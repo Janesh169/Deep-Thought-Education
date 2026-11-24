@@ -10,6 +10,12 @@ problems, interactive labs, handwriting on every lesson, and ambient study sound
 - **Offline:** clone or download the repository and open `index.html`. It works straight from disk,
   with no server and no internet connection.
 
+**Search** (🔍 in the top bar, `Ctrl/⌘ K` or `/`) finds anything inside the lessons: ideas, formulas,
+key results, JEE traps, questions, solutions and labs. It understands formulas typed loosely (`F=qvB`,
+`mu0 I/2 pi r`, `qB/m`), typos, abbreviations (emf, KVL, RHR…) and words like *formula*, *trap*, *pyq 2019*
+or *lab*. Picking a result opens the lesson at that exact spot, highlighted. The Library search box shows
+matches from inside the lessons too.
+
 Progress, answers, handwritten notes and settings are kept on the device. Use **Export backup** /
 **Import backup** at the bottom of the Library page to save them to a `.json` file or move them to
 another device or browser. Backups are interchangeable with the single-file version of the app.
@@ -23,7 +29,10 @@ another device or browser. Backups are interchangeable with the single-file vers
 | `assets/app.js` | App core: router, quiz engine, lab framework, handwriting, ambient sound, backup |
 | `chapters/<id>.js` | One file per chapter (its lessons and interactive labs). It loads the first time one of that chapter's lessons is opened |
 | `tools/build.py` | Builds all of the above from the single-file version of the app |
+| `assets/search-index.js` | The search index (every lesson cut into findable pieces). It loads the first time you search |
 | `tools/backup.js` | The Export / Import backup module |
+| `tools/search.js`, `tools/search.css` | Search: ranking, the search panel, jumping to a result |
+| `tools/search_index.py` | Builds the search index, turning each rendered formula back into searchable text |
 
 The first visit loads about 0.5 MB instead of the whole 8.5 MB course. Each chapter (about 2 MB) loads when
 you need it, and opening a chapter overview fetches it in the background.

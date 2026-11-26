@@ -1,0 +1,35 @@
+{
+  "id": "simple-harmonic-motion",
+  "title": "Oscillations & SHM",
+  "subject": "Physics",
+  "unit": "Oscillations & Waves",
+  "tone": "tide",
+  "tagline": "Pendulums, springs, tides and heartbeats all keep time the same way. Learn the one equation behind every steady rhythm, then watch it work in more than a dozen live experiments.",
+  "sections": [
+    { "title": "Rhythm", "lessons": [1] },
+    { "title": "The SHM Toolkit", "lessons": [2] },
+    { "title": "Springs & Energy", "lessons": [3, 4] },
+    { "title": "Pendulums", "lessons": [5] },
+    { "title": "SHM Everywhere", "lessons": [6] },
+    { "title": "Beyond the Ideal", "lessons": [7] },
+    { "title": "Wrap-up", "lessons": [8] }
+  ],
+  "lessons": [
+    { "n": 1, "minutes": 25, "title": "Things That Repeat",
+      "summary": "Periodic or oscillatory? Period, frequency and angular frequency, functions that repeat, and the big idea of the chapter: SHM is the shadow of a point going round a circle." },
+    { "n": 2, "minutes": 35, "title": "The SHM Equation & Phase",
+      "summary": "x = A sin(ωt + φ) and what each symbol does. Velocity and acceleration, who leads whom, how to find the phase, and how to time any part of a swing with the reference circle." },
+    { "n": 3, "minutes": 30, "title": "Springs",
+      "summary": "Hooke’s law gives SHM straight away. Hang the spring vertically, join springs in series or in parallel, cut one in half, or put two masses on it. The period follows every time." },
+    { "n": 4, "minutes": 30, "title": "Energy in SHM",
+      "summary": "Kinetic and potential energy pass back and forth at twice the oscillation frequency while the total stays fixed. Also: any smooth valley gives SHM, and what happens when a mass lands on a moving block." },
+    { "n": 5, "minutes": 35, "title": "The Simple Pendulum",
+      "summary": "Derive T = 2π√(L/g) and see where the small-angle approximation breaks down. Pendulums in lifts, cars, liquids and the heat, a child standing up on a swing, and swinging rods and rings." },
+    { "n": 6, "minutes": 35, "title": "Spotting SHM Anywhere",
+      "summary": "One method finds the period of any oscillator: U-tubes, floating blocks, a tunnel through the Earth, a gas spring. Then add two SHMs along one line or at right angles and watch Lissajous figures appear." },
+    { "n": 7, "minutes": 30, "title": "Damping, Driving & Resonance",
+      "summary": "Real swings die away exponentially, and a push at the right moment builds them up. The pendulum-dissipation experiment, forced oscillations and resonance, from playground swings to the wobbling Millennium Bridge." },
+    { "n": 8, "minutes": 25, "title": "Wrap-up: The SHM Toolkit",
+      "summary": "Every formula on one page, the traps examiners like, a fast game called SHM Rush and a final mix of previous-year questions." }
+  ]
+}

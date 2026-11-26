@@ -1,0 +1,28 @@
+/* "tide" (Oscillations & SHM): sea-glass aqua over a moonlit ocean, with warm coral as the second colour.
+   A tide is the slowest oscillation most people ever watch. The background glow drifts slowly and stays
+   dim so long sessions are easy on the eyes. */
+[data-tone="tide"] { --accent: #6fefd2; --accent-ink: #00261d; --violet: #ffa58c; }
+:root[data-tone="tide"] { --bg0: #040f18; --c1: #0b5560; --c2: #13397a; --c3: #0c5744; --c4: #4b2340; --blob-alpha: .5; }
+[data-theme="light"][data-tone="tide"], [data-theme="light"] [data-tone="tide"] { --accent: #007865; --accent-ink: #ffffff; --violet: #bf4220; }
+:root[data-theme="light"][data-tone="tide"] { --bg0: #eef7f5; --c1: #a6ebdd; --c2: #bcd5ff; --c3: #cdeec9; --c4: #ffd2c4; --blob-alpha: .78; }
+:root[data-tone="tide"] .blob { animation-duration: 84s; }
+
+/* Solid fill in the chapter's second colour (coral), for figure dots. */
+.fig .fill-v { fill: var(--violet); stroke: none; }
+
+/* Animated lesson figures. Each loop uses sine easing, so every animated figure in this chapter is itself in SHM.
+   They stop with the Motion switch and with the system's reduced-motion setting. */
+.fig .osc-swing { animation: osc-swing var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-swing { from { transform: rotate(var(--a, 16deg)); } to { transform: rotate(calc(-1 * var(--a, 16deg))); } }
+.fig .osc-bounce { animation: osc-bounce var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-bounce { from { transform: translateY(calc(-1 * var(--d, 14px))); } to { transform: translateY(var(--d, 14px)); } }
+.fig .osc-slide { animation: osc-slide var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-slide { from { transform: translateX(calc(-1 * var(--d, 14px))); } to { transform: translateX(var(--d, 14px)); } }
+.fig .osc-stretch { animation: osc-stretch var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-stretch { from { transform: scale(var(--s0, .8), 1); } to { transform: scale(var(--s1, 1.2), 1); } }
+.fig .osc-stretch-y { animation: osc-stretch-y var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-stretch-y { from { transform: scale(1, var(--s0, .8)); } to { transform: scale(1, var(--s1, 1.2)); } }
+.fig .osc-spin { animation: osc-spin var(--T, 4.8s) linear infinite; }
+@keyframes osc-spin { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+.motion-off .fig [class*="osc-"] { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .fig [class*="osc-"] { animation: none; } }

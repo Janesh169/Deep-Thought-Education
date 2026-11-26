@@ -1,0 +1,151 @@
+<card>
+<h2>The lamp in the cathedral</h2>
+<p>The story goes that in 1583 a bored nineteen-year-old named <strong>Galileo Galilei</strong> sat in the cathedral at Pisa watching a hanging lamp swing in a draught. He timed it against his own pulse and noticed something strange. When the swings were wide the lamp moved fast, and when they were narrow it moved slowly, but <strong>each swing took the same time</strong>.</p>
+<p>That one observation led to the pendulum clock. The same steady beat runs through the rest of the world too:</p>
+<ul>
+<li>the quartz crystal in a wristwatch vibrates exactly <strong>32 768</strong> times a second;</li>
+<li>your heart beats roughly once a second;</li>
+<li>the sea rises and falls about every <strong>12 hours 25 minutes</strong>;</li>
+<li>the atoms in a solid jiggle about <strong>10¹³</strong> times a second.</li>
+</ul>
+<p>This chapter is about the one equation all of these share. By the end you will be able to look at a spring, a pendulum, a floating block or a tunnel through the Earth and write down its period in a single line.</p>
+<callout kind="story" title="How this chapter is built">
+<p>Every lesson has at least one live experiment. Drag things, break things, and check your guesses. Lessons 1–2 build the toolkit, 3–6 apply it to real systems, 7 adds friction and pushing, and 8 is a game and a final round of past papers. Each lesson also has a short breather in the middle. Take it.</p>
+</callout>
+</card>
+
+<card>
+<h2>Periodic and oscillatory</h2>
+<p>A motion is <strong>periodic</strong> if it repeats itself exactly after a fixed time. That time is the <strong>period</strong>, $T$. The Moon going round the Earth is periodic, and so are the hands of a clock.</p>
+<p>A motion is <strong>oscillatory</strong> if, on top of repeating, it goes <strong>to and fro about a fixed middle point</strong>, called the <strong>mean position</strong> or equilibrium position. A swing does this, and so does a guitar string. Every oscillation is periodic, but not every periodic motion is an oscillation: the Moon never comes back through a middle point.</p>
+<p>Three numbers describe the rhythm:</p>
+<tbl><table>
+<thead><tr><th>Quantity</th><th>Meaning</th><th>Unit</th></tr></thead>
+<tbody>
+<tr><td>Period $T$</td><td>time for one complete cycle</td><td>s</td></tr>
+<tr><td>Frequency $f = \dfrac{1}{T}$</td><td>cycles per second</td><td>Hz (s⁻¹)</td></tr>
+<tr><td>Angular frequency $\omega = \dfrac{2\pi}{T} = 2\pi f$</td><td>radians of “phase” per second (more on phase soon)</td><td>rad s⁻¹</td></tr>
+</tbody>
+</table></tbl>
+<p>A wristwatch crystal has $f = 32\,768\ \text{Hz}$, so $T \approx 30.5\ \mu\text{s}$. A tide has $T \approx 12.4\ \text{h}$. The physics is the same, only the clock runs at a different speed.</p>
+</card>
+
+<q type="multi" answer="A,C,E" title="Periodic or oscillatory?">
+<stem>Which of these motions are <strong>oscillatory</strong>, and not just periodic?</stem>
+<opt>The bob of a swinging pendulum</opt>
+<opt>The Moon going round the Earth</opt>
+<opt>A block bobbing up and down on a spring</opt>
+<opt>The tip of a clock’s minute hand</opt>
+<opt>The needle of a working sewing machine</opt>
+<hint>Is there a middle point that the body passes back and forth through?</hint>
+<sol><p>The pendulum, the spring and the needle all go back and forth through a mean position: <strong>A, C, E</strong>. The Moon and the minute hand repeat their motion, so they are periodic, but they go round in one direction and never pass back through a middle point, so they do not oscillate.</p></sol>
+</q>
+
+<card>
+<h2>Functions that repeat</h2>
+<p>The natural language of periodic motion is the sine and the cosine. $\sin\theta$ repeats every $2\pi$, so $\sin\omega t$ repeats when $\omega t$ grows by $2\pi$. That gives the rule:</p>
+$$\sin\omega t \text{ and } \cos\omega t \text{ have period } T = \frac{2\pi}{\omega}.$$
+<p>A few more facts are worth knowing, because JEE likes to test them:</p>
+<ul>
+<li><strong>Squares halve the period.</strong> $\sin^2\omega t = \tfrac{1}{2}(1 - \cos 2\omega t)$, so it repeats every $\pi/\omega$.</li>
+<li><strong>Sums repeat on the LCM.</strong> $\sin\omega t + \sin 2\omega t$ repeats when both parts do. The periods are $2\pi/\omega$ and $\pi/\omega$, so the sum repeats every $2\pi/\omega$. It is periodic, but as you will see it is not SHM.</li>
+<li><strong>Same frequency, still a sine.</strong> $a\sin\omega t + b\cos\omega t = \sqrt{a^2+b^2}\,\sin(\omega t + \alpha)$. Adding a sine and a cosine of the <em>same</em> $\omega$ gives one sine wave with a bigger amplitude (Lesson 2).</li>
+<li>Functions such as $e^{-t}$, $\log t$ or $t^2$ never repeat, so they are <strong>not periodic</strong>.</li>
+</ul>
+</card>
+
+<q type="single" answer="C" title="Spot the period">
+<stem>What is the period of $x = 3\sin(2\pi t) + 4\sin(3\pi t)$, with $t$ in seconds?</stem>
+<opt>$1\ \text{s}$</opt>
+<opt>$\tfrac{2}{3}\ \text{s}$</opt>
+<opt>$2\ \text{s}$</opt>
+<opt>$\tfrac{1}{3}\ \text{s}$</opt>
+<hint>Find each part’s period, then the smallest time that is a whole number of both.</hint>
+<sol><p>The first part has $T_1 = 2\pi/2\pi = 1\ \text{s}$ and the second has $T_2 = 2\pi/3\pi = \tfrac{2}{3}\ \text{s}$. The sum repeats only when both parts do, which happens at the least common multiple: $2\ \text{s}$ is 2 periods of the first and 3 of the second. <strong>Answer: 2 s.</strong></p></sol>
+</q>
+
+<q type="single" answer="B" title="A squared sine">
+<stem>A particle moves along a line with $x = \sin^2\omega t$. Which statement is correct?</stem>
+<opt>It is SHM about $x = 0$ with period $2\pi/\omega$</opt>
+<opt>It is SHM about $x = \tfrac{1}{2}$ with period $\pi/\omega$</opt>
+<opt>It is periodic but not SHM, with period $\pi/\omega$</opt>
+<opt>It is not periodic</opt>
+<hint>Rewrite $\sin^2\omega t$ using the double-angle formula, then differentiate twice.</hint>
+<sol><p>$x = \tfrac{1}{2} - \tfrac{1}{2}\cos 2\omega t$. That is a cosine of angular frequency $2\omega$ (period $\pi/\omega$) about the point $x = \tfrac{1}{2}$. Differentiating twice gives</p>
+$$a = 2\omega^2\cos 2\omega t = -4\omega^2\left(x - \tfrac{1}{2}\right),$$
+<p>which is exactly the SHM condition with mean position $x = \tfrac12$. <strong>Answer: B.</strong></p>
+<p><em>Exam note:</em> a version of this question appeared in AIEEE 2005, and the official key said “periodic but not simple harmonic”. The physics says otherwise, because $a = -4\omega^2(x - \tfrac12)$. If it comes up again, check whether the options mention a shifted mean position.</p></sol>
+</q>
+
+<card>
+<h2>What makes it “simple harmonic”</h2>
+<p>Pull a block on a spring to one side and let go. The spring pulls it back towards the middle. It overshoots, gets pulled back again, and keeps going. The important thing is <em>how hard</em> the spring pulls: twice as far out means twice the pull. That is Hooke’s law, $F = -kx$.</p>
+<?py fig(380, 124,
+  wall(30, 25, 100) + floor(30, 360, 100) +
+  g(spring(30, 62, 170, 62, 9, 9), 'osc-stretch', '--T:1.8s;--s0:.786;--s1:1.214;transform-origin:30px 62px') +
+  g(block(170, 40, 46, 44, 'm'), 'osc-slide', '--T:1.8s;--d:30px') +
+  line(193, 24, 193, 100, 'ln thin dash') + note(193, 18, 'mean position'),
+  'The pull grows in step with the distance from the middle, and always points back towards it.',
+  'An animated block on a spring sliding back and forth about its mean position') ?>
+<p>Any motion where the <strong>restoring force is proportional to the displacement and points back towards the mean position</strong> is called <strong>simple harmonic motion</strong> (SHM):</p>
+$$F = -kx \quad\Longleftrightarrow\quad a = -\omega^2 x, \qquad \omega^2 = \frac{k}{m}.$$
+<p>The minus sign says the force always points back to the middle. The fact that $x$ appears to the first power, with no $x^2$ or $x^3$, is what makes it <em>simple</em>.</p>
+<callout kind="key" title="The SHM test">
+<p>If you can write $a = -(\text{positive constant}) \times (\text{displacement from some fixed point})$, the motion is SHM, and that constant is $\omega^2$. For rotation, the same test reads $\alpha = -\omega^2\theta$, which is <strong>angular SHM</strong>.</p>
+</callout>
+</card>
+
+<q type="multi" answer="A,D" title="SHM or not?">
+<stem>For which of these accelerations is the motion simple harmonic? Here $x$ is in metres and $a$ in m s⁻².</stem>
+<opt>$a = -9x$</opt>
+<opt>$a = -9x^2$</opt>
+<opt>$a = 9x$</opt>
+<opt>$a = -9(x - 2)$</opt>
+<opt>$a = -9x^3$</opt>
+<hint>You need a negative constant times the first power of the displacement from some fixed point.</hint>
+<sol><p><strong>A</strong> is SHM about $x = 0$ with $\omega = 3\ \text{rad/s}$. <strong>D</strong> is SHM about $x = 2$, also with $\omega = 3\ \text{rad/s}$: shifting the mean position changes nothing. B is not SHM, because it pulls towards $-x$ on <em>both</em> sides of zero. C pushes the body <em>away</em>, so it runs off instead of oscillating. E oscillates, but its period depends on the amplitude, so it is not simple harmonic.</p></sol>
+</q>
+
+<card>
+<h2>The big idea: SHM is a shadow</h2>
+<p>Here is the picture that makes the rest of the chapter easy. Take a point moving round a circle of radius $A$ at a steady angular speed $\omega$. Shine a light from the side and look at its shadow on a wall. The shadow slides up and down a straight line, and that up-and-down motion is <strong>exactly SHM</strong>.</p>
+<?py fig(520, 190,
+  circ(110, 95, 70, 'ln thin') + line(30, 95, 505, 95, 'ln thin') +
+  g(line(110, 95, 110, 25, 'ln') + bob(110, 25, 7), 'osc-spin', '--T:4.8s;transform-origin:110px 95px') +
+  line(225, 18, 225, 172, 'ln') +
+  g(bob(225, 95, 7, 'fill-v'), 'osc-bounce', '--T:2.4s;--d:70px') +
+  sine(235, 95, 270, 70, 270, pi/2, 'ln acc') +
+  note(110, 186, 'point going round') + note(225, 186, 'its shadow') + note(400, 186, 'the shadow’s height over time'),
+  'A point going steadily round a circle (left). Its shadow on the wall (middle) moves in SHM, tracing a sine curve against time (right).',
+  'Animated: a dot circles at constant speed while its shadow on a vertical line moves up and down in step with a sine curve') ?>
+<p>If the point is at angle $\theta = \omega t + \phi$ from the horizontal, its height is $A\sin\theta$, so the shadow is at</p>
+$$x = A\sin(\omega t + \phi).$$
+<p>This circle is called the <strong>reference circle</strong> (or auxiliary circle). Try it below. Pause it, drag the point to any angle, and turn on the arrows.</p>
+<lab sim="osc-circle-lab" title="The reference circle">
+<p>Things to try. <strong>(1)</strong> Turn on the arrows. The point’s speed $A\omega$ never changes, yet the shadow’s velocity (green) is biggest at the middle and zero at the ends. <strong>(2)</strong> The point’s acceleration $A\omega^2$ always points to the centre. Its shadow (yellow) is biggest at the ends and always points back to the middle: that is $a = -\omega^2 x$. <strong>(3)</strong> Double $\omega$ and watch the curve on the right squeeze to half its period.</p>
+</lab>
+</card>
+
+<callout kind="breather" title="Breathe with the swell">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Watch the ring. Breathe in while it grows and out while it shrinks. Its rhythm is about the same as a slow ocean swell, roughly 9 seconds a cycle. Three breaths, then on to the last idea.</p>
+</callout>
+
+<card>
+<h2>What the circle gives you for free</h2>
+<p>The shadow can never go faster than the point itself, which moves at $A\omega$. It can never accelerate harder than the point’s centripetal acceleration, $A\omega^2$. Both limits are reached:</p>
+<ul>
+<li><strong>Top speed</strong> $v_{\max} = A\omega$, when the point is at the top or bottom of the circle and the shadow is passing through the <strong>mean position</strong>.</li>
+<li><strong>Largest acceleration</strong> $a_{\max} = A\omega^2$, when the shadow is at an <strong>extreme</strong> ($x = \pm A$) and has stopped for an instant.</li>
+</ul>
+<p>Keep this circle in mind. In the next lesson it gives you the velocity, the acceleration, the phase and the time between any two positions, with almost no algebra.</p>
+<callout kind="recap" title="Lesson 1 in four lines">
+<p>Periodic means it repeats. Oscillatory means it repeats back and forth through a mean position. $T = 1/f = 2\pi/\omega$. SHM means $a = -\omega^2 x$, and it is the shadow of a point going steadily round a circle.</p>
+</callout>
+</card>
+
+<q type="numeric" answer="0.63" tol="0.01" title="Shadow speed">
+<stem>A small ball goes round a circle of radius 5 cm, making 2 revolutions per second. Its shadow on a diameter moves in SHM. What is the shadow’s <strong>greatest speed</strong>, in m s⁻¹? (Give 2 decimal places.)</stem>
+<hint>The shadow’s top speed equals the ball’s own speed, $A\omega$.</hint>
+<sol><p>$\omega = 2\pi f = 2\pi \times 2 = 4\pi\ \text{rad/s}$, so $v_{\max} = A\omega = 0.05 \times 4\pi \approx 0.63\ \text{m/s}$.</p></sol>
+</q>

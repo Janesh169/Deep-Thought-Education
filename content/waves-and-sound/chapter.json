@@ -1,0 +1,36 @@
+{
+  "id": "waves-and-sound",
+  "title": "Waves & Sound",
+  "subject": "Physics",
+  "unit": "Oscillations & Waves",
+  "tone": "chorus",
+  "tagline": "A ripple on a pond, a guitar note, a sonic boom: energy travels while the matter stays put. Learn the wave equation, then see and hear it in harmonics, organ pipes, beats and the Doppler shift.",
+  "sections": [
+    { "title": "What Travels", "lessons": [1, 2] },
+    { "title": "Speed", "lessons": [3] },
+    { "title": "When Waves Meet", "lessons": [4] },
+    { "title": "Standing Waves", "lessons": [5, 6] },
+    { "title": "Beats & Doppler", "lessons": [7, 8] },
+    { "title": "Wrap-up", "lessons": [9] }
+  ],
+  "lessons": [
+    { "n": 1, "minutes": 25, "title": "What Is a Wave?",
+      "summary": "A wave carries energy without carrying the medium along. Transverse and longitudinal waves, compressions and rarefactions, and the one equation that links them all: v = fλ." },
+    { "n": 2, "minutes": 35, "title": "The Travelling-Wave Equation",
+      "summary": "y = A sin(kx − ωt): which way the wave goes, how fast, and what each particle is doing. Phase differences, particle velocity versus wave velocity, and how to read a snapshot." },
+    { "n": 3, "minutes": 30, "title": "How Fast? The Speed of Waves",
+      "summary": "√(T/μ) on a string and √(γP/ρ) in a gas, including Newton’s mistake and Laplace’s fix. The effects of temperature, pressure and humidity, a rope hanging under its own weight, and the energy a wave carries." },
+    { "n": 4, "minutes": 30, "title": "Superposition, Interference & Reflection",
+      "summary": "Waves pass straight through each other and add along the way. Loud and quiet spots from two sources, the maximum and minimum intensity ratio, and what happens to a pulse at a fixed end, a free end or a joint." },
+    { "n": 5, "minutes": 35, "title": "Standing Waves on Strings",
+      "summary": "Two waves travelling in opposite directions make one that stays put: nodes, antinodes and harmonics. The sonometer’s laws, consecutive resonances, and a string driven until it sings." },
+    { "n": 6, "minutes": 35, "title": "Organ Pipes & the Resonance Tube",
+      "summary": "Air columns open at both ends or closed at one, which harmonics each allows, end correction, and the resonance-tube experiment for measuring the speed of sound, which you carry out yourself in the lab." },
+    { "n": 7, "minutes": 25, "title": "Beats",
+      "summary": "Two nearly equal notes throb at the difference of their frequencies. Hear it, see the envelope, tune a mystery fork by ear, and learn the wax-and-file rules JEE loves." },
+    { "n": 8, "minutes": 30, "title": "The Doppler Effect",
+      "summary": "Why a passing siren drops in pitch: moving sources, moving observers, wind, motion at an angle, echoes from moving reflectors, and the Mach cone of a sonic boom." },
+    { "n": 9, "minutes": 25, "title": "Wrap-up: The Waves Toolkit",
+      "summary": "Strings and pipes side by side, the traps examiners like, a game called Wave Rush and a final mix of previous-year questions." }
+  ]
+}

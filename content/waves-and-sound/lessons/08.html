@@ -1,0 +1,113 @@
+<callout kind="key" title="Syllabus note" label="Syllabus">
+<p>Since 2024, NTA’s JEE Main syllabus doesn’t list the Doppler effect. It is still in the <strong>JEE Advanced</strong> syllabus and appears in JEE Main papers up to 2023. Advanced aspirants: this lesson is core. Main-only: it is 30 well-spent minutes and the ideas are short.</p>
+</callout>
+
+<card>
+<h2>Trumpets on a train</h2>
+<p>In 1842 Christian Doppler predicted that the pitch of a sound, and the colour of starlight, should change when the source moves. In 1845 Buys Ballot tested it in the Netherlands. He put trumpeters on an open railway carriage, had them hold one steady note as the train rolled past, and stationed musicians with perfect pitch beside the track. As the train approached, the note sounded higher. As it moved away, it sounded lower.</p>
+<p>You hear the same thing every time an ambulance passes: <em>neeee-owww</em>.</p>
+</card>
+
+<card>
+<h2>A moving source squeezes the waves</h2>
+<?py fig(520, 240,
+  ''.join(circ(180 + 20 * i, 120, 21 * (5 - i) + 5, 'ln acc', ' opacity="%.2f"' % (0.35 + 0.13 * i)) for i in range(6)) +
+  block(274, 112, 26, 16, '') + arr(302, 120, 330, 120, 'ln vio', 'ah-v') +
+  lbl(440, 112, 'squeezed:', 'sm', 'middle') + lbl(440, 130, 'higher pitch', 'sm t-a', 'middle') +
+  lbl(62, 112, 'stretched:', 'sm', 'end') + lbl(62, 130, 'lower pitch', 'sm t-v', 'end'),
+  'Each wavefront is a circle centred where it was emitted. The source keeps catching up with its own waves in front and running away from those behind.',
+  'Circular wavefronts from a source moving to the right, bunched together ahead and spread out behind') ?>
+<p>A source of frequency $f$ moves at $v_s$ towards you through still air, where sound travels at $v$. Each crest is emitted $T = 1/f$ after the previous one, during which the source has moved $v_sT$ closer. So the crests in front are squeezed together:</p>
+$$\lambda' = \frac{v - v_s}{f} \quad\Rightarrow\quad f' = \frac{v}{\lambda'} = f\,\frac{v}{v - v_s}.$$
+<p>Behind the source the crests are stretched apart, and $v - v_s$ becomes $v + v_s$.</p>
+</card>
+
+<card>
+<h2>A moving observer meets the waves sooner</h2>
+<p>If the source is still but <strong>you</strong> move towards it at $v_o$, the wavelength doesn’t change. You simply run into crests faster, at relative speed $v + v_o$:</p>
+$$f' = f\,\frac{v + v_o}{v}.$$
+<callout kind="key" title="One formula for every case">
+$$f' = f\,\frac{v \pm v_o}{v \mp v_s}$$
+<p>Use the <strong>upper signs when the motion is towards the other</strong> one: observer approaching gives $+v_o$ on top, and source approaching gives $-v_s$ below. Approaching raises the pitch, and receding lowers it. With wind blowing at $w$ from the source to the observer, replace $v$ by $v + w$ (or $v - w$ if it blows the other way).</p>
+</callout>
+<p>The two effects are <em>not</em> symmetric. A source at $v/2$ coming towards you doubles the frequency, while you running at $v/2$ towards a still source only multiplies it by 1.5. That is because sound moves through air, and air gives a preferred frame.</p>
+</card>
+
+<lab sim="wav-doppler-lab" title="Waves from a moving source">
+<p>Things to try. <strong>(1)</strong> Watch the circles bunch up ahead of the source and spread out behind. <strong>(2)</strong> Drag the ear to the side of the track. As the source passes you, the frequency drops <em>smoothly</em>, not suddenly, because only the component of motion along the line to you counts. <strong>(3)</strong> Press ♪ to hear a drive-past. <strong>(4)</strong> Push the speed past 1.0 × v: the source outruns its own waves, which pile up into a <strong>Mach cone</strong>, the sonic boom.</p>
+</lab>
+
+<q type="single" answer="B" pyq="AIEEE 2005">
+<stem>An observer moves towards a stationary source of sound with a speed equal to one-fifth of the speed of sound. What is the percentage increase in the frequency they hear?</stem>
+<opt>5%</opt>
+<opt>20%</opt>
+<opt>0%</opt>
+<opt>0.5%</opt>
+<sol><p>$f' = f(v + v/5)/v = 1.2f$, an increase of 20%. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="single" answer="B" pyq="JEE Main 2015">
+<stem>A train moves along a straight track at 20 m/s, blowing its whistle at 1000 Hz. The percentage change in the frequency heard by a person standing beside the track, as the train passes, is close to (speed of sound = 320 m/s)</stem>
+<opt>6%</opt>
+<opt>12%</opt>
+<opt>18%</opt>
+<opt>24%</opt>
+<sol><p>Approaching: $1000 \times 320/300 \approx 1066.7$ Hz. Receding: $1000 \times 320/340 \approx 941.2$ Hz. The change is $125.5$ Hz, which is $125.5/1066.7 \approx 11.8\% \approx 12\%$ of the approaching pitch. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Listen to the street">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Next time a car or a motorbike passes, listen for the drop in pitch. For now, three slow breaths, then the last few twists: angles, echoes and booms.</p>
+</callout>
+
+<card>
+<h2>Motion at an angle</h2>
+<p>Only the component of velocity <strong>along the line joining source and observer</strong> matters. If the source’s velocity makes an angle $\theta$ with that line, use $v_s\cos\theta$. A source moving exactly across your line of sight (at its closest approach) gives no shift at that instant.</p>
+</card>
+
+<q type="single" answer="B" pyq="JEE Main 2013">
+<stem>A source S of 100 Hz sound and a stationary observer O are some distance apart. S moves at 19.4 m/s in a direction making 60° with the line from S to O. The speed of sound is 330 m/s. The frequency heard by O is</stem>
+<opt>100 Hz</opt>
+<opt>103 Hz</opt>
+<opt>106 Hz</opt>
+<opt>97 Hz</opt>
+<sol><p>The component towards O is $19.4\cos 60° = 9.7$ m/s. So $f' = 100 \times \dfrac{330}{330 - 9.7} = \dfrac{33\,000}{320.3} \approx 103\ \text{Hz}$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<card>
+<h2>Echoes from moving things</h2>
+<p>A reflector works in two steps. First it <strong>receives</strong> the sound as a moving observer, then it <strong>re-emits</strong> it as a moving source. For a car approaching a wall at speed $u$ and hearing its own horn’s echo:</p>
+$$f_{\text{wall}} = f\,\frac{v}{v - u}, \qquad f_{\text{echo}} = f_{\text{wall}}\,\frac{v + u}{v} = f\,\frac{v + u}{v - u}.$$
+<p>Police radar and medical ultrasound (measuring blood flow) use the same two-step shift, with radio waves or ultrasound.</p>
+</card>
+
+<q type="integer" answer="450" title="Echo off a wall">
+<stem>A car moves at 20 m/s towards a large wall, sounding a 400 Hz horn. What frequency, in Hz, does the driver hear in the echo? ($v = 340$ m/s)</stem>
+<sol><p>$f_{\text{echo}} = 400 \times \dfrac{340 + 20}{340 - 20} = 400 \times \dfrac{360}{320} = 450\ \text{Hz}$.</p></sol>
+</q>
+
+<q type="single" answer="A" pyq="AIEEE 2009">
+<stem>A motorcycle starts from rest and accelerates in a straight line at 2 m/s². At its starting point there is a stationary siren. How far has the motorcycle gone when the rider hears the siren at 94% of the frequency heard at rest? (Speed of sound = 330 m/s.)</stem>
+<opt>98 m</opt>
+<opt>147 m</opt>
+<opt>196 m</opt>
+<opt>49 m</opt>
+<sol><p>The rider is moving away, so $f' = f(v - v_o)/v = 0.94f$, giving $v_o = 0.06 \times 330 = 19.8$ m/s. Then $s = v_o^2/2a = 392.04/4 \approx 98\ \text{m}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<card>
+<h2>Faster than sound</h2>
+<p>When $v_s > v$, the source outruns its own sound. The wavefronts pile up along a cone, the <strong>Mach cone</strong>, with half-angle</p>
+$$\sin\theta = \frac{v}{v_s} = \frac{1}{\text{Mach number}}.$$
+<p>The pile-up arrives as a sudden pressure jump, the <strong>sonic boom</strong>. In the lab, the readout for an observer ahead says “nothing yet” for exactly this reason: no sound can reach them before the source does.</p>
+<p>Light shows a Doppler shift too. Light from galaxies moving away from us is <strong>red-shifted</strong>, and that is how we know the universe is expanding.</p>
+</card>
+
+<q type="integer" answer="30" title="Mach two">
+<stem>A jet flies at Mach 2. What is the half-angle of its Mach cone, in degrees?</stem>
+<sol><p>$\sin\theta = 1/2$, so $\theta = 30°$.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 8 in four lines">
+<p>$f' = f\dfrac{v \pm v_o}{v \mp v_s}$, with upper signs for motion towards the other. Use the velocity components along the line joining source and observer. A moving reflector first receives, then re-emits: $f(v + u)/(v - u)$. Supersonic sources make a Mach cone with $\sin\theta = v/v_s$.</p>
+</callout>

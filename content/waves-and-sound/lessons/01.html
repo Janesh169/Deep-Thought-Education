@@ -1,0 +1,115 @@
+<card>
+<h2>The stadium wave</h2>
+<p>Watch a Mexican wave go round a cricket stadium. A ripple of people standing up and sitting down races round the stands at about <strong>12 metres per second</strong>, roughly 20 seats a second. Yet nobody leaves their seat. Each person only stands up and sits down. What travels round the stadium is the <em>pattern</em>.</p>
+<p>That is the whole idea of a wave: <strong>a disturbance that travels, carrying energy from place to place, while the material it passes through stays where it is</strong>. A ripple on a pond, a note from a guitar, the shaking from an earthquake, the light from the Sun: all of them carry energy without carrying matter.</p>
+<callout kind="story" title="How this chapter is built">
+<p>It builds directly on Oscillations & SHM. A wave is just a long line of oscillators, each nudging the next. Lessons 1–3 are about travelling waves, Lesson 4 about waves meeting, 5–6 about waves trapped between boundaries (strings and pipes), and 7–8 about beats and the Doppler effect. Lesson 9 is a game and a final round of past papers. Many labs here make real sound, so headphones help.</p>
+</callout>
+</card>
+
+<card>
+<h2>Mechanical and non-mechanical</h2>
+<p><strong>Mechanical waves</strong> need a medium: something with mass that can be pushed and that pushes back. Sound, waves on a string, water waves and seismic waves are all mechanical. Each bit of the medium is a little oscillator tied to its neighbours. When one bit moves, it pulls on the next, a little later.</p>
+<p><strong>Electromagnetic waves</strong> (light, radio, X-rays) need no medium at all, which is why sunlight crosses the vacuum of space while the Sun’s roar never reaches us. This chapter is about mechanical waves.</p>
+</card>
+
+<card>
+<h2>Transverse and longitudinal</h2>
+<p>There are two ways the particles of a medium can move as a wave passes.</p>
+<p><strong>Transverse:</strong> the particles move <em>at right angles</em> to the direction the wave travels. Flick a rope and the rope moves up and down while the wave runs along it.</p>
+<?py fig(470, 120,
+  '<defs><clipPath id="wv-clip-l1a"><rect x="20" y="0" width="420" height="120"/></clipPath></defs>' +
+  line(20, 60, 440, 60, 'ln thin dash') +
+  g(g(sine(20, 60, 560, 34, 140, 0, 'ln acc', 280), 'wav-travel', '--T:2.2s;--d:140px'), '', '', ' clip-path="url(#wv-clip-l1a)"') +
+  g(bob(195, 60, 6.5, 'fill-v'), 'wav-bob', '--T:1.1s;--d:34px') +
+  arr(395, 14, 440, 14, 'ln acc', 'ah-a') + lbl(386, 18, 'wave travels', 'sm t-a', 'end') +
+  lbl(207, 112, 'this bead only goes up and down', 'sm t-v', 'start'),
+  'A transverse wave: the pattern moves to the right, but every bead of the string only moves up and down.',
+  'Animated transverse wave travelling to the right, with one highlighted bead moving only up and down') ?>
+<p><strong>Longitudinal:</strong> the particles move <em>back and forth along</em> the direction of travel. Push and pull one end of a slinky and you get bunched-up regions (<strong>compressions</strong>) and spread-out regions (<strong>rarefactions</strong>) moving along it. <strong>Sound in air is longitudinal.</strong></p>
+<?py fig(470, 110,
+  ''.join(g(dot(x, y, 2.6), 'wav-push', '--T:1.1s;--d:6px;animation-delay:%.2fs' % (-(((1 - (x - 30) / 140.0) % 1) * 2.2))) for x in range(30, 441, 10) for y in (35, 55, 75)) +
+  arr(395, 12, 440, 12, 'ln acc', 'ah-a') + lbl(386, 16, 'wave travels', 'sm t-a', 'end') +
+  lbl(235, 104, 'every air particle only moves back and forth about its own place', 'sm'),
+  'A longitudinal wave: bunched-up compressions and spread-out rarefactions travel to the right, while each particle only jiggles back and forth.',
+  'Animated rows of dots showing compressions and rarefactions moving to the right') ?>
+<tbl><table>
+<thead><tr><th>Medium</th><th>Transverse?</th><th>Longitudinal?</th></tr></thead>
+<tbody>
+<tr><td>Solids</td><td>yes (they resist being sheared)</td><td>yes</td></tr>
+<tr><td>Inside liquids and gases</td><td>no (a fluid can’t resist shear)</td><td>yes</td></tr>
+<tr><td>A stretched string</td><td>yes (the tension supplies the restoring force)</td><td>yes, but rarely used</td></tr>
+<tr><td>The surface of water</td><td colspan="2">both at once: the water moves in small circles</td></tr>
+</tbody>
+</table></tbl>
+<callout kind="intuition" title="How we know the Earth’s core is liquid">
+<p>Earthquakes send out longitudinal P-waves and transverse S-waves. Seismometers on the far side of the planet pick up the P-waves but not the S-waves, which leaves an “S-wave shadow”. Transverse waves can’t cross a liquid, so the Earth’s outer core must be liquid.</p>
+</callout>
+</card>
+
+<lab sim="wav-medium-lab" title="Inside a wave">
+<p>Things to try. <strong>(1)</strong> Watch the highlighted particle. Whatever the wave does, the particle only moves up and down (transverse) or back and forth (longitudinal), never along with the wave. <strong>(2)</strong> Switch to longitudinal and find the compressions (C) and rarefactions (R). The distance from one C to the next is one wavelength. <strong>(3)</strong> Double the frequency: the wave speed doubles, because $v = f\lambda$. <strong>(4)</strong> Turn on <em>Single pulse</em> to see one disturbance pass through.</p>
+</lab>
+
+<q type="multi" answer="A,C,E" title="True or false?">
+<stem>Which statements are true?</stem>
+<opt>Sound in air is a longitudinal wave</opt>
+<opt>Transverse mechanical waves can travel through the inside of a gas</opt>
+<opt>Longitudinal waves can travel through solids, liquids and gases</opt>
+<opt>When a wave passes, the particles of the medium travel along with it</opt>
+<opt>Transverse seismic S-waves cannot cross the Earth’s liquid outer core</opt>
+<sol><p><strong>A, C, E.</strong> B is false: the inside of a fluid can’t resist shear, so it can’t carry transverse waves. D is false: particles only oscillate about their own places, and only energy and momentum travel.</p></sol>
+</q>
+
+<card>
+<h2>Wavelength, frequency and speed</h2>
+<p>A wave that repeats has a <strong>wavelength</strong> $\lambda$, the distance from one crest (or compression) to the next. Each particle oscillates with the source’s <strong>frequency</strong> $f$ and period $T = 1/f$. Its <strong>amplitude</strong> $A$ is the largest displacement of a particle.</p>
+<p>In one period, every particle completes one oscillation and the pattern moves forward by exactly one wavelength. So</p>
+$$v = \frac{\lambda}{T} = f\lambda.$$
+<callout kind="key" title="What sets what">
+<p>The <strong>source</strong> sets the frequency. The <strong>medium</strong> sets the speed. The wavelength then follows from $\lambda = v/f$. When a wave passes into a new medium, its frequency <em>stays the same</em>, while its speed and wavelength change together.</p>
+</callout>
+</card>
+
+<q type="numeric" answer="0.66" tol="0.01" title="Middle C’s neighbour">
+<stem>A 512 Hz tuning fork sounds in air, where the speed of sound is 340 m/s. What is the wavelength, in metres (2 decimal places)?</stem>
+<sol><p>$\lambda = v/f = 340/512 \approx 0.66\ \text{m}$.</p></sol>
+</q>
+
+<q type="single" answer="B" title="Into the water">
+<stem>A sound wave goes from air ($v \approx 340$ m/s) into water ($v \approx 1500$ m/s). Which describes it in the water?</stem>
+<opt>Same speed, higher frequency, longer wavelength</opt>
+<opt>Same frequency, higher speed, longer wavelength</opt>
+<opt>Same wavelength, higher speed, higher frequency</opt>
+<opt>Same frequency, higher speed, shorter wavelength</opt>
+<sol><p>The source fixes the frequency, so it is unchanged. The speed rises about 4.4 times, so $\lambda = v/f$ rises by the same factor. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Listen for a minute">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Close your eyes for three breaths and just listen. Every sound reaching you is a set of tiny pressure ripples, rising and falling hundreds of times a second, that set off a chain of events in your inner ear.</p>
+</callout>
+
+<card>
+<h2>Sound as a pressure wave</h2>
+<p>In a sound wave, compressions are regions of slightly <strong>higher pressure</strong> and rarefactions are regions of slightly <strong>lower pressure</strong>. A normal conversation changes the air pressure by only about a millionth of an atmosphere, and your ear still picks it up.</p>
+<p>A sound wave can be described either by how far the air moves (<strong>displacement</strong>) or by how much the pressure changes (<strong>pressure</strong>). They are a quarter-wavelength apart. Where the air particles are displaced the most, they are pushed the same way as their neighbours, so the pressure there is normal. The pressure changes most where the displacement is zero, because there neighbours on either side are moving towards each other or apart. You will need this in Lesson 6.</p>
+<tbl><table>
+<thead><tr><th>Range</th><th>Frequency</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td>Infrasound</td><td>below 20 Hz</td><td>earthquakes, elephants’ calls</td></tr>
+<tr><td>Audible</td><td>20 Hz – 20 kHz</td><td>speech, music</td></tr>
+<tr><td>Ultrasound</td><td>above 20 kHz</td><td>bats, dolphins, medical scans, SONAR</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<q type="numeric" answer="3.4" tol="0.05" title="A bat’s call">
+<stem>A bat emits ultrasound at 100 kHz in air (speed 340 m/s). What is the wavelength, in <strong>millimetres</strong>?</stem>
+<hint>Short wavelengths let bats detect very small insects.</hint>
+<sol><p>$\lambda = 340/100\,000 = 3.4\times10^{-3}\ \text{m} = 3.4\ \text{mm}$. That is small enough to reflect strongly off a moth.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 1 in four lines">
+<p>A wave carries energy, not matter. Transverse means the particles move across the direction of travel; longitudinal means along it, with compressions and rarefactions. Fluids carry only longitudinal waves in their bulk. $v = f\lambda$: the source sets $f$, the medium sets $v$.</p>
+</callout>

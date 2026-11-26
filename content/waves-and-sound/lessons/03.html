@@ -1,0 +1,125 @@
+<card>
+<h2>Counting to the storm</h2>
+<p>You see the lightning, then you count until the thunder arrives. Sound covers about a kilometre every 3 seconds, so a 6-second gap puts the storm about 2 km away. Light arrives almost instantly, while sound plods along at about 340 m/s.</p>
+<p>So what decides how fast a wave goes? For every mechanical wave the answer has the same shape:</p>
+$$v = \sqrt{\frac{\text{how hard the medium springs back}}{\text{how much inertia it has}}}.$$
+<p>A stiffer medium pulls displaced bits back faster, and a heavier one responds more slowly. This lesson fills in that fraction for strings and for sound.</p>
+</card>
+
+<card>
+<h2>Waves on a string</h2>
+<p>For a string under tension $T$ with mass per unit length $\mu$:</p>
+$$v = \sqrt{\frac{T}{\mu}}.$$
+<derive tag="Derivation" title="Ride along with the pulse">
+<p>Run alongside the pulse at speed $v$. In your frame the string flows backwards through a stationary bump. Near the top of the bump, a small piece of length $\Delta l$ follows an arc of radius $R$. Its mass is $\mu\Delta l$ and it moves at $v$, so it needs a centripetal force $\mu\Delta l\,v^2/R$. That force comes from the tension pulling at both ends, slightly downward: together $2T\sin(\Delta l/2R) \approx T\Delta l/R$. Setting them equal: $T\Delta l/R = \mu\Delta l\,v^2/R$, so $v = \sqrt{T/\mu}$. The size and shape of the bump cancel, which is why every pulse on a string travels at the same speed.</p>
+</derive>
+<p>Quadruple the tension and the speed doubles. Use a string four times heavier per metre and the speed halves. For a wire of density $\rho$ and cross-section $A$, $\mu = \rho A$. If the tension comes from stretching it, $T = YA \times \text{strain}$.</p>
+</card>
+
+<q type="single" answer="D" pyq="AIEEE 2010">
+<stem>The equation of a wave on a string of linear mass density $0.04\ \text{kg m}^{-1}$ is $y = 0.02\sin\left[2\pi\left(\dfrac{t}{0.04} - \dfrac{x}{0.50}\right)\right]$ (SI units). The tension in the string is</stem>
+<opt>4.0 N</opt>
+<opt>12.5 N</opt>
+<opt>0.5 N</opt>
+<opt>6.25 N</opt>
+<hint>Read off $T$ and $\lambda$ to get $v$, then $T_{\text{string}} = \mu v^2$.</hint>
+<sol><p>$T = 0.04\ \text{s}$ and $\lambda = 0.50\ \text{m}$, so $v = \lambda/T = 12.5\ \text{m/s}$. Tension $= \mu v^2 = 0.04 \times 156.25 = 6.25\ \text{N}$. <strong>Answer: D.</strong></p></sol>
+</q>
+
+<q type="single" answer="C" pyq="JEE Main 2020">
+<stem>Transverse waves travel at 90 m/s along a straight wire of mass 6.0 g, length 60 cm and cross-sectional area 1.0 mm². If the Young’s modulus of the wire is $16\times10^{11}\ \text{N m}^{-2}$, the extension of the wire beyond its natural length is</stem>
+<opt>0.04 mm</opt>
+<opt>0.02 mm</opt>
+<opt>0.03 mm</opt>
+<opt>0.01 mm</opt>
+<sol><p>$\mu = 0.006/0.6 = 0.01\ \text{kg/m}$, so the tension is $\mu v^2 = 0.01 \times 8100 = 81\ \text{N}$. Extension $= \dfrac{TL}{AY} = \dfrac{81 \times 0.6}{10^{-6} \times 16\times10^{11}} = 3.0\times10^{-5}\ \text{m} = 0.03\ \text{mm}$. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="single" answer="C" pyq="JEE Main 2019">
+<stem>A heavy ball of mass $M$ hangs from the ceiling of a car on a light string of mass $m$ ($m \ll M$). With the car at rest, transverse waves travel along the string at 60 m/s. When the car has acceleration $a$, the wave speed rises to 60.5 m/s. The value of $a$ is closest to</stem>
+<opt>$g/30$</opt>
+<opt>$g/20$</opt>
+<opt>$g/5$</opt>
+<opt>$g/10$</opt>
+<hint>The tension is $M g_{\text{eff}}$ with $g_{\text{eff}} = \sqrt{g^2 + a^2}$, and $v \propto \sqrt{\text{tension}}$.</hint>
+<sol><p>$\left(\dfrac{60.5}{60}\right)^2 = \dfrac{\sqrt{g^2 + a^2}}{g} \approx 1.0167$. So $1 + a^2/g^2 = 1.0337$, giving $a/g \approx 0.18$, closest to $g/5$. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<lab sim="wav-speed-lab" title="Wave races">
+<p>Things to try. <strong>(1)</strong> Strings: lane B starts with 4× the tension of lane A, so it runs twice as fast. Now give it 4× the mass per metre as well and the two tie. <strong>(2)</strong> Gases: race air against helium, then carbon dioxide. Change the temperature and watch both lanes speed up together. <strong>(3)</strong> Hanging rope: the pulse <em>speeds up</em> as it climbs, because there is more rope below it pulling down.</p>
+</lab>
+
+<card>
+<h2>A rope hanging under its own weight</h2>
+<p>In a uniform rope hanging freely, the tension at height $y$ above the bottom only has to hold up the rope below it: $T = \mu g y$. So</p>
+$$v = \sqrt{\frac{T}{\mu}} = \sqrt{gy},$$
+<p>whatever the rope is made of. A pulse sent up from the bottom keeps speeding up. Writing $dy/dt = \sqrt{gy}$ and integrating, the climb to the top of a rope of length $L$ takes $t = 2\sqrt{L/g}$.</p>
+</card>
+
+<q type="single" answer="A" pyq="JEE Main 2016">
+<stem>A uniform string 20 m long hangs from a rigid support. A short wave pulse starts at its lowest end and moves up the string. How long does it take to reach the support? ($g = 10\ \text{m s}^{-2}$)</stem>
+<opt>$2\sqrt2$ s</opt>
+<opt>$\sqrt2$ s</opt>
+<opt>$2\pi\sqrt2$ s</opt>
+<opt>2 s</opt>
+<sol><p>$t = 2\sqrt{L/g} = 2\sqrt{20/10} = 2\sqrt2\ \text{s}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Hum a note">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Hum softly for one long breath out and feel the buzz in your chest and nose. Those are longitudinal waves in bone and tissue, which carry sound about four times faster than air does.</p>
+</callout>
+
+<card>
+<h2>The speed of sound: Newton’s mistake, Laplace’s fix</h2>
+<p>For longitudinal waves the “springiness” is an elastic modulus: Young’s modulus $Y$ in a solid rod, and the bulk modulus $B$ in a fluid.</p>
+$$v_{\text{solid}} = \sqrt{\frac{Y}{\rho}}, \qquad v_{\text{fluid}} = \sqrt{\frac{B}{\rho}}.$$
+<p><strong>Newton (1687)</strong> assumed the compressions in a sound wave happen at constant temperature. For an isothermal gas, $B = P$, giving $v = \sqrt{P/\rho} \approx 280\ \text{m/s}$ at 0 °C. Measurements gave about 330 m/s, a 15% error that stood for over a century.</p>
+<p><strong>Laplace (1816)</strong> saw the problem. The compressions and rarefactions come and go so fast that heat has no time to flow between them, so they are <strong>adiabatic</strong>. For an adiabatic gas, $B = \gamma P$:</p>
+$$v = \sqrt{\frac{\gamma P}{\rho}} = \sqrt{\frac{\gamma RT}{M}} \approx 331\ \text{m/s at } 0\,^\circ\text{C for air } (\gamma = 1.4).$$
+<tbl><table>
+<thead><tr><th>Change</th><th>Effect on $v$ in a gas</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Temperature up</td><td>faster, $v \propto \sqrt{T}$ (about +0.6 m/s per °C near room temperature)</td><td>$v = \sqrt{\gamma RT/M}$</td></tr>
+<tr><td>Pressure up, same temperature</td><td><strong>no change</strong></td><td>$\rho$ rises in proportion to $P$, so $P/\rho$ is fixed</td></tr>
+<tr><td>Humidity up</td><td>slightly faster</td><td>water vapour ($M = 18$) makes the air lighter</td></tr>
+<tr><td>Lighter gas, larger $\gamma$</td><td>faster (He ≈ 1000 m/s)</td><td>$v \propto \sqrt{\gamma/M}$</td></tr>
+</tbody>
+</table></tbl>
+<p>Typical speeds: air 343 m/s at 20 °C, water about 1480 m/s, steel about 5900 m/s.</p>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2008">
+<stem>The speed of sound in oxygen (O₂) at a certain temperature is 460 m/s. At the same temperature, the speed of sound in helium (He) will be (treat both as ideal gases)</stem>
+<opt>500 m/s</opt>
+<opt>1421 m/s</opt>
+<opt>650 m/s</opt>
+<opt>330 m/s</opt>
+<hint>$v \propto \sqrt{\gamma/M}$. Helium is monatomic ($\gamma = 5/3$, $M = 4$); oxygen is diatomic ($\gamma = 7/5$, $M = 32$).</hint>
+<sol><p>$\dfrac{v_{He}}{v_{O_2}} = \sqrt{\dfrac{5/3}{7/5} \times \dfrac{32}{4}} = \sqrt{\dfrac{25}{21} \times 8} \approx 3.09$, so $v_{He} \approx 460 \times 3.09 \approx 1420\ \text{m/s}$. The listed 1421 m/s comes from rounding $\gamma_{He}$ to 1.67. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="integer" answer="819" title="Twice as fast">
+<stem>At what temperature, in °C, is the speed of sound in a gas twice its value at 0 °C?</stem>
+<sol><p>$v \propto \sqrt T$, so doubling $v$ needs $T = 4 \times 273 = 1092\ \text{K}$, which is $819\ ^\circ\text{C}$.</p></sol>
+</q>
+
+<card>
+<h2>The energy a wave carries</h2>
+<p>Every particle the wave passes through is an oscillator with energy $\tfrac12(\Delta m)\omega^2A^2$. The wave delivers that energy along at speed $v$. The power crossing each square metre, the <strong>intensity</strong>, is</p>
+$$I = \tfrac12\rho v\omega^2A^2 = 2\pi^2\rho v f^2A^2 \qquad\Rightarrow\qquad I \propto A^2f^2.$$
+<ul>
+<li>Double the amplitude and you carry <strong>four times</strong> the energy.</li>
+<li>From a small source, energy spreads over spheres of area $4\pi r^2$, so $I \propto 1/r^2$ and $A \propto 1/r$.</li>
+<li>Loudness is measured in <strong>decibels</strong>, $\beta = 10\log_{10}(I/I_0)$ with $I_0 = 10^{-12}\ \text{W m}^{-2}$. Every 10× in intensity adds 10 dB.</li>
+</ul>
+</card>
+
+<q type="numeric" answer="13" tol="0.2" title="Twenty times louder">
+<stem>The intensity of a sound is increased by a factor of 20. By how many decibels does the sound level go up? (1 decimal place is enough.)</stem>
+<sol><p>$\Delta\beta = 10\log_{10}20 = 10 \times 1.301 \approx 13.0\ \text{dB}$.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 3 in five lines">
+<p>String: $v = \sqrt{T/\mu}$. Hanging rope: $v = \sqrt{gy}$, climb time $2\sqrt{L/g}$. Sound: $v = \sqrt{Y/\rho}$ in a solid rod and $\sqrt{B/\rho}$ in a fluid. In a gas $v = \sqrt{\gamma P/\rho} = \sqrt{\gamma RT/M}$ (Laplace); it depends on $T$, but not on $P$ at fixed $T$. Intensity $I \propto A^2f^2$.</p>
+</callout>

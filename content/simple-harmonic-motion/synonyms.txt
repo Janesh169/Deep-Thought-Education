@@ -1,0 +1,13 @@
+# One group per line: words or phrases a search should treat as the same thing.
+spring constant | force constant | stiffness
+time period | period of oscillation
+angular frequency | omega
+reference circle | phasor | auxiliary circle
+mean position | equilibrium position
+extreme position | turning point
+seconds pendulum | second pendulum
+compound pendulum | physical pendulum
+damped | damping
+forced oscillation | driven oscillation
+lissajous | lissajous figure
+u tube | u-tube

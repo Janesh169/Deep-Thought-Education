@@ -1,0 +1,68 @@
+<card>
+<h2>The whole chapter on one screen</h2>
+<tbl><table>
+<thead><tr><th>Idea</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Travelling wave</td><td>$y = A\sin(kx - \omega t)$, $k = 2\pi/\lambda$, $\omega = 2\pi f$, $v = \omega/k = f\lambda$. $(x - vt)$ moves towards $+x$.</td></tr>
+<tr><td>Phase and particles</td><td>$\Delta\phi = 2\pi\Delta x/\lambda$. $v_p = -v\,\partial y/\partial x$, $v_{p,\max} = A\omega$.</td></tr>
+<tr><td>Speeds</td><td>String $\sqrt{T/\mu}$ · hanging rope $\sqrt{gy}$ · rod $\sqrt{Y/\rho}$ · gas $\sqrt{\gamma P/\rho} = \sqrt{\gamma RT/M}$</td></tr>
+<tr><td>Energy</td><td>$I = 2\pi^2\rho vf^2A^2 \propto A^2f^2$ · $\beta = 10\log(I/I_0)$</td></tr>
+<tr><td>Interference</td><td>$A^2 = A_1^2 + A_2^2 + 2A_1A_2\cos\phi$ · $I_{\max}/I_{\min} = \left(\frac{A_1 + A_2}{A_1 - A_2}\right)^2$</td></tr>
+<tr><td>Reflection</td><td>Fixed end or denser medium: inverted. Free end or rarer medium: upright. $f$ unchanged.</td></tr>
+<tr><td>Standing wave</td><td>$2A\sin kx\cos\omega t$. N–N $= \lambda/2$, N–A $= \lambda/4$.</td></tr>
+<tr><td>Beats</td><td>$f_{\text{beat}} = |f_1 - f_2|$. Wax lowers $f$, filing raises it.</td></tr>
+<tr><td>Doppler</td><td>$f' = f\frac{v \pm v_o}{v \mp v_s}$ (upper signs: approaching). Echo: $f\frac{v + u}{v - u}$.</td></tr>
+</tbody>
+</table></tbl>
+<tbl><table>
+<thead><tr><th></th><th>String, both ends fixed</th><th>Open pipe</th><th>Closed pipe</th></tr></thead>
+<tbody>
+<tr><td>Ends</td><td>node · node</td><td>antinode · antinode</td><td>node · antinode</td></tr>
+<tr><td>Fundamental</td><td>$v/2L$</td><td>$v/2L$</td><td>$v/4L$</td></tr>
+<tr><td>Harmonics present</td><td>all: $f_1, 2f_1, 3f_1 \dots$</td><td>all</td><td>odd only: $f_1, 3f_1, 5f_1 \dots$</td></tr>
+<tr><td>Gap between resonances</td><td>$f_1$</td><td>$f_1$</td><td>$2f_1$</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<callout kind="trap" title="Eight traps examiners like">
+<p><strong>1.</strong> Particle speed ($A\omega$) is not wave speed ($\omega/k$). <strong>2.</strong> In a gas at constant temperature, pressure doesn’t change the speed of sound. <strong>3.</strong> The frequency never changes on entering a new medium; $v$ and $\lambda$ do. <strong>4.</strong> “$n$-th overtone” is the $(n+1)$-th harmonic for strings and open pipes, but the $(2n+1)$-th harmonic for closed pipes. <strong>5.</strong> A half-submerged open pipe becomes a closed pipe of half the length, with the same fundamental. <strong>6.</strong> In the resonance tube $l_2 > 3l_1$, because of the end correction. <strong>7.</strong> Beats give $|f_1 - f_2|$ but not its sign, so use the wax/file/tension clue. <strong>8.</strong> In the Doppler formula a moving source and a moving observer are not interchangeable.</p>
+</callout>
+
+<lab sim="wav-rush-lab" title="Wave Rush">
+<p>Twelve quick questions from across the chapter, with 15 seconds each. Fast answers and streaks score extra, and anything you miss comes back once later in the round. Your best score is kept on this device. Keys 1, 2 and 3 work too.</p>
+</lab>
+
+<callout kind="breather" title="Last stretch">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Stand up, reach for the ceiling, then let your arms swing down loosely. One breath with the ring, then the last round of past papers.</p>
+</callout>
+
+<q type="single" answer="B" pyq="JEE Main 2019">
+<stem>A string 2.0 m long, fixed at both ends, is driven by a 240 Hz vibrator and vibrates in its third harmonic. The speed of the wave and the fundamental frequency are</stem>
+<opt>160 m/s, 80 Hz</opt>
+<opt>320 m/s, 80 Hz</opt>
+<opt>320 m/s, 120 Hz</opt>
+<opt>180 m/s, 120 Hz</opt>
+<sol><p>Third harmonic: $L = 3\lambda/2$, so $\lambda = 4/3$ m and $v = f\lambda = 240 \times 4/3 = 320$ m/s. The fundamental is $240/3 = 80$ Hz. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="integer" answer="15" title="Pipes in unison">
+<stem>The first overtone of an open pipe 60 cm long is in unison (has the same frequency) with the fundamental of a closed pipe. How long is the closed pipe, in cm? (Ignore end corrections.)</stem>
+<sol><p>Open pipe, first overtone: $2v/(2 \times 0.6) = v/0.6$. Closed pipe fundamental: $v/4L$. Setting them equal gives $L = 0.6/4 = 0.15$ m $= 15$ cm.</p></sol>
+</q>
+
+<q type="integer" answer="10" title="Running between sirens">
+<stem>Two identical sirens, both at rest, each sound 340 Hz. A person runs at 5 m/s along the line joining them, towards one and away from the other. How many beats per second do they hear? ($v = 340$ m/s)</stem>
+<sol><p>Towards: $340 \times 345/340 = 345$ Hz. Away: $340 \times 335/340 = 335$ Hz. Beats $= 10$ per second.</p></sol>
+</q>
+
+<q type="numeric" answer="7.5" tol="0.05" title="Node to antinode">
+<stem>A standing wave is $y = 4\sin\left(\dfrac{\pi x}{15}\right)\cos(96\pi t)$, with $x$ and $y$ in cm. What is the distance, in cm, from a node to the next antinode?</stem>
+<sol><p>$k = \pi/15$, so $\lambda = 2\pi/k = 30$ cm. Node to antinode is $\lambda/4 = 7.5$ cm.</p></sol>
+</q>
+
+<card>
+<h2>Where this goes next</h2>
+<p>Everything here comes back in optics. Interference and the path-difference rule from Lesson 4 are the heart of Young’s double-slit experiment. Standing waves come back as the quantised energy levels of an atom, and the Doppler shift comes back as the red-shift of galaxies. If any of the SHM ideas felt shaky, <a href="#/c/simple-harmonic-motion">Oscillations &amp; SHM</a> is one click away.</p>
+</card>

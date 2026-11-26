@@ -1086,8 +1086,20 @@ var PF = (function () {function $(e,t,u,x=h=>h){return e*x(.5-t*(.5-u))}function
 /* chapter:alcohols-phenols-and-ethers:scene:start */
       still: { name: "Still-room", note: "Warm room tone with the slow, sparse bubbling of a flask on a low flame." },
 /* chapter:alcohols-phenols-and-ethers:scene:end */
+/* chapter:simple-harmonic-motion:scene:start */
+      swell: { name: "Slow swell", note: "Distant surf rising and falling about every eleven seconds: a slow, steady oscillation you can breathe along with." },
+/* chapter:simple-harmonic-motion:scene:end */
+/* chapter:waves-and-sound:scene:start */
+      hall: { name: "Resonant hall", note: "Soft air in a big quiet room, and now and then a far-off singing bowl whose overtones beat slowly as they fade." },
+/* chapter:waves-and-sound:scene:end */
     };
     var MAP = { electrostatics: 'wind', 'current-electricity': 'rain', thermodynamics: 'fire', magnetism: 'aurora' };
+/* chapter:waves-and-sound:map:start */
+    MAP["waves-and-sound"] = 'hall';
+/* chapter:waves-and-sound:map:end */
+/* chapter:simple-harmonic-motion:map:start */
+    MAP["simple-harmonic-motion"] = 'swell';
+/* chapter:simple-harmonic-motion:map:end */
 /* chapter:alcohols-phenols-and-ethers:map:start */
     MAP["alcohols-phenols-and-ethers"] = 'still';
 /* chapter:alcohols-phenols-and-ethers:map:end */
@@ -1259,6 +1271,52 @@ var PF = (function () {function $(e,t,u,x=h=>h){return e*x(.5-t*(.5-u))}function
         return finish(out, stops, 0.88);
       },
 /* chapter:alcohols-phenols-and-ethers:build:end */
+/* chapter:simple-harmonic-motion:build:start */
+      swell: function (c) {
+        var out = c.createGain(), stops = [];
+        // the sea floor: deep, steady brown noise
+        var deep = loop(c, noise('brown', 9), stops), lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 300;
+        var g = c.createGain(); g.gain.value = 0.42; deep.connect(lp); lp.connect(g); g.connect(out);
+        // the swell: a softer band whose loudness and brightness rise and fall together, like a wave arriving
+        var surf = loop(c, noise('pink', 7), stops), bp = c.createBiquadFilter(); bp.type = 'lowpass'; bp.frequency.value = 700; bp.Q.value = 0.4;
+        var g2 = c.createGain(); g2.gain.value = 0.2; surf.connect(bp); bp.connect(g2); g2.connect(out);
+        lfo(c, 0.09, 0.14, g2.gain, stops); lfo(c, 0.09, 380, bp.frequency, stops);
+        // a second, slower swell slightly out of step, so the pattern never sounds mechanical
+        lfo(c, 0.061, 0.05, g2.gain, stops, 2.1);
+        // foam: the faint wash after each crest, a quarter-cycle later
+        var foam = loop(c, noise('pink', 7), stops), hp = c.createBiquadFilter(); hp.type = 'bandpass'; hp.frequency.value = 1700; hp.Q.value = 0.55;
+        var g3 = c.createGain(); g3.gain.value = 0.022; foam.connect(hp); hp.connect(g3); g3.connect(out);
+        lfo(c, 0.09, 0.02, g3.gain, stops, 4.4);
+        return finish(out, stops, 0.98);
+      },
+/* chapter:simple-harmonic-motion:build:end */
+/* chapter:waves-and-sound:build:start */
+      hall: function (c) {
+        var out = c.createGain(), stops = [];
+        // the room: soft, dark air
+        var air = loop(c, noise('pink', 7), stops), lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 650;
+        var g = c.createGain(); g.gain.value = 0.3; air.connect(lp); lp.connect(g); g.connect(out); lfo(c, 0.021, 0.05, g.gain, stops);
+        var low = loop(c, noise('brown', 9), stops), lp2 = c.createBiquadFilter(); lp2.type = 'lowpass'; lp2.frequency.value = 200;
+        var g2 = c.createGain(); g2.gain.value = 0.34; low.connect(lp2); lp2.connect(g2); g2.connect(out);
+        // a distant bowl: the first four harmonics of a low note, each paired with a twin a fraction of a hertz away,
+        // so every overtone beats slowly while the note fades over about ten seconds
+        var NOTES = [196, 220, 261.63, 293.66, 329.63];
+        function bowl(t) {
+          var f0 = NOTES[Math.floor(Math.random() * NOTES.length)], bus = c.createGain(), lpf = c.createBiquadFilter();
+          lpf.type = 'lowpass'; lpf.frequency.value = 1600; bus.connect(lpf); connectPanned(c, lpf, out, Math.random() * 1.2 - 0.6);
+          [[1, 0.022], [2, 0.009], [3, 0.0045], [4, 0.002]].forEach(function (p, i) {
+            [-1, 1].forEach(function (s) {
+              var o = c.createOscillator(), e = c.createGain(), d = 9 + Math.random() * 3 - i * 1.5;
+              o.type = 'sine'; o.frequency.value = f0 * p[0] + s * (0.3 + 0.22 * i);
+              e.gain.setValueAtTime(0.0001, t); e.gain.exponentialRampToValueAtTime(p[1], t + 0.35); e.gain.exponentialRampToValueAtTime(0.0001, t + d);
+              o.connect(e); e.connect(bus); o.start(t); o.stop(t + d + 0.1);
+            });
+          });
+        }
+        stops.push(scheduler(c, 0.085, bowl));
+        return finish(out, stops, 1.05);
+      },
+/* chapter:waves-and-sound:build:end */
       focus: function (c) {
         var out = c.createGain(), stops = [];
         var b = loop(c, noise('brown', 9), stops), lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 650;
@@ -2123,6 +2181,12 @@ var PF = (function () {function $(e,t,u,x=h=>h){return e*x(.5-t*(.5-u))}function
 /* chapter:alcohols-phenols-and-ethers:synonyms:start */
     'pcc | pyridinium chlorochromate', 'lialh4 | lithium aluminium hydride | lah', 'nabh4 | sodium borohydride', 'eas | electrophilic substitution | electrophilic aromatic substitution', 'sn1 | unimolecular substitution', 'sn2 | bimolecular substitution', 'reimer tiemann | salicylaldehyde', 'kolbe | salicylic acid', 'williamson | williamson synthesis', 'carbolic acid | phenol', 'grignard | rmgx | organomagnesium', 'hydroboration | anti markovnikov', 'markovnikov | markownikoff', 'saytzeff | zaitsev', 'iodoform | haloform | chi3', 'picric acid | trinitrophenol', 'anisole | methoxybenzene', 'phenetole | ethoxybenzene', 'cumene | isopropylbenzene', 'lucas | lucas test | lucas reagent', 'dehydration | elimination', 'bp | boiling point', 'hbond | hydrogen bond', 'pka | acidity | acid strength', 'wood spirit | methanol', 'glycerol | propane-1,2,3-triol | glycerine', 'glycol | ethane-1,2-diol', 'cresol | methylphenol', 'catechol | benzene-1,2-diol', 'resorcinol | benzene-1,3-diol', 'quinol | hydroquinone | benzene-1,4-diol', 'ether | alkoxyalkane',
 /* chapter:alcohols-phenols-and-ethers:synonyms:end */
+/* chapter:simple-harmonic-motion:synonyms:start */
+    'spring constant | force constant | stiffness', 'time period | period of oscillation', 'angular frequency | omega', 'reference circle | phasor | auxiliary circle', 'mean position | equilibrium position', 'extreme position | turning point', 'seconds pendulum | second pendulum', 'compound pendulum | physical pendulum', 'damped | damping', 'forced oscillation | driven oscillation', 'lissajous | lissajous figure', 'u tube | u-tube',
+/* chapter:simple-harmonic-motion:synonyms:end */
+/* chapter:waves-and-sound:synonyms:start */
+    'wavelength | lambda', 'wave number | propagation constant | angular wave number', 'progressive wave | travelling wave | traveling wave', 'standing wave | stationary wave', 'fundamental | first harmonic', 'overtone | higher harmonic', 'closed pipe | closed organ pipe | stopped pipe', 'open pipe | open organ pipe', 'resonance tube | resonance column', 'end correction | end effect', 'sonometer | sonometer wire', 'beat frequency | beats per second', 'doppler | doppler effect | doppler shift', 'mach | mach number | sonic boom', 'laplace correction | laplace', 'newton formula | newton speed of sound', 'linear mass density | mass per unit length', 'compression | condensation',
+/* chapter:waves-and-sound:synonyms:end */
   ];
   var SYN = {}; // stemmed single word → [[stems…], …]
   SYN_GROUPS.forEach(function (g) {

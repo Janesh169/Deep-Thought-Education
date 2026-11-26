@@ -1,0 +1,120 @@
+<callout kind="key" title="Syllabus note" label="Syllabus">
+<p>Since 2024, NTA’s JEE Main syllabus no longer lists free, damped and forced oscillations or resonance by name. This lesson is still worth 30 minutes. The practical-skills list keeps the <strong>simple pendulum energy-dissipation</strong> experiment, which is about damping. Resonance returns in sound (the resonance tube), and both topics fill Main papers up to 2023.</p>
+</callout>
+
+<card>
+<h2>The bridge that wobbled</h2>
+<p>On 10 June 2000, thousands of people walked across London’s new <strong>Millennium Bridge</strong> on its opening day. It began to sway from side to side. As it swayed, people adjusted their steps to keep their balance, and those steps fell into time with the sway, pushing it further. The bridge closed two days later and reopened in 2002, after engineers fitted dozens of dampers.</p>
+<p>That story contains both ideas in this lesson. <strong>Damping</strong> drains an oscillation’s energy. <strong>Driving</strong> feeds it in, and when the pushes arrive at the natural rhythm, the result is <strong>resonance</strong>.</p>
+</card>
+
+<card>
+<h2>Damped oscillations</h2>
+<p>Real oscillators lose energy to air drag and friction. For slow motion, drag is roughly proportional to velocity, $F_d = -bv$, so</p>
+$$m\ddot x = -kx - b\dot x.$$
+<p>For light damping, the solution is a cosine whose amplitude <strong>decays exponentially</strong>:</p>
+$$x = A_0\,e^{-bt/2m}\cos(\omega' t + \phi), \qquad \omega' = \sqrt{\omega_0^2 - \left(\frac{b}{2m}\right)^2} \approx \omega_0.$$
+<?py fig(460, 170,
+  axes(40, 85, 410, 72, 72, 't', 'x') +
+  curve(lambda u: exp(-1.6 * u) * cos(2 * pi * 5 * u), 0, 1, 40, 85, 400, 66, 400, 'ln acc') +
+  curve(lambda u: exp(-1.6 * u), 0, 1, 40, 85, 400, 66, 80, 'ln wrn dash') +
+  curve(lambda u: -exp(-1.6 * u), 0, 1, 40, 85, 400, 66, 80, 'ln wrn dash') +
+  lbl(300, 40, 'envelope A₀e^(−bt/2m)', 'sm t-w', 'start'),
+  'Light damping: the oscillation keeps nearly its natural period while the envelope (dashed) shrinks by the same fraction in each equal time.',
+  'A damped oscillation inside a shrinking exponential envelope') ?>
+<ul>
+<li>The <strong>amplitude</strong> goes as $e^{-bt/2m}$. In equal times it shrinks by equal <em>fractions</em>: if it falls to 90% in 5 s, it falls to 81% after 10 s and 72.9% after 15 s.</li>
+<li>The <strong>energy</strong> goes as amplitude squared, so $E = E_0e^{-bt/m}$. Energy dies twice as fast as amplitude.</li>
+<li>Heavier damping gives a slightly slower oscillation. <strong>Critical damping</strong> returns to rest fastest with no overshoot, which is what car shock absorbers and door closers are designed for. <strong>Heavy damping</strong> just creeps back.</li>
+</ul>
+</card>
+
+<q type="single" answer="C" pyq="JEE Main 2013">
+<stem>The amplitude of a damped oscillator falls to 0.9 times its original value in 5 s. In another 10 s it will fall to $\alpha$ times its original value, where $\alpha$ is</stem>
+<opt>0.7</opt>
+<opt>0.81</opt>
+<opt>0.729</opt>
+<opt>0.6</opt>
+<hint>Exponential decay: every 5 s multiplies the amplitude by 0.9.</hint>
+<sol><p>After 15 s from the start, there have been three 5-second steps: $\alpha = 0.9^3 = 0.729$. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="single" answer="B" pyq="AIEEE 2012">
+<stem>A pendulum has significant amplitude only from $t = 0$ until $t = \tau$, where $\tau$ is the time for the amplitude to fall to $1/e$ of its initial value. Call $\tau$ the average life of the pendulum. The spherical bob suffers a retardation (deceleration from viscous drag) proportional to its velocity, with proportionality constant $b$. Assuming the damping is small, the average life in seconds is</stem>
+<opt>$1/b$</opt>
+<opt>$2/b$</opt>
+<opt>$0.693/b$</opt>
+<opt>$b$</opt>
+<hint>Here $b$ is a retardation per unit velocity, i.e. $b$ already equals “$b/m$” in our notation.</hint>
+<sol><p>The equation is $\ddot x = -\omega^2x - b\dot x$, so the amplitude goes as $e^{-bt/2}$. It reaches $1/e$ when $bt/2 = 1$, i.e. $\tau = 2/b$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<card>
+<h2>The experiment: a pendulum running down</h2>
+<p>This experiment <em>is</em> in the current JEE Main practical-skills list. Set a pendulum swinging, then read its amplitude (from a scale behind the bob) every few oscillations, and tabulate time against amplitude.</p>
+<ol>
+<li>Energy goes as $A^2$, so plot <strong>$A^2$ against $t$</strong>. The curve falls exponentially: the energy loss per swing is proportional to the energy left.</li>
+<li>To check, plot $\ln(A^2)$ against $t$. It is a straight line of slope $-b/m$.</li>
+<li>Read off the time for $A^2$ to halve. It is the same whichever point you start from, just like a radioactive half-life.</li>
+</ol>
+<callout kind="trap" title="A light bob versus a heavy bob">
+<p>The decay rate $b/m$ depends on the mass. A heavier bob of the same size, with the same drag, has a smaller $b/m$ and swings for longer. That is why a hollow plastic bob dies down quickly and a solid brass one keeps going.</p>
+</callout>
+</card>
+
+<q type="integer" answer="180" title="Energy half-life">
+<stem>In the pendulum-dissipation experiment, $A^2$ falls from 16 cm² to 8 cm² in 60 s. How long, in seconds, from the start does it take $A^2$ to reach 2 cm²?</stem>
+<sol><p>$A^2$ halves every 60 s, and $16 \to 8 \to 4 \to 2$ is three halvings, so $3 \times 60 = 180\ \text{s}$.</p></sol>
+</q>
+
+<callout kind="breather" title="Push a swing">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Have you ever pushed someone on a swing? You never push hard. You push <em>at the right moment</em>, just as it starts to move away from you. Hold that picture for three breaths: it is the whole idea of resonance.</p>
+</callout>
+
+<card>
+<h2>Forced oscillations and resonance</h2>
+<p>Now shake the oscillator with a periodic force, $F_0\sin\omega t$, where $\omega$ is the <strong>driving frequency</strong>, which is not the same as the natural $\omega_0 = \sqrt{k/m}$. At first the motion is a messy mixture. Once the natural part has been damped away, the body settles into a <strong>steady state</strong>:</p>
+<ul>
+<li>it oscillates at the <strong>driving</strong> frequency $\omega$, not at its own;</li>
+<li>its amplitude depends on how close $\omega$ is to $\omega_0$:</li>
+</ul>
+$$A = \frac{F_0/m}{\sqrt{(\omega_0^2 - \omega^2)^2 + (b\omega/m)^2}}.$$
+<p>When $\omega$ is near $\omega_0$, the denominator is small and the amplitude becomes large. That is <strong>resonance</strong>. The less damping there is, the taller and narrower the peak. With no damping at all, it would grow without limit.</p>
+<p>The response lags behind the drive. It is in step at low frequency, a quarter-cycle ($90°$) behind at resonance, and almost opposite ($180°$) at high frequency.</p>
+</card>
+
+<lab sim="osc-resonance-lab" title="Shake it at the right rhythm">
+<p>Things to try. <strong>(1)</strong> Press <em>Start from rest</em> with the drive at 1.00 ω₀ and watch the swing grow, pass after pass, until damping balances the input. <strong>(2)</strong> Sweep the driving frequency slowly from 0.2 to 2.5. The block stays small, peaks at resonance, then barely moves at high frequency. <strong>(3)</strong> Lower the damping and the peak gets taller and narrower (higher Q). <strong>(4)</strong> Press <em>Pluck, driver off</em> to see a free, damped oscillation inside its exponential envelope.</p>
+</lab>
+
+<q type="single" answer="B" pyq="AIEEE 2004">
+<stem>A particle of mass $m$ on a spring of constant $k$ has natural angular frequency $\omega_0$. An external force $F(t)$ proportional to $\cos\omega t$ ($\omega \ne \omega_0$) acts on it. Ignoring damping, its displacement will be proportional to</stem>
+<opt>$\dfrac{1}{m}$</opt>
+<opt>$\dfrac{1}{m(\omega_0^2 - \omega^2)}$</opt>
+<opt>$\dfrac{1}{m(\omega_0^2 + \omega^2)}$</opt>
+<opt>$\dfrac{m}{\omega_0^2 - \omega^2}$</opt>
+<sol><p>Try $x = C\cos\omega t$ in $m\ddot x + kx = F_0\cos\omega t$: $C(k - m\omega^2) = F_0$, so $C = \dfrac{F_0}{m(\omega_0^2 - \omega^2)}$. <strong>Answer: B.</strong> It blows up as $\omega \to \omega_0$, which is resonance with no damping.</p></sol>
+</q>
+
+<q type="multi" answer="A,B,D" title="Resonance facts">
+<stem>For a lightly damped oscillator driven by a sinusoidal force, which statements are true in the steady state?</stem>
+<opt>The amplitude is largest when the driving frequency is close to the natural frequency</opt>
+<opt>Less damping gives a taller and sharper resonance peak</opt>
+<opt>The body oscillates at its own natural frequency, whatever the driving frequency</opt>
+<opt>At exact resonance ($\omega = \omega_0$), the displacement lags the driving force by a quarter-cycle</opt>
+<sol><p>A, B and D are true. C is false: in the steady state the body always follows the <strong>driving</strong> frequency. Its natural frequency only decides how big the response is.</p></sol>
+</q>
+
+<card>
+<h2>Resonance in the real world</h2>
+<ul>
+<li><strong>Swings and bridges:</strong> small, well-timed pushes add up. Soldiers break step when they cross a bridge so that their marching can’t act as a periodic drive.</li>
+<li><strong>Radios:</strong> tuning means adjusting a circuit’s natural frequency so that it resonates with one station and ignores the rest.</li>
+<li><strong>Music:</strong> a guitar’s hollow body, a violin’s wood and the air in a flute all resonate. That is how a small vibrating string fills a room. You will see this in the next chapter: the resonance tube, organ pipes and strings are all resonance.</li>
+<li><strong>A wine glass</strong> can be shattered by a sustained note at its natural frequency.</li>
+</ul>
+<callout kind="recap" title="Lesson 7 in five lines">
+<p>Damping: amplitude $\propto e^{-bt/2m}$ and energy $\propto e^{-bt/m}$, with equal fractions lost in equal times. In the experiment, plot $A^2$ against $t$. A driven oscillator settles at the driving frequency. Its amplitude peaks near $\omega_0$ (resonance), more sharply when the damping is light. The phase lag goes from 0 to 90° (at resonance) to 180°.</p>
+</callout>
+</card>

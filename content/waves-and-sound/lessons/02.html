@@ -1,0 +1,128 @@
+<card>
+<h2>A snapshot and a movie</h2>
+<p>There are two ways to look at a wave. Take a <strong>photograph</strong> and you see the shape of the whole string at one instant: displacement against position. Or film <strong>one particle</strong> and you see it bob up and down: displacement against time. One equation, $y(x, t)$, holds both pictures. This lesson is about reading it fluently.</p>
+</card>
+
+<card>
+<h2>Any shape on the move</h2>
+<p>Take any shape $y = f(x)$ and slide it to the right at speed $v$. After time $t$, the point that was at $x$ is at $x + vt$, so the shape is now $y = f(x - vt)$. In the same way, $f(x + vt)$ slides to the left.</p>
+<callout kind="key" title="Direction rule">
+<p>A function of $(x - vt)$ travels towards $+x$. A function of $(x + vt)$ travels towards $-x$. The speed is the coefficient of $t$ divided by the coefficient of $x$.</p>
+</callout>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2011">
+<stem>The transverse displacement of a wave on a string is $y(x, t) = e^{-(ax^2 + bt^2 + 2\sqrt{ab}\,xt)}$. This represents a</stem>
+<opt>wave moving in the $+x$ direction with speed $\sqrt{a/b}$</opt>
+<opt>wave moving in the $-x$ direction with speed $\sqrt{b/a}$</opt>
+<opt>standing wave of frequency $\sqrt b$</opt>
+<opt>standing wave of frequency $1/\sqrt b$</opt>
+<hint>The exponent is a perfect square.</hint>
+<sol><p>$ax^2 + bt^2 + 2\sqrt{ab}\,xt = (\sqrt a\,x + \sqrt b\,t)^2 = a\left(x + \sqrt{b/a}\,t\right)^2$. So $y$ is a function of $x + \sqrt{b/a}\,t$: a Gaussian pulse moving towards $-x$ at speed $\sqrt{b/a}$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<card>
+<h2>The harmonic wave</h2>
+<p>When the source moves in SHM, the shape is a sine curve and the wave is</p>
+$$y(x, t) = A\sin(kx - \omega t + \phi), \qquad k = \frac{2\pi}{\lambda}, \quad \omega = 2\pi f, \quad v = \frac{\omega}{k} = f\lambda.$$
+<?py fig(470, 140,
+  '<defs><clipPath id="wv-clip-l2a"><rect x="30" y="0" width="420" height="140"/></clipPath></defs>' +
+  axes(30, 72, 425, 58, 58, 'x', 'y') +
+  g(g(sine(30, 72, 560, 40, 140, 0, 'ln acc', 280), 'wav-travel', '--T:2.4s;--d:140px'), '', '', ' clip-path="url(#wv-clip-l2a)"') +
+  dim(30, 126, 170, 126, 'λ', -10) + line(30, 32, 455, 32, 'ln thin dash') + lbl(22, 36, 'A', 'it', 'end'),
+  'y = A sin(kx − ωt): each wavelength λ of the pattern passes by every period T, so v = λ/T = ω/k.',
+  'An animated sine wave moving to the right with its wavelength and amplitude marked') ?>
+<tbl><table>
+<thead><tr><th>Symbol</th><th>Name</th><th>Unit</th></tr></thead>
+<tbody>
+<tr><td>$k = 2\pi/\lambda$</td><td>angular wave number (propagation constant)</td><td>rad m⁻¹</td></tr>
+<tr><td>$\omega = 2\pi f$</td><td>angular frequency</td><td>rad s⁻¹</td></tr>
+<tr><td>$kx - \omega t + \phi$</td><td>phase</td><td>rad</td></tr>
+</tbody>
+</table></tbl>
+<p>Reading the direction: if $x$ and $t$ have <strong>opposite signs</strong> in the phase ($kx - \omega t$ or $\omega t - kx$), the wave moves towards $+x$. If they have the <strong>same sign</strong> ($kx + \omega t$), it moves towards $-x$. In every case, $v = (\text{coefficient of } t)/(\text{coefficient of } x)$.</p>
+</card>
+
+<lab sim="wav-travel-lab" title="Reading y = A sin(kx − ωt)">
+<p>Things to try. <strong>(1)</strong> Watch the equation readout as you move the sliders. $k$ follows $\lambda$, $\omega$ follows $f$, and $v = \omega/k$. <strong>(2)</strong> Flip the direction and see which sign changes. <strong>(3)</strong> Drag the probe to another point. Its history graph (bottom) is a sine curve too, at the same frequency but shifted in phase by $2\pi\Delta x/\lambda$. <strong>(4)</strong> Turn on the ghost to see where the wave will be a moment later. The particle always moves towards the ghost.</p>
+</lab>
+
+<q type="single" answer="C" pyq="AIEEE 2004">
+<stem>The displacement of a particle in a medium is $y = 10^{-6}\sin(100t + 20x + \pi/4)$ m, with $t$ in seconds and $x$ in metres. The speed of the wave is</stem>
+<opt>2000 m/s</opt>
+<opt>0.2 m/s</opt>
+<opt>5 m/s</opt>
+<opt>2 m/s</opt>
+<sol><p>$\omega = 100$ and $k = 20$, so $v = \omega/k = 5\ \text{m/s}$. The same signs on $x$ and $t$ mean it moves towards $-x$. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="single" answer="A" pyq="AIEEE 2008">
+<stem>A wave along the x-axis is described by $y(x, t) = 0.005\cos(\alpha x - \beta t)$. If its wavelength is 0.08 m and its period is 2.0 s, then $\alpha$ and $\beta$, in SI units, are</stem>
+<opt>$\alpha = 25\pi,\ \beta = \pi$</opt>
+<opt>$\alpha = 0.08/\pi,\ \beta = 2/\pi$</opt>
+<opt>$\alpha = 0.04/\pi,\ \beta = 1/\pi$</opt>
+<opt>$\alpha = 12.5\pi,\ \beta = \pi/2$</opt>
+<sol><p>$\alpha = k = 2\pi/0.08 = 25\pi\ \text{m}^{-1}$ and $\beta = \omega = 2\pi/2 = \pi\ \text{s}^{-1}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="single" answer="D" pyq="JEE Main 2019">
+<stem>A travelling harmonic wave is $y(x, t) = 10^{-3}\sin(50t + 2x)$, with $x$, $y$ in metres and $t$ in seconds. Which statement about the wave is correct?</stem>
+<opt>It moves towards $+x$ with speed 25 m/s</opt>
+<opt>It moves towards $+x$ with speed 100 m/s</opt>
+<opt>It moves towards $-x$ with speed 100 m/s</opt>
+<opt>It moves towards $-x$ with speed 25 m/s</opt>
+<sol><p>The same signs on $x$ and $t$ mean the $-x$ direction, and $v = 50/2 = 25\ \text{m/s}$. <strong>Answer: D.</strong></p></sol>
+</q>
+
+<card>
+<h2>Phase difference</h2>
+<p>Two points a distance $\Delta x$ apart on the same wave do the same motion, but one is a little behind the other. Their phase difference is</p>
+$$\Delta\phi = k\,\Delta x = \frac{2\pi}{\lambda}\,\Delta x.$$
+<p>So points $\lambda$ apart move exactly in step, and points $\lambda/2$ apart move exactly opposite. In the same way, one particle at two times $\Delta t$ apart differs in phase by $\omega\,\Delta t = 2\pi\Delta t/T$.</p>
+</card>
+
+<q type="integer" answer="60" title="How far out of step?">
+<stem>A wave of frequency 500 Hz travels at 360 m/s. What is the phase difference, in degrees, between two points 12 cm apart along its direction of travel?</stem>
+<sol><p>$\lambda = 360/500 = 0.72\ \text{m}$. $\Delta\phi = 360° \times 0.12/0.72 = 60°$.</p></sol>
+</q>
+
+<callout kind="breather" title="A quick stretch">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Interlace your fingers, push your palms away from you and hold for one breath. Then turn your head slowly left and right. Back to the last idea: what each particle is doing.</p>
+</callout>
+
+<card>
+<h2>Particle velocity is not wave velocity</h2>
+<p>The <strong>wave</strong> moves at $v = \omega/k$, a constant set by the medium. Each <strong>particle</strong> moves up and down in SHM with</p>
+$$v_p = \frac{\partial y}{\partial t} = -A\omega\cos(kx - \omega t), \qquad v_{p,\max} = A\omega, \qquad a_p = -\omega^2 y.$$
+<p>Comparing $\partial y/\partial t$ with the slope $\partial y/\partial x = Ak\cos(kx - \omega t)$ gives a neat link:</p>
+$$v_p = -v\,\frac{\partial y}{\partial x}.$$
+<callout kind="intuition" title="Reading a snapshot">
+<p>For a wave moving to the right, a particle where the string slopes <strong>upward</strong> (to the right) is moving <strong>down</strong>, and one on a downward slope is moving up. You can check it with the ghost in the lab: the part of the wave that is about to arrive is the part to the particle’s left. Particles at crests and troughs are momentarily at rest, and particles crossing the middle move fastest.</p>
+</callout>
+</card>
+
+<q type="single" answer="B" title="Which way does P move?">
+<stem>A wave travels in the $+x$ direction along a string. At one instant, point P is where the string slopes <strong>upward</strong> to the right, halfway between a trough and the next crest. At this instant P is</stem>
+<opt>moving up</opt>
+<opt>moving down</opt>
+<opt>at rest</opt>
+<opt>moving to the right with the wave</opt>
+<sol><p>$v_p = -v\,\partial y/\partial x$. The slope is positive and $v > 0$, so $v_p < 0$: P is moving down. Picture the wave sliding right: the trough behind P is about to arrive. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="numeric" answer="0.25" tol="0.01" title="Particles versus pattern">
+<stem>For the wave $y = 0.02\sin\left[2\pi\left(\dfrac{x}{0.5} - \dfrac{t}{0.01}\right)\right]$ (SI units), find the ratio of the greatest particle speed to the wave speed (2 decimal places).</stem>
+<hint>$v_{p,\max}/v = A\omega/(\omega/k) = Ak$.</hint>
+<sol><p>$Ak = 0.02 \times 2\pi/0.5 = 0.08\pi \approx 0.25$. Check: $v_{p,\max} = A\omega = 0.02 \times 200\pi \approx 12.6\ \text{m/s}$ and $v = \lambda/T = 0.5/0.01 = 50\ \text{m/s}$.</p></sol>
+</q>
+
+<card>
+<h2>The wave equation</h2>
+<p>Every travelling wave $f(x \pm vt)$, whatever its shape, satisfies one partial differential equation:</p>
+$$\frac{\partial^2 y}{\partial x^2} = \frac{1}{v^2}\,\frac{\partial^2 y}{\partial t^2}.$$
+<p>If you are given an equation for $y(x, t)$ and asked whether it is a wave, check this, or check whether $x$ and $t$ appear only in the combination $x \pm vt$. A function like $y = \sin x\cos t$ also satisfies it; that is a <em>standing</em> wave, which is Lesson 5.</p>
+<callout kind="recap" title="Lesson 2 in five lines">
+<p>$f(x - vt)$ moves towards $+x$. $y = A\sin(kx - \omega t)$ with $k = 2\pi/\lambda$, $\omega = 2\pi f$, $v = \omega/k$. Opposite signs of $x$ and $t$ mean $+x$; same signs mean $-x$. $\Delta\phi = 2\pi\Delta x/\lambda$. Particle velocity $v_p = -v\,\partial y/\partial x$, with $v_{p,\max} = A\omega$, has nothing to do with the wave speed.</p>
+</callout>
+</card>

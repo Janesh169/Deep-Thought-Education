@@ -759,3 +759,58 @@ html.fd-open { overflow: hidden; }
 .fig .hb { stroke: var(--violet); stroke-dasharray: 3 4; stroke-width: 1.6; fill: none; }
 .fig .ox { fill: var(--pos); fill-opacity: .16; stroke: none; }
 /* chapter:alcohols-phenols-and-ethers:theme:end */
+/* chapter:simple-harmonic-motion:theme:start */
+/* "tide" (Oscillations & SHM): sea-glass aqua over a moonlit ocean, with warm coral as the second colour.
+   A tide is the slowest oscillation most people ever watch. The background glow drifts slowly and stays
+   dim so long sessions are easy on the eyes. */
+[data-tone="tide"] { --accent: #6fefd2; --accent-ink: #00261d; --violet: #ffa58c; }
+:root[data-tone="tide"] { --bg0: #040f18; --c1: #0b5560; --c2: #13397a; --c3: #0c5744; --c4: #4b2340; --blob-alpha: .5; }
+[data-theme="light"][data-tone="tide"], [data-theme="light"] [data-tone="tide"] { --accent: #007865; --accent-ink: #ffffff; --violet: #bf4220; }
+:root[data-theme="light"][data-tone="tide"] { --bg0: #eef7f5; --c1: #a6ebdd; --c2: #bcd5ff; --c3: #cdeec9; --c4: #ffd2c4; --blob-alpha: .78; }
+:root[data-tone="tide"] .blob { animation-duration: 84s; }
+
+/* Solid fill in the chapter's second colour (coral), for figure dots. */
+.fig .fill-v { fill: var(--violet); stroke: none; }
+
+/* Animated lesson figures. Each loop uses sine easing, so every animated figure in this chapter is itself in SHM.
+   They stop with the Motion switch and with the system's reduced-motion setting. */
+.fig .osc-swing { animation: osc-swing var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-swing { from { transform: rotate(var(--a, 16deg)); } to { transform: rotate(calc(-1 * var(--a, 16deg))); } }
+.fig .osc-bounce { animation: osc-bounce var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-bounce { from { transform: translateY(calc(-1 * var(--d, 14px))); } to { transform: translateY(var(--d, 14px)); } }
+.fig .osc-slide { animation: osc-slide var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-slide { from { transform: translateX(calc(-1 * var(--d, 14px))); } to { transform: translateX(var(--d, 14px)); } }
+.fig .osc-stretch { animation: osc-stretch var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-stretch { from { transform: scale(var(--s0, .8), 1); } to { transform: scale(var(--s1, 1.2), 1); } }
+.fig .osc-stretch-y { animation: osc-stretch-y var(--T, 2.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes osc-stretch-y { from { transform: scale(1, var(--s0, .8)); } to { transform: scale(1, var(--s1, 1.2)); } }
+.fig .osc-spin { animation: osc-spin var(--T, 4.8s) linear infinite; }
+@keyframes osc-spin { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+.motion-off .fig [class*="osc-"] { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .fig [class*="osc-"] { animation: none; } }
+/* chapter:simple-harmonic-motion:theme:end */
+/* chapter:waves-and-sound:theme:start */
+/* "chorus" (Waves & Sound): rose stage light over a deep indigo hall, with sky blue as the second colour.
+   The background glow drifts slowly and stays dim so long sessions are easy on the eyes. */
+[data-tone="chorus"] { --accent: #ff8fb4; --accent-ink: #2d0716; --violet: #8fd0ff; }
+:root[data-tone="chorus"] { --bg0: #0b0814; --c1: #5a1a44; --c2: #222f7a; --c3: #5c3412; --c4: #0f4a5e; --blob-alpha: .5; }
+[data-theme="light"][data-tone="chorus"], [data-theme="light"] [data-tone="chorus"] { --accent: #b1225a; --accent-ink: #ffffff; --violet: #0a64a1; }
+:root[data-theme="light"][data-tone="chorus"] { --bg0: #fbf1f5; --c1: #ffc4d8; --c2: #c9d1ff; --c3: #ffe0bc; --c4: #bfe8f4; --blob-alpha: .78; }
+:root[data-tone="chorus"] .blob { animation-duration: 78s; }
+
+/* Solid fill in the chapter's second colour, for figure dots. */
+.fig .fill-v { fill: var(--violet); stroke: none; }
+
+/* Animated lesson figures: travelling waves slide by exactly one wavelength per loop (seamless), standing waves flip
+   with sine easing, and longitudinal "air particles" oscillate with phase delays. All stop with the Motion switch. */
+.fig .wav-travel { animation: wav-travel var(--T, 2s) linear infinite; }
+@keyframes wav-travel { from { transform: translateX(calc(-1 * var(--d, 100px))); } to { transform: translateX(0); } }
+.fig .wav-stand { animation: wav-stand var(--T, 1.4s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes wav-stand { from { transform: scaleY(1); } to { transform: scaleY(-1); } }
+.fig .wav-push { animation: wav-push var(--T, .7s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes wav-push { from { transform: translateX(calc(-1 * var(--d, 5px))); } to { transform: translateX(var(--d, 5px)); } }
+.fig .wav-bob { animation: wav-bob var(--T, .7s) cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+@keyframes wav-bob { from { transform: translateY(calc(-1 * var(--d, 12px))); } to { transform: translateY(var(--d, 12px)); } }
+.motion-off .fig [class*="wav-"] { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .fig [class*="wav-"] { animation: none; } }
+/* chapter:waves-and-sound:theme:end */

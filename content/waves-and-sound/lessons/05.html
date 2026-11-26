@@ -1,0 +1,132 @@
+<card>
+<h2>One string, many notes</h2>
+<p>A guitarist touches a string <em>very lightly</em> exactly halfway along and plucks. Instead of the usual note you hear a bell-like tone, one octave higher. Touch it at a third of the way and the note jumps higher again. These are <strong>harmonics</strong>, and they show that a string doesn’t vibrate in one way only. It can vibrate in a whole family of patterns.</p>
+<p>Each pattern is a <strong>standing wave</strong>: a wave that doesn’t seem to travel at all.</p>
+</card>
+
+<card>
+<h2>Two waves, going opposite ways</h2>
+<p>Add a wave travelling right to an equal one travelling left, as happens when a wave reflects off the end of a string:</p>
+$$y = A\sin(kx - \omega t) + A\sin(kx + \omega t) = \underbrace{2A\sin kx}_{\text{amplitude at }x}\;\cos\omega t.$$
+<?py fig(470, 150,
+  wall(30, 25, 125) + wall(440, 25, 125, 1) + line(30, 75, 440, 75, 'ln thin dash') +
+  sine(30, 75, 410, 40, 410 * 2 / 3.0, 0, 'ln thin dash', 160) + sine(30, 75, 410, -40, 410 * 2 / 3.0, 0, 'ln thin dash', 160) +
+  g(sine(30, 75, 410, 40, 410 * 2 / 3.0, 0, 'ln acc', 160), 'wav-stand', '--T:.9s;transform-origin:0px 75px') +
+  ''.join(tag(30 + j * 410 / 3.0, 140, 'N', 'sm') for j in range(4)) +
+  ''.join(tag(30 + (j + 0.5) * 410 / 3.0, 14, 'A') for j in range(3)),
+  'A standing wave: points marked N (nodes) never move, and points marked A (antinodes) swing the most. Everything in one loop moves together.',
+  'An animated standing wave with three loops between two fixed ends, nodes and antinodes marked') ?>
+<p>Every point oscillates in SHM, but with its <strong>own fixed amplitude</strong> $2A|\sin kx|$:</p>
+<ul>
+<li><strong>Nodes</strong>, where $\sin kx = 0$: $x = 0, \tfrac{\lambda}{2}, \lambda \dots$ These points never move.</li>
+<li><strong>Antinodes</strong>, where $|\sin kx| = 1$: $x = \tfrac{\lambda}{4}, \tfrac{3\lambda}{4} \dots$ These swing with amplitude $2A$.</li>
+<li>Node to node is $\lambda/2$. Node to the next antinode is $\lambda/4$.</li>
+<li>All points between two nodes move <strong>in phase</strong>. Neighbouring loops move in <strong>opposite</strong> phase.</li>
+<li>No energy flows past the nodes. In each loop it sloshes between stretch and motion.</li>
+</ul>
+</card>
+
+<q type="single" answer="A" pyq="JEE Main 2017">
+<stem>A standing wave is formed by two waves travelling in opposite directions. Its transverse displacement is $y(x, t) = 0.5\sin\left(\dfrac{5\pi}{4}x\right)\cos(200\pi t)$, with $x$ in metres and $t$ in seconds. What is the speed of the travelling wave moving in the $+x$ direction?</stem>
+<opt>160 m/s</opt>
+<opt>180 m/s</opt>
+<opt>120 m/s</opt>
+<opt>90 m/s</opt>
+<sol><p>The two travelling waves share $k = 5\pi/4$ and $\omega = 200\pi$, so $v = \omega/k = 200\pi \times 4/5\pi = 160\ \text{m/s}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<card>
+<h2>A string fixed at both ends</h2>
+<p>Both ends are clamped, so both must be nodes. Only patterns that fit a <strong>whole number of half-wavelengths</strong> into the length $L$ can exist:</p>
+$$L = n\frac{\lambda_n}{2} \quad\Rightarrow\quad f_n = \frac{n v}{2L} = \frac{n}{2L}\sqrt{\frac{T}{\mu}}, \qquad n = 1, 2, 3 \dots$$
+<?py fig(470, 210,
+  ''.join(wall(30, 14 + 50 * i, 46 + 50 * i) + wall(330, 14 + 50 * i, 46 + 50 * i, 1) + envelope(30, 30 + 50 * i, 300, 14, i + 1, 'string') +
+          lbl(345, 34 + 50 * i, ['n = 1: fundamental', 'n = 2: 1st overtone', 'n = 3: 2nd overtone', 'n = 4: 3rd overtone'][i], 'sm', 'start') for i in range(4)),
+  'The first four modes of a string fixed at both ends: 1, 2, 3 and 4 loops. Their frequencies are f₁, 2f₁, 3f₁ and 4f₁.',
+  'Envelopes of the first four standing-wave modes of a string') ?>
+<ul>
+<li>$n = 1$ is the <strong>fundamental</strong> (first harmonic). The $n$-th harmonic is the $(n-1)$-th <strong>overtone</strong>.</li>
+<li>All whole-number multiples $f_1, 2f_1, 3f_1 \dots$ are possible. Two <strong>consecutive</strong> resonant frequencies always differ by exactly $f_1$.</li>
+<li><strong>Laws of a stretched string</strong> (the sonometer): $f \propto \dfrac1L$, $f \propto \sqrt T$, $f \propto \dfrac{1}{\sqrt\mu}$. For a wire of radius $r$ and density $\rho$, $\mu = \pi r^2\rho$, so $f \propto \dfrac{1}{r\sqrt\rho}$.</li>
+</ul>
+</card>
+
+<lab sim="wav-string-lab" title="Harmonics on a string">
+<p>Things to try. <strong>(1)</strong> Step $n$ from 1 to 8 and count the loops, nodes and antinodes. Press ♪ to hear each one. They are the notes a bugle plays. <strong>(2)</strong> Turn on <em>the two travelling waves</em>: two identical waves going opposite ways add up to the standing wave. <strong>(3)</strong> Quadruple the tension and every frequency doubles. <strong>(4)</strong> Switch to <em>Drive it</em> and sweep the vibrator’s frequency. The string barely moves except at $f_1, 2f_1, 3f_1 \dots$, where it suddenly resonates.</p>
+</lab>
+
+<q type="single" answer="C" pyq="AIEEE 2006">
+<stem>A string is stretched between fixed points 75 cm apart. It has resonant frequencies of 420 Hz and 315 Hz, with no other resonant frequencies between them. The lowest resonant frequency of the string is</stem>
+<opt>10.5 Hz</opt>
+<opt>1050 Hz</opt>
+<opt>105 Hz</opt>
+<opt>155 Hz</opt>
+<sol><p>Consecutive harmonics differ by $f_1$: $f_1 = 420 - 315 = 105\ \text{Hz}$. As a check, 315 and 420 are the 3rd and 4th harmonics. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="single" answer="A" pyq="JEE Main 2013">
+<stem>A sonometer wire 1.5 m long is made of steel. The tension in it produces an elastic strain of 1%. What is the fundamental frequency of the wire? (Density of steel $7.7\times10^3\ \text{kg m}^{-3}$, Young’s modulus $2.2\times10^{11}\ \text{N m}^{-2}$.)</stem>
+<opt>178.2 Hz</opt>
+<opt>200.5 Hz</opt>
+<opt>770 Hz</opt>
+<opt>188.5 Hz</opt>
+<hint>$T/A$ is the stress $= Y \times \text{strain}$, and $\mu = \rho A$, so $v = \sqrt{T/\mu} = \sqrt{\text{stress}/\rho}$.</hint>
+<sol><p>Stress $= 2.2\times10^{11} \times 0.01 = 2.2\times10^9\ \text{Pa}$, so $v = \sqrt{2.2\times10^9/7.7\times10^3} \approx 534.5\ \text{m/s}$. Then $f_1 = v/2L = 534.5/3 \approx 178.2\ \text{Hz}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="integer" answer="20" pyq="JEE Main 2019">
+<stem>A string 1 m long with mass 5 g is fixed at both ends, under a tension of 8.0 N. It is set vibrating by an external vibrator of frequency 100 Hz. What is the distance between successive nodes on the string, in cm?</stem>
+<sol><p>$\mu = 0.005\ \text{kg/m}$, so $v = \sqrt{8/0.005} = 40\ \text{m/s}$ and $\lambda = v/f = 0.4\ \text{m}$. Successive nodes are $\lambda/2 = 20\ \text{cm}$ apart. (100 Hz is the 5th harmonic of this string, so it resonates.)</p></sol>
+</q>
+
+<callout kind="breather" title="Pluck an imaginary string">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Breathe in as the ring grows, and on the way out picture a long string slowly settling from its fundamental into stillness. Then on to which notes a pluck can and can’t make.</p>
+</callout>
+
+<card>
+<h2>Where you pluck matters</h2>
+<p>A mode can only be present if its shape agrees with how the string starts out. A pluck at a point makes that point move a lot, so <strong>every mode with a node at the plucking point is missing</strong>. Pluck exactly at the middle and all the even harmonics vanish, because they all have a node there. A light touch at a point forces a node there instead, so only the modes with a node at that point survive. That is the guitarist’s harmonic trick.</p>
+<p>The same thinking handles strings made of two parts. At a joint between two wires, both parts must vibrate at the same frequency, but they have different wave speeds and so different wavelengths.</p>
+</card>
+
+<q type="single" answer="B" title="Plucked in the middle">
+<stem>A string fixed at both ends is plucked exactly at its midpoint. Which harmonics are missing from the sound?</stem>
+<opt>all the odd harmonics</opt>
+<opt>all the even harmonics</opt>
+<opt>only the fundamental</opt>
+<opt>none</opt>
+<sol><p>The $n$-th mode $\sin(n\pi x/L)$ has a node at $x = L/2$ whenever $n$ is even. A pluck at the midpoint gives that point the largest displacement, so it can’t excite those modes. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="single" answer="A" pyq="JEE Main 2019">
+<stem>A wire of length $2L$ is made by joining two wires A and B of the same length and material but different radii, $r$ and $2r$. It vibrates at a frequency at which the joint is a node. If wire A has $p$ antinodes and wire B has $q$ antinodes, then $p : q$ is</stem>
+<opt>$1 : 2$</opt>
+<opt>$2 : 1$</opt>
+<opt>$1 : 4$</opt>
+<opt>$4 : 1$</opt>
+<hint>The tension and frequency are the same in both parts; $\mu \propto r^2$, so $v \propto 1/r$.</hint>
+<sol><p>$v_A = 2v_B$, so $\lambda_A = 2\lambda_B$. Each part is fixed at its ends with whole loops: $L = p\lambda_A/2 = q\lambda_B/2$. So $p/q = \lambda_B/\lambda_A = 1/2$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<card>
+<h2>Standing waves in rods</h2>
+<p>A solid rod carries <strong>longitudinal</strong> standing waves, with $v = \sqrt{Y/\rho}$. A clamp makes a displacement <em>node</em>, and a free end is an <em>antinode</em>.</p>
+<ul>
+<li>Clamped at the middle, free at both ends: $L = \lambda/2$, so $f_1 = \dfrac{v}{2L}$.</li>
+<li>Clamped at one end: $L = \lambda/4$, so $f_1 = \dfrac{v}{4L}$.</li>
+</ul>
+</card>
+
+<q type="single" answer="B" pyq="JEE Main 2018">
+<stem>A granite rod 60 cm long is clamped at its middle and set into longitudinal vibration. Granite has density $2.7\times10^3\ \text{kg m}^{-3}$ and Young’s modulus $9.27\times10^{10}$ Pa. What is the fundamental frequency of the longitudinal vibrations?</stem>
+<opt>2.5 kHz</opt>
+<opt>5 kHz</opt>
+<opt>10 kHz</opt>
+<opt>7.5 kHz</opt>
+<sol><p>$v = \sqrt{9.27\times10^{10}/2.7\times10^3} \approx 5.86\times10^3\ \text{m/s}$. Clamped at the middle with both ends free means $L = \lambda/2$, so $f = v/2L = 5860/1.2 \approx 4.9\ \text{kHz} \approx 5\ \text{kHz}$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 5 in five lines">
+<p>Two equal waves going opposite ways give $y = 2A\sin kx\cos\omega t$. Nodes are $\lambda/2$ apart, and node to antinode is $\lambda/4$. A string fixed at both ends has $f_n = \frac{n}{2L}\sqrt{T/\mu}$ for every $n$, and consecutive resonances differ by $f_1$. Sonometer: $f \propto \frac{1}{L}\sqrt{T/\mu}$. Plucking at a point kills the modes with a node there. Rods: $v = \sqrt{Y/\rho}$, clamps are nodes and free ends are antinodes.</p>
+</callout>

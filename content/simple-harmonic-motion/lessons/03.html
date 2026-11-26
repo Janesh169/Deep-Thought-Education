@@ -1,0 +1,145 @@
+<card>
+<h2>An anagram from 1676</h2>
+<p>In 1676 Robert Hooke published a puzzle: the letters <em>ceiiinosssttuv</em>. Two years later he gave the answer, <em>ut tensio, sic vis</em>, “as the stretch, so the force”. Publishing it scrambled first let him claim the idea without giving it away.</p>
+<p>That law, $F = -kx$, is why your car’s suspension, a trampoline, a bathroom scale and the bonds between atoms all behave like springs. Put Hooke’s law into Newton’s second law and SHM falls straight out:</p>
+$$m\frac{d^2x}{dt^2} = -kx \quad\Rightarrow\quad \omega = \sqrt{\frac{k}{m}}, \qquad T = 2\pi\sqrt{\frac{m}{k}}.$$
+<callout kind="key" title="What the period does not depend on">
+<p>$T$ depends only on $m$ and $k$. It does <strong>not</strong> depend on the amplitude: pull it twice as far and the bigger force exactly makes up for the longer trip. It does not depend on $g$ either, so a spring clock keeps the same time on the Moon.</p>
+</callout>
+</card>
+
+<card>
+<h2>Hanging it vertically</h2>
+<p>Hang a mass on a spring and it settles lower, at a stretch $d$ where the spring’s pull balances the weight: $kd = mg$. Now pull it a further $y$ below that point. The spring pulls up with $k(d + y)$ and gravity pulls down with $mg$, so the net force is</p>
+$$F = mg - k(d + y) = -ky.$$
+<?py fig(390, 230,
+  ceiling(40, 350, 20) +
+  spring(70, 20, 70, 80, 7, 7) + line(45, 80, 230, 80, 'ln thin dash') + note(70, 214, 'unstretched') +
+  spring(190, 20, 190, 120, 9, 7) + block(170, 120, 40, 34, 'm') + dim(228, 80, 228, 120, 'd', -10) +
+  spring(320, 20, 320, 152, 11, 7) + block(300, 152, 40, 34, 'm') + line(160, 120, 360, 120, 'ln thin dash') + dim(355, 120, 355, 152, 'y', -10) +
+  note(190, 200, 'equilibrium: kd = mg') + note(320, 214, 'pulled down: F = −ky') + note(258, 114, 'equilibrium'),
+  'Gravity only moves the centre of the motion down by d = mg/k. Measured from that new centre, the restoring force is still −ky.',
+  'Three springs: unstretched, stretched by d at equilibrium with a mass, and pulled a further y below equilibrium') ?>
+<p>That is the same SHM with the same $T = 2\pi\sqrt{m/k}$. <strong>Gravity only shifts the mean position.</strong> There is a useful shortcut too: since $m/k = d/g$,</p>
+$$T = 2\pi\sqrt{\frac{d}{g}},$$
+<p>so you only need to know how far the spring sagged.</p>
+</card>
+
+<lab sim="osc-spring-lab" title="Pull it and let go">
+<p>Things to try. <strong>(1)</strong> In horizontal mode, pull the block a little, then a lot. The period readout does not move. <strong>(2)</strong> Make the mass four times bigger: the period doubles. <strong>(3)</strong> Switch to vertical. The block sags to a new equilibrium, but the period is identical to the horizontal one. <strong>(4)</strong> Compare series with parallel: series gives a softer spring and a longer period, parallel a stiffer spring and a shorter one.</p>
+</lab>
+
+<q type="single" answer="A" pyq="AIEEE 2003">
+<stem>A mass $M$ hangs from a light spring and oscillates with period $T$. When the mass is increased by $m$, the period becomes $5T/3$. The ratio $m/M$ is</stem>
+<opt>$16/9$</opt>
+<opt>$25/9$</opt>
+<opt>$5/3$</opt>
+<opt>$3/5$</opt>
+<hint>$T \propto \sqrt{\text{mass}}$, so $(T'/T)^2 = (M + m)/M$.</hint>
+<sol><p>$\dfrac{M + m}{M} = \left(\dfrac53\right)^2 = \dfrac{25}{9}$, so $\dfrac{m}{M} = \dfrac{25}{9} - 1 = \dfrac{16}{9}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="numeric" answer="0.31" tol="0.01" title="Period from the sag">
+<stem>A block hung on a spring stretches it by 2.5 cm and stays at rest. It is then pulled down slightly and released. Find the period in seconds. Take $g = 10\ \text{m s}^{-2}$ and give 2 decimal places.</stem>
+<hint>$T = 2\pi\sqrt{d/g}$. You don’t need $m$ or $k$.</hint>
+<sol><p>$T = 2\pi\sqrt{0.025/10} = 2\pi \times 0.05 = 0.314\ \text{s} \approx 0.31\ \text{s}$.</p></sol>
+</q>
+
+<card>
+<h2>Joining springs</h2>
+<?py fig(570, 160,
+  wall(20, 28, 102) + spring(20, 50, 115, 50, 8, 6) + spring(20, 82, 115, 82, 8, 6) + block(115, 40, 40, 52, 'm') + var(65, 36, 'k_1') + var(65, 108, 'k_2') + note(88, 142, 'parallel: k = k₁ + k₂') +
+  wall(210, 40, 92) + spring(210, 66, 262, 66, 5, 6) + dot(262, 66, 3) + spring(262, 66, 314, 66, 5, 6) + block(314, 46, 40, 40, 'm') + var(236, 52, 'k_1') + var(288, 52, 'k_2') + note(282, 142, '1/k = 1/k₁ + 1/k₂') +
+  wall(405, 40, 92) + spring(405, 66, 455, 66, 5, 6) + block(455, 46, 40, 40, 'm') + spring(495, 66, 545, 66, 5, 6) + wall(545, 40, 92, 1) + var(430, 52, 'k_1') + var(520, 52, 'k_2') + note(475, 142, 'one on each side: k = k₁ + k₂'),
+  'Parallel springs share the stretch, so their forces add. Series springs share the force, so their stretches add.',
+  'Three arrangements of two springs: parallel, in series, and one spring on each side of the block') ?>
+<p><strong>Parallel:</strong> both springs stretch by the same $x$, so the forces add: $k = k_1 + k_2$, a stiffer spring.</p>
+<p><strong>Series:</strong> both springs carry the same force $F$, and their stretches add: $\dfrac{F}{k} = \dfrac{F}{k_1} + \dfrac{F}{k_2}$, so $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$, a softer spring.</p>
+<p><strong>One spring on each side</strong>, with both far ends fixed: move the block by $x$ and one spring stretches by $x$ while the other compresses by $x$. <em>Both</em> push it back, so $k = k_1 + k_2$. It looks like a series arrangement but behaves like a parallel one.</p>
+<callout kind="trap" title="Don’t judge by the picture">
+<p>Don’t decide “series” or “parallel” from how the drawing looks. Ask one question: <strong>do the springs share the stretch (add the k’s) or share the force (add the 1/k’s)?</strong></p>
+</callout>
+</card>
+
+<q type="single" answer="C" title="Springs on both sides">
+<stem>A block of mass $m$ on a smooth floor is attached to two identical springs of constant $k$, one on each side, with their far ends fixed to walls. Its period of small oscillations is</stem>
+<opt>$2\pi\sqrt{m/k}$</opt>
+<opt>$2\pi\sqrt{2m/k}$</opt>
+<opt>$2\pi\sqrt{m/2k}$</opt>
+<opt>$\pi\sqrt{m/k}$</opt>
+<hint>Displace the block by $x$. What does each spring do?</hint>
+<sol><p>One spring stretches by $x$ and pulls back with $kx$. The other compresses by $x$ and pushes back with $kx$. The total restoring force is $2kx$, so $k_{\text{eff}} = 2k$ and $T = 2\pi\sqrt{m/2k}$. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="single" answer="A" pyq="AIEEE 2004">
+<stem>Two springs of force constants $k_1$ and $k_2$ are connected to a mass $m$, and the mass oscillates with frequency $f$. If both $k_1$ and $k_2$ are made four times larger, the frequency becomes</stem>
+<opt>$2f$</opt>
+<opt>$f/2$</opt>
+<opt>$f/4$</opt>
+<opt>$4f$</opt>
+<hint>Whatever the arrangement, $k_{\text{eff}}$ is built from $k_1$ and $k_2$ in a way that scales with them.</hint>
+<sol><p>Whether the springs are in series ($k_1k_2/(k_1+k_2)$) or in parallel ($k_1 + k_2$), multiplying both by 4 multiplies $k_{\text{eff}}$ by 4. Since $f \propto \sqrt{k_{\text{eff}}}$, the frequency doubles. <strong>Answer: A.</strong> You didn’t even need the diagram.</p></sol>
+</q>
+
+<callout kind="breather" title="Look far away">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Find the farthest thing you can see from where you sit and look at it for three slow breaths. Your eyes have been holding a close focus for a while.</p>
+</callout>
+
+<card>
+<h2>Cutting a spring</h2>
+<p>A spring is like a chain of tiny springs in series. Cut it in half, and each half has half as many links, so it stretches half as much under the same force: <strong>$k$ doubles</strong>. In general,</p>
+$$k \times \text{length} = \text{constant} \qquad\Rightarrow\qquad \text{a piece } \tfrac{1}{n} \text{ as long has constant } nk.$$
+<p>So cutting a spring into pieces in the ratio $1 : 2$ gives constants $3k$ and $\tfrac32 k$. Put those two pieces side by side in parallel and the effective constant is $4.5k$.</p>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2002">
+<stem>A spring–mass system has period $T$. The spring is cut into $n$ equal parts and the same mass hangs from one part. The new period is</stem>
+<opt>$T\sqrt n$</opt>
+<opt>$T/\sqrt n$</opt>
+<opt>$nT$</opt>
+<opt>$T$</opt>
+<hint>Each piece is stiffer by a factor $n$.</hint>
+<sol><p>Each piece has constant $nk$, so $T' = 2\pi\sqrt{m/nk} = T/\sqrt n$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<card>
+<h2>Two bodies on one spring</h2>
+<p>Put two blocks, $m_1$ and $m_2$, on a smooth table with a spring between them, pull them apart and let go. Neither end is fixed, so both blocks move, in opposite directions, and their centre of mass stays still. Both blocks oscillate with the same period, given by the <strong>reduced mass</strong>:</p>
+$$T = 2\pi\sqrt{\frac{\mu}{k}}, \qquad \mu = \frac{m_1m_2}{m_1 + m_2}.$$
+<derive tag="Derivation" title="Where the reduced mass comes from">
+<p>Let the stretch be $x = x_2 - x_1 - L_0$. The spring pushes the two blocks oppositely: $m_1\ddot x_1 = kx$ and $m_2\ddot x_2 = -kx$. Subtract:</p>
+$$\ddot x = \ddot x_2 - \ddot x_1 = -kx\left(\frac{1}{m_1} + \frac{1}{m_2}\right) = -\frac{k}{\mu}\,x.$$
+<p>That is SHM with $\omega^2 = k/\mu$. If $m_2 \to \infty$ (a wall), then $\mu \to m_1$ and you get back the ordinary spring–mass result.</p>
+</derive>
+<callout kind="intuition" title="When the spring itself has mass">
+<p>A real spring has mass $m_s$ of its own. Its far end barely moves, while the end at the block moves fully. Adding up the kinetic energy of all its coils gives $T = 2\pi\sqrt{(m + m_s/3)/k}$: <strong>a third of the spring’s mass</strong> joins the block. JEE mostly uses light springs, but this result does come up.</p>
+</callout>
+</card>
+
+<q type="numeric" answer="0.30" tol="0.01" title="Reduced mass">
+<stem>Blocks of 1 kg and 2 kg on a smooth table are joined by a spring with $k = 300\ \text{N m}^{-1}$. They are pulled apart and released. Find the period of oscillation in seconds (2 decimal places).</stem>
+<hint>$\mu = m_1m_2/(m_1+m_2)$.</hint>
+<sol><p>$\mu = \dfrac{1\times2}{3} = \dfrac23\ \text{kg}$, so $T = 2\pi\sqrt{\dfrac{2/3}{300}} = 2\pi\sqrt{\dfrac{1}{450}} = 2\pi \times 0.0471 \approx 0.30\ \text{s}$.</p></sol>
+</q>
+
+<card>
+<h2>Atoms on springs</h2>
+<p>The atoms in a solid sit in a regular lattice, held by chemical bonds that act like stiff springs. Each atom jiggles about its place around $10^{12}$–$10^{13}$ times a second. That vibration is what we feel as heat, and it is why a solid can carry sound.</p>
+</card>
+
+<q type="single" answer="B" pyq="JEE Main 2018">
+<stem>A silver atom in a solid oscillates in SHM in some direction with frequency $10^{12}\ \text{s}^{-1}$. What is the force constant of the bonds connecting it to its neighbours? (Molar mass of silver $= 108\ \text{g}$, $N_A = 6.02 \times 10^{23}\ \text{mol}^{-1}$.)</stem>
+<opt>$6.4\ \text{N m}^{-1}$</opt>
+<opt>$7.1\ \text{N m}^{-1}$</opt>
+<opt>$2.2\ \text{N m}^{-1}$</opt>
+<opt>$5.5\ \text{N m}^{-1}$</opt>
+<hint>Mass of one atom $= M/N_A$ (in kg!), then $k = m\omega^2 = m(2\pi f)^2$.</hint>
+<sol><p>$m = \dfrac{0.108}{6.02\times10^{23}} = 1.79\times10^{-25}\ \text{kg}$ and $\omega = 2\pi\times10^{12} = 6.28\times10^{12}\ \text{rad/s}$.</p>
+$$k = m\omega^2 = 1.79\times10^{-25} \times 3.95\times10^{25} \approx 7.1\ \text{N m}^{-1}.$$
+<p><strong>Answer: B.</strong> The trap is forgetting to convert grams to kilograms.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 3 in five lines">
+<p>$T = 2\pi\sqrt{m/k}$, with no amplitude and no $g$. Hanging it vertically only shifts the centre: $T = 2\pi\sqrt{d/g}$. Parallel springs and springs on both sides add $k$; springs in series add $1/k$. A piece $1/n$ as long has constant $nk$. Two free bodies use $\mu = m_1m_2/(m_1+m_2)$.</p>
+</callout>

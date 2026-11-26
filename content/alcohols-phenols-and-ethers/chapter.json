@@ -1,0 +1,39 @@
+{
+  "id": "alcohols-phenols-and-ethers",
+  "title": "Alcohols, Phenols & Ethers",
+  "subject": "Chemistry",
+  "unit": "Organic Chemistry",
+  "tone": "vine",
+  "tagline": "From hand sanitiser to aspirin to the first surgical anaesthetic — one oxygen atom, three personalities. Every JEE Main idea on alcohols, phenols and ethers, with labs you can play with.",
+  "sections": [
+    { "title": "Meet the Family", "lessons": [1] },
+    { "title": "Making Them", "lessons": [2, 3] },
+    { "title": "How They Behave", "lessons": [4, 5] },
+    { "title": "Alcohols in Action", "lessons": [6, 7] },
+    { "title": "Phenol’s Ring", "lessons": [8] },
+    { "title": "Ethers", "lessons": [9] },
+    { "title": "Wrap-up", "lessons": [10] }
+  ],
+  "lessons": [
+    { "n": 1, "minutes": 30, "title": "Meet the –OH Family",
+      "summary": "One oxygen atom, three personalities. Learn to classify, name and picture alcohols, phenols and ethers — and why none of their bond angles is the textbook 109.5°." },
+    { "n": 2, "minutes": 35, "title": "Making Alcohols",
+      "summary": "Three roads to an –OH: add water across a C=C (two ways, opposite answers), reduce a C=O, or let a Grignard reagent build the carbon skeleton for you." },
+    { "n": 3, "minutes": 25, "title": "Making Phenols",
+      "summary": "A 300-atmosphere pressure cooker, a salt that fizzes nitrogen, and the cumene process that makes phenol and acetone in one go." },
+    { "n": 4, "minutes": 25, "title": "Boiling Points & Solubility",
+      "summary": "Why ethanol boils almost 100 K above an ether of the same mass, why ethanol mixes with water but butanol barely does — and why one nitrophenol escapes with steam." },
+    { "n": 5, "minutes": 35, "title": "Acidity: Who Lets Go of H⁺?",
+      "summary": "Sodium fizzes with all of them, but only phenol dissolves in caustic soda. The whole story is the stability of the anion left behind — and you can watch it on the pKa ladder." },
+    { "n": 6, "minutes": 35, "title": "Breaking C–O: Substitution & Dehydration",
+      "summary": "Turn –OH into a leaving group and alcohols become halides, alkenes or ethers. Race the Lucas test, and step through the carbocation that sometimes rearranges itself." },
+    { "n": 7, "minutes": 25, "title": "Oxidation & Telling Alcohols Apart",
+      "summary": "Primary, secondary or tertiary? Oxidise it, heat it on copper, or look for a yellow iodoform cloud. Plus the chemistry inside a police breathalyser." },
+    { "n": 8, "minutes": 35, "title": "Phenol’s Hyperactive Ring",
+      "summary": "The –OH makes the benzene ring so electron-rich that bromine water alone puts on three bromines. Nitration, halogenation, Kolbe, Reimer–Tiemann — all in one explorer." },
+    { "n": 9, "minutes": 30, "title": "Ethers: The Quiet Cousins",
+      "summary": "Unreactive enough to be the perfect solvent, until HI arrives. Williamson synthesis, its one big trap, and which side of the oxygen the iodide attacks." },
+    { "n": 10, "minutes": 25, "title": "Wrap-up: The Reaction Map",
+      "summary": "Every reaction of the chapter on one map, a detective case with four bottles of C₄H₁₀O, and Reagent Rush — a quick-fire game to lock it all in." }
+  ]
+}

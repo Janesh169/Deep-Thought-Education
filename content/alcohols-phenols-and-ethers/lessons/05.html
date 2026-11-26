@@ -1,0 +1,157 @@
+<card>
+<h2>Drop in a piece of sodium</h2>
+<p>Put a small piece of sodium into ethanol and it fizzes, more gently than in water: hydrogen gas, and a solution of <strong>sodium ethoxide</strong>. Phenol does the same. Diethyl ether does nothing — which is why chemists store ether over sodium wire to keep it dry.</p>
+$$\ce{2R-OH + 2Na -> 2R-O^-Na+ + H2 ^}$$
+<p>So alcohols and phenols are <strong>acids</strong>, in the Brønsted sense: they can give up the H of their O–H. But try a stronger test. Shake each with aqueous sodium hydroxide:</p>
+<ul>
+<li><strong>Phenol dissolves</strong>, as sodium phenoxide:
+$$\ce{C6H5OH + NaOH -> C6H5O^-Na+ + H2O}$$</li>
+<li><strong>Ethanol does not react appreciably</strong> — the equilibrium lies almost entirely on the alcohol side.</li>
+</ul>
+<p>Phenol is about a <strong>million times</strong> more acidic than ethanol. Explaining that factor is the whole of this lesson.</p>
+<callout kind="key" title="The one rule of acidity">
+<p>An acid HA is strong when its <strong>conjugate base</strong> $\ce{A-}$ is <strong>stable</strong>. Anything that spreads out or soothes the negative charge left on the oxygen makes the acid stronger; anything that piles more electron density onto it makes the acid weaker.</p>
+</callout>
+</card>
+
+<card>
+<h2>Alcohols: why bigger groups mean weaker acids</h2>
+<p>Alkyl groups push electron density towards the oxygen (+I effect). In the <strong>alkoxide ion</strong> $\ce{RO-}$ that oxygen already carries a full negative charge, so extra density destabilises it. More alkyl groups on the carbinol carbon, more destabilisation:</p>
+$$\text{acidity:}\quad 1^\circ > 2^\circ > 3^\circ \qquad \ce{CH3CH2OH} > \ce{(CH3)2CHOH} > \ce{(CH3)3COH}$$
+<p>(Crowding around the oxygen also stops water from solvating the alkoxide ion well, which pushes the same way.)</p>
+<p><strong>Alcohols versus water.</strong> Alkoxide ions are stronger bases than hydroxide: $\ce{RO- + H2O -> ROH + OH-}$ goes to the right. So water is the better proton donor and alcohols are, in general, <strong>weaker acids than water</strong> (ethanol pKa ≈ 15.9 vs water 15.7). Methanol is the borderline case, very close to water.</p>
+<p>Alcohols are also weak <strong>bases</strong>: the oxygen lone pairs accept a proton from a strong acid, giving $\ce{R-OH2+}$. That protonation is the first step of almost every reaction in Lesson 6.</p>
+</card>
+
+<q type="single" answer="B" title="Three alcohols, one order">
+<stem>Arrange in <strong>decreasing</strong> order of acidity: (I) 2-methylpropan-2-ol, (II) ethanol, (III) propan-2-ol.</stem>
+<opt>I &gt; III &gt; II</opt>
+<opt>II &gt; III &gt; I</opt>
+<opt>III &gt; II &gt; I</opt>
+<opt>II &gt; I &gt; III</opt>
+<sol><p>Ethanol is primary, propan-2-ol secondary, 2-methylpropan-2-ol tertiary. Each extra alkyl group on the carbinol carbon pushes more electron density onto the alkoxide oxygen (and hinders its solvation), destabilising the conjugate base. Acidity: 1° &gt; 2° &gt; 3°, so II &gt; III &gt; I. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>Phenol: the charge that has somewhere to go</h2>
+<p>Two things make phenol the stronger acid.</p>
+<p><strong>1. The –OH sits on an sp² carbon.</strong> An sp² carbon is more electronegative than an sp³ one, so it pulls electron density away from the oxygen and makes the O–H bond more polar.</p>
+<p><strong>2. The phenoxide ion is stabilised by resonance.</strong> In ethoxide the negative charge is stuck on one oxygen. In phenoxide it is spread over the oxygen <em>and</em> three ring carbons:</p>
+<?py fig(580, 150,
+  ring(62, 92, {1: 'O^−'}) + txt(124, 96, '↔', 'rm') +
+  ring(196, 92, {1: '=O'}, doubles=[(3, 4), (5, 6)], charges={2: '−'}) + txt(258, 96, '↔', 'rm') +
+  ring(330, 92, {1: '=O'}, doubles=[(2, 3), (5, 6)], charges={4: '−'}) + txt(392, 96, '↔', 'rm') +
+  ring(464, 92, {1: '=O'}, doubles=[(2, 3), (4, 5)], charges={6: '−'}) +
+  note(62, 145, 'charge on O') + note(196, 145, 'ortho') + note(330, 145, 'para') + note(464, 145, 'ortho'),
+  'The phenoxide ion: its negative charge is shared between the oxygen and the two ortho carbons and the para carbon.',
+  'Four resonance structures of the phenoxide ion, with the negative charge on the oxygen, then on the ortho, para and other ortho carbon') ?>
+<p>Phenol itself also has resonance structures, but they <strong>separate charge</strong> (+ on O, − on the ring), which costs energy. Phenoxide’s structures carry only the one negative charge, just moved around. So resonance stabilises the ion more than the acid, and the equilibrium shifts towards ionisation.</p>
+<callout kind="intuition" title="Spread charge is happy charge">
+<p>Think of the negative charge as heat in a metal rod: concentrated in one spot it is fierce; spread along the rod it is gentle. Phenoxide spreads its charge over four atoms. Ethoxide keeps it all on one oxygen — and pushes even more onto it from the ethyl group.</p>
+</callout>
+</card>
+
+<card>
+<h2>Substituents: tuning phenol’s acidity</h2>
+<p>Because the charge reaches the <strong>ortho and para</strong> carbons, groups at those positions can help or hurt it most.</p>
+<ul>
+<li><strong>Electron-withdrawing groups</strong> (–NO₂, –CN, –Cl, –CHO) stabilise phenoxide → <strong>stronger acid</strong>. At o/p, –NO₂ pulls the charge onto its own oxygens by resonance (−R) as well as by induction (−I). At meta only −I acts, so the boost is smaller.</li>
+<li><strong>Electron-donating groups</strong> (–CH₃, –OCH₃, –NH₂) destabilise phenoxide → <strong>weaker acid</strong>.</li>
+</ul>
+<tbl><table>
+<thead><tr><th>Compound</th><th>pKa</th><th>Compound</th><th>pKa</th></tr></thead>
+<tbody>
+<tr><td>o-Nitrophenol</td><td>7.2</td><td>o-Cresol</td><td>10.2</td></tr>
+<tr><td>m-Nitrophenol</td><td>8.3</td><td>m-Cresol</td><td>10.1</td></tr>
+<tr><td>p-Nitrophenol</td><td>7.1</td><td>p-Cresol</td><td>10.2</td></tr>
+<tr><td><strong>Phenol</strong></td><td><strong>10.0</strong></td><td><strong>Ethanol</strong></td><td><strong>15.9</strong></td></tr>
+<tr><td>2,4-Dinitrophenol</td><td>4.0</td><td>2,4,6-Trinitrophenol (picric acid)</td><td>0.4</td></tr>
+</tbody>
+</table></tbl>
+<p>Each extra o/p nitro group adds more stabilisation. <strong>Picric acid</strong>, with three, is stronger than acetic acid (pKa 4.76) — strong enough to fizz with sodium bicarbonate.</p>
+<callout kind="trap" title="A methoxy group can make phenol MORE acidic">
+<p>–OCH₃ donates by resonance (+R) but withdraws by induction (−I). At <strong>para</strong> the +R wins: p-methoxyphenol (pKa 10.2) is weaker than phenol. At <strong>meta</strong> resonance cannot reach, only −I acts: m-methoxyphenol (pKa 9.7) is <em>stronger</em> than phenol. The same two-faced logic applies to halogens: chlorophenols are all stronger acids than phenol, the ortho one most of all.</p>
+</callout>
+</card>
+
+<lab sim="ape-acidity-lab" title="The pKa ladder">
+<p>Build a phenol: choose a substituent and where it sits on the ring. Its rung on the ladder is its real pKa — lower means stronger acid. The coloured cloud on the ring shows where phenoxide’s negative charge sits.</p>
+<p><strong>Try these, in order:</strong></p>
+<ol>
+<li>Put –NO₂ at <strong>ortho</strong>, <strong>meta</strong> and <strong>para</strong>. Which position helps least, and why?</li>
+<li>Switch to –OCH₃. Para lowers the acidity, but meta… check the trap above.</li>
+<li>Press <strong>Add NaHCO₃</strong> for each compound. Only acids that sit above the carbonic acid line fizz.</li>
+</ol>
+</lab>
+
+<q type="single" answer="C" pyq="JEE Main 2023">
+<stem>The increasing order of $\mathrm{p}K_a$ for the following phenols is: (1) 2,4-dinitrophenol (2) 4-nitrophenol (3) 2,4,5-trimethylphenol (4) phenol (5) 3-chlorophenol</stem>
+<opt>1, 5, 4, 3, 2</opt>
+<opt>3, 4, 5, 2, 1</opt>
+<opt>1, 2, 5, 4, 3</opt>
+<opt>3, 5, 4, 2, 1</opt>
+<hint>Lowest pKa = strongest acid. Rank by how well each substituent pattern stabilises the phenoxide ion.</hint>
+<sol><p>Strongest first: two nitro groups at o and p (pKa ≈ 4.0) → one para nitro (7.1) → a meta chloro, inductive pull only (9.1) → phenol (10.0) → three electron-donating methyl groups (≈ 10.6). Increasing pKa: <strong>1, 2, 5, 4, 3</strong>. <strong>Answer (C).</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Stand up for ten seconds">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Stand, stretch your arms overhead, sit back down. Blood that has been pooling in your legs goes back to work.</p>
+<p>Then: the bicarbonate test — the quickest way, in a lab or an exam, to tell a phenol from a carboxylic acid.</p>
+</callout>
+
+<card>
+<h2>The bicarbonate test</h2>
+<p>Carbonic acid has pKa ≈ 6.4. Any acid <strong>stronger</strong> than that (lower pKa) reacts with sodium bicarbonate and releases bubbles of $\ce{CO2}$; anything weaker does not.</p>
+<ul>
+<li><strong>Carboxylic acids</strong> (pKa ≈ 4–5): fizz.</li>
+<li><strong>Picric acid</strong> (0.4) and <strong>2,4-dinitrophenol</strong> (4.0): fizz.</li>
+<li><strong>Phenol</strong> (10.0) and cresols: <strong>no fizz</strong> — but they dissolve in NaOH.</li>
+<li><strong>Alcohols</strong>: react with neither.</li>
+</ul>
+$$\text{acid strength:}\quad \ce{RCOOH} > \ce{H2CO3} > \text{phenol} > \ce{H2O} > \ce{R-OH}$$
+</card>
+
+<q type="multi" answer="A,C" title="Who fizzes?">
+<stem>Which of the following dissolve in aqueous $\ce{NaHCO3}$ with effervescence?</stem>
+<opt>Benzoic acid</opt>
+<opt>Phenol</opt>
+<opt>2,4,6-Trinitrophenol</opt>
+<opt>p-Cresol</opt>
+<sol><p>Only acids stronger than carbonic acid (pKa 6.4) release $\ce{CO2}$. Benzoic acid (4.2) and picric acid (0.4) do; phenol (10.0) and p-cresol (10.2) are far too weak. <strong>Answer: A, C.</strong></p></sol>
+</q>
+
+<q type="single" answer="A" pyq="JEE Main 2023">
+<stem>Five hydroxy compounds: (A) methanol, (B) 2-methylpropan-2-ol, (C) phenol, (D) 4-methoxyphenol, (E) 4-nitrophenol. The correct order of acidity is:</stem>
+<opt>E &gt; C &gt; D &gt; A &gt; B</opt>
+<opt>D &gt; E &gt; C &gt; A &gt; B</opt>
+<opt>C &gt; E &gt; D &gt; B &gt; A</opt>
+<opt>E &gt; D &gt; C &gt; B &gt; A</opt>
+<sol><p>All three phenols beat both alcohols. Among the phenols, the para-nitro group stabilises phenoxide (E strongest), and the para-methoxy group destabilises it by +R (D weaker than phenol C). Among the alcohols, the 1° methanol beats the 3° 2-methylpropan-2-ol. So E &gt; C &gt; D &gt; A &gt; B. <strong>Answer (A).</strong></p></sol>
+</q>
+
+<q type="integer" answer="6" title="How many times stronger?">
+<stem>Phenol has pKa 10.0 and ethanol has pKa 15.9. The ratio $K_a(\text{phenol})/K_a(\text{ethanol})$ is close to $10^n$. What is $n$, to the nearest integer?</stem>
+<hint>$K_a = 10^{-\mathrm{p}K_a}$.</hint>
+<sol><p>$\dfrac{K_a(\text{phenol})}{K_a(\text{ethanol})} = \dfrac{10^{-10.0}}{10^{-15.9}} = 10^{5.9} \approx 10^{6}$. Phenol is roughly a million times the stronger acid. <strong>n = 6.</strong></p></sol>
+</q>
+
+<q type="single" answer="C" title="Detective: C₇H₈O">
+<stem>A compound $\ce{C7H8O}$ dissolves in aqueous NaOH but not in aqueous $\ce{NaHCO3}$, and gives a violet colour with neutral $\ce{FeCl3}$. It is:</stem>
+<opt>Benzyl alcohol, $\ce{C6H5CH2OH}$</opt>
+<opt>Anisole, $\ce{C6H5OCH3}$</opt>
+<opt>p-Cresol, $\ce{CH3C6H4OH}$</opt>
+<opt>None of these</opt>
+<sol><p>All three named compounds are $\ce{C7H8O}$. Dissolving in NaOH but not in bicarbonate means an acid of phenol strength. The violet colour with $\ce{FeCl3}$ is the test for a phenolic –OH (Lesson 8). Benzyl alcohol is an alcohol (too weak for NaOH); anisole has no O–H at all. <strong>Answer (C).</strong></p></sol>
+</q>
+
+<card>
+<callout kind="recap">
+<ul>
+<li>Alcohols and phenols release $\ce{H2}$ with Na. Only phenols react with NaOH; only acids stronger than $\ce{H2CO3}$ (carboxylic acids, picric acid) react with $\ce{NaHCO3}$.</li>
+<li>Alcohols: acidity 1° &gt; 2° &gt; 3° (+I destabilises the alkoxide); generally weaker acids than water.</li>
+<li>Phenol (pKa 10) ≫ ethanol (15.9): sp² carbon, and the phenoxide charge is delocalised onto o and p carbons.</li>
+<li>Electron-withdrawing groups at o/p raise acidity most (−R and −I); at meta only −I. Electron donors lower it — except that a meta –OCH₃ raises it.</li>
+</ul>
+</callout>
+</card>

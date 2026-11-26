@@ -1,0 +1,179 @@
+<card>
+<h2>Three roads to an –OH</h2>
+<p>Every laboratory route to an alcohol in your syllabus is one of three moves. Learn them as moves, not as a list, and the whole lesson collapses into one picture:</p>
+<?py fig(520, 190,
+  box(10, 12, 160, 42, 'C=C', sub='') + box(10, 74, 160, 42, 'C=O') + box(10, 136, 160, 42, 'C=O + RMgX') +
+  arrow(176, 33, 332, 'add H and OH') + arrow(176, 95, 332, 'add H and H') + arrow(176, 157, 332, 'add R, then H') +
+  box(338, 12, 160, 166, 'R–OH', fill='shade-v') +
+  note(90, 66, 'alkenes: hydration') + note(90, 128, 'carbonyls: reduction') + note(90, 189, 'Grignard: builds the skeleton'),
+  'Hydration adds water across C=C. Reduction adds hydrogen across C=O. A Grignard reagent adds a carbon group across C=O — the only road that makes the carbon chain longer.',
+  'Three routes to alcohols: hydration of alkenes, reduction of carbonyl compounds, and Grignard addition to carbonyl compounds') ?>
+<callout kind="intuition" title="Read the target backwards">
+<p>Faced with “make this alcohol”, look at the carbinol carbon. Did it get its –OH from a C=C? Its hydrogen from a C=O? One of its carbon groups from a Grignard reagent? Working backwards from the –OH is how every JEE conversion question in this chapter is solved.</p>
+</callout>
+</card>
+
+<card>
+<h2>Road 1a: adding water the Markovnikov way</h2>
+<p>Alkenes do not react with plain water, but with a little acid as catalyst they add H–OH across the double bond:</p>
+$$\ce{CH3-CH=CH2 + H2O ->[H+] CH3-CH(OH)-CH3}$$
+<p>The –OH ends up on the <strong>more substituted</strong> carbon — Markovnikov’s rule — and the mechanism tells you why.</p>
+<derive tag="Mechanism" title="Three steps of acid-catalysed hydration">
+<p><strong>Step 1 — protonation (slow).</strong> $\ce{H3O+}$ attacks the π bond as an electrophile, putting H on one carbon and leaving a <strong>carbocation</strong> on the other. It chooses the more stable carbocation: for propene, the 2° one.</p>
+$$\ce{CH3-CH=CH2 + H3O+ -> CH3-\overset{+}{C}H-CH3 + H2O}$$
+<p><strong>Step 2 — water attacks.</strong> A water molecule uses a lone pair to bond to the carbocation, giving a protonated alcohol.</p>
+$$\ce{CH3-\overset{+}{C}H-CH3 + H2O -> CH3-CH(\overset{+}{O}H2)-CH3}$$
+<p><strong>Step 3 — deprotonation.</strong> Another water molecule takes the extra proton, giving back $\ce{H3O+}$, so the acid is only a catalyst.</p>
+$$\ce{CH3-CH(\overset{+}{O}H2)-CH3 + H2O -> CH3-CH(OH)-CH3 + H3O+}$$
+</derive>
+<callout kind="trap" title="A carbocation can rearrange before water arrives">
+<p>Because step 1 makes a free carbocation, a 1,2-shift of H or $\ce{CH3}$ can turn a 2° cation into a more stable 3° one. Hydrating 3,3-dimethylbut-1-ene gives mainly <strong>2,3-dimethylbutan-2-ol</strong>, not the “obvious” 3,3-dimethylbutan-2-ol. Whenever a C=C sits next to a carbon carrying extra methyl groups, check for a shift.</p>
+</callout>
+</card>
+
+<q type="single" answer="C" title="Hydration with a twist">
+<stem>3,3-Dimethylbut-1-ene, $\ce{(CH3)3C-CH=CH2}$, is warmed with dilute $\ce{H2SO4}$. The major product is:</stem>
+<opt>3,3-Dimethylbutan-1-ol</opt>
+<opt>3,3-Dimethylbutan-2-ol</opt>
+<opt>2,3-Dimethylbutan-2-ol</opt>
+<opt>2,2-Dimethylbutan-1-ol</opt>
+<hint>Protonate to the 2° carbocation first. Is there a methyl group next door that could move and leave a 3° cation behind?</hint>
+<sol><p>Protonation gives the 2° cation $\ce{(CH3)3C-\overset{+}{C}H-CH3}$. A methyl group on the neighbouring carbon shifts across with its bonding pair (a 1,2-methyl shift), giving the 3° cation $\ce{(CH3)2\overset{+}{C}-CH(CH3)-CH3}$. Water attacks that: $\ce{(CH3)2C(OH)-CH(CH3)2}$, which is <strong>2,3-dimethylbutan-2-ol</strong>. <strong>Answer (C).</strong></p></sol>
+</q>
+
+<card>
+<h2>Road 1b: adding water the other way round</h2>
+<p>Hydroboration–oxidation adds the same H and OH across the double bond, but with the <strong>opposite orientation</strong>:</p>
+$$\ce{CH3-CH=CH2 ->[(i) B2H6][(ii) H2O2,\ OH^-] CH3-CH2-CH2OH}$$
+<p>Diborane, $\ce{(BH3)2}$, adds H–B across the C=C. Boron is the electron-poor end, so it goes to the <strong>less substituted</strong>, less crowded carbon, and hydrogen goes to the other. Three such additions give a trialkylborane $\ce{(CH3CH2CH2)3B}$. Alkaline hydrogen peroxide then replaces each C–B bond by C–OH.</p>
+<p>The result looks like water added <strong>against</strong> Markovnikov’s rule. There is no carbocation at any stage, so there is <strong>no rearrangement</strong>, and the yield is excellent.</p>
+<callout kind="intuition" title="One more way, often asked in JEE: oxymercuration–demercuration">
+<p>$\ce{Hg(OAc)2}$ in water/THF, then $\ce{NaBH4}$, adds water the <strong>Markovnikov</strong> way like acid does, but through a bridged mercurinium ion instead of a free carbocation — so, again, <strong>no rearrangement</strong>.</p>
+</callout>
+<tbl><table>
+<thead><tr><th>Method</th><th>Where –OH goes</th><th>Rearrangement?</th><th>Propene gives</th></tr></thead>
+<tbody>
+<tr><td>$\ce{H2O/H+}$</td><td>more substituted C (Markovnikov)</td><td>possible</td><td>propan-2-ol</td></tr>
+<tr><td>$\ce{Hg(OAc)2}$, $\ce{H2O}$; then $\ce{NaBH4}$</td><td>more substituted C (Markovnikov)</td><td>no</td><td>propan-2-ol</td></tr>
+<tr><td>$\ce{B2H6}$; then $\ce{H2O2/OH-}$</td><td>less substituted C (anti-Markovnikov)</td><td>no</td><td>propan-1-ol</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<q type="single" answer="B" pyq="JEE Main 2024">
+<stem>Propene is converted into product <strong>A</strong> by $\ce{H2O/H+}$, and into product <strong>B</strong> by (i) $\ce{B2H6}$, (ii) $\ce{H2O2/OH-}$. Identify A and B.</stem>
+<opt>A = propan-1-ol, B = propan-2-ol</opt>
+<opt>A = propan-2-ol, B = propan-1-ol</opt>
+<opt>A = B = propan-2-ol</opt>
+<opt>A = B = propan-1-ol</opt>
+<sol><p>Acid-catalysed hydration goes through the more stable 2° carbocation, so –OH ends on C-2: <strong>A = propan-2-ol</strong> (Markovnikov). Hydroboration puts boron, and later –OH, on the terminal carbon: <strong>B = propan-1-ol</strong> (anti-Markovnikov orientation). <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>Road 2: reduce a C=O</h2>
+<p>Add two hydrogen atoms across a carbonyl group and the oxygen becomes –OH:</p>
+<ul>
+<li><strong>Aldehydes → primary alcohols</strong>; <strong>ketones → secondary alcohols</strong>. Reagents: $\ce{H2}$ over Pt, Pd or Ni (catalytic hydrogenation), or the hydride donors <strong>sodium borohydride</strong> $\ce{NaBH4}$ and <strong>lithium aluminium hydride</strong> $\ce{LiAlH4}$.</li>
+<li><strong>Carboxylic acids → primary alcohols</strong>, but only with the powerful $\ce{LiAlH4}$. It is expensive, so industry first turns the acid into an <strong>ester</strong> and then hydrogenates the ester over a catalyst.</li>
+</ul>
+$$\ce{RCHO ->[H2,\ Pd] RCH2OH} \qquad \ce{R-CO-R' ->[NaBH4] R-CH(OH)-R'} \qquad \ce{RCOOH ->[(i) LiAlH4][(ii) H2O] RCH2OH}$$
+<callout kind="key" title="Which reducing agent touches what">
+<p>$\ce{H2/Ni}$ reduces C=C <em>and</em> C=O. $\ce{NaBH4}$ is gentle: aldehydes and ketones only — not C=C, not acids or esters. $\ce{LiAlH4}$ reduces aldehydes, ketones, acids and esters, but leaves an isolated C=C alone. Picking the right one lets you reduce one group and spare another.</p>
+</callout>
+</card>
+
+<q type="single" answer="B" title="Spare the double bond">
+<stem>Which reagent converts propenal, $\ce{CH2=CH-CHO}$, into prop-2-en-1-ol, $\ce{CH2=CH-CH2OH}$?</stem>
+<opt>$\ce{H2}$, Ni</opt>
+<opt>$\ce{NaBH4}$</opt>
+<opt>$\ce{H2O/H+}$</opt>
+<opt>(i) $\ce{B2H6}$, (ii) $\ce{H2O2/OH-}$</opt>
+<sol><p>We must reduce the C=O and leave the C=C. Hydrogen over nickel would reduce both, giving propan-1-ol. $\ce{NaBH4}$ delivers hydride only to the carbonyl carbon. (C) and (D) attack the C=C instead. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Shoulders down">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Roll your shoulders back twice and unclench your jaw — most of us study with both slightly locked.</p>
+<p>Next up is the most powerful tool in this lesson: a reagent that builds new carbon–carbon bonds. Worth arriving fresh for.</p>
+</callout>
+
+<card>
+<h2>Road 3: let a Grignard reagent build it</h2>
+<p>A <strong>Grignard reagent</strong>, R–MgX, has a carbon–magnesium bond so polar that the carbon behaves like a carbanion, $\ce{R^-}$. It attacks the carbon of a C=O (nucleophilic addition), and water then turns the magnesium alkoxide into an alcohol:</p>
+$$\ce{>C=O + R-MgX -> >C(R)-OMgX ->[H2O] >C(R)-OH + Mg(OH)X}$$
+<p>Because R joins the carbinol carbon, the carbonyl compound you pick decides the class of alcohol:</p>
+<tbl><table>
+<thead><tr><th>Carbonyl compound</th><th>Alcohol formed</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Methanal, HCHO</td><td><strong>primary</strong></td><td>$\ce{HCHO + CH3MgBr ->} \ce{CH3CH2OH}$</td></tr>
+<tr><td>Any other aldehyde, RCHO</td><td><strong>secondary</strong></td><td>$\ce{CH3CHO + CH3MgBr ->} \ce{(CH3)2CHOH}$</td></tr>
+<tr><td>Ketone, R₂CO</td><td><strong>tertiary</strong></td><td>$\ce{(CH3)2CO + CH3MgBr ->} \ce{(CH3)3COH}$</td></tr>
+<tr><td>Ester, RCOOR′ (two RMgX)</td><td><strong>tertiary</strong>, with two identical new groups</td><td>$\ce{CH3COOC2H5 + 2CH3MgBr ->} \ce{(CH3)3COH}$</td></tr>
+<tr><td>Ethylene oxide (epoxide)</td><td><strong>primary</strong>, chain longer by two carbons</td><td>$\ce{CH3MgBr ->} \ce{CH3CH2CH2OH}$</td></tr>
+</tbody>
+</table></tbl>
+<p>(Every row ends with hydrolysis by water or dilute acid.) An ester reacts <strong>twice</strong>: the first $\ce{RMgX}$ adds and kicks out the $\ce{-OR'}$ group to give a ketone, which immediately takes a second $\ce{RMgX}$.</p>
+<callout kind="trap" title="Grignard reagents hate acidic hydrogens">
+<p>R–MgX is also a very strong base. Any compound with an acidic H — water, alcohols, phenols, carboxylic acids, $\ce{NH3}$, amines, even a terminal alkyne — simply gives up that proton and turns the Grignard reagent into an alkane: $\ce{CH3MgBr + H2O -> CH4 + Mg(OH)Br}$. That is why Grignard reactions are run in perfectly dry ether.</p>
+</callout>
+</card>
+
+<q type="multi" answer="A,B,D" title="Three ways to one alcohol">
+<stem>Which of the following give 2-methylbutan-2-ol, $\ce{(CH3)2C(OH)CH2CH3}$, after hydrolysis?</stem>
+<opt>$\ce{CH3MgBr}$ + butan-2-one, $\ce{CH3COCH2CH3}$</opt>
+<opt>$\ce{C2H5MgBr}$ + propanone, $\ce{CH3COCH3}$</opt>
+<opt>$\ce{CH3MgBr}$ + butanal, $\ce{CH3CH2CH2CHO}$</opt>
+<opt>Excess $\ce{CH3MgBr}$ + ethyl propanoate, $\ce{CH3CH2COOC2H5}$</opt>
+<hint>Cut the target at the carbinol carbon: which of its three carbon groups could have arrived from the Grignard reagent?</hint>
+<sol><p>The carbinol carbon carries $\ce{CH3}$, $\ce{CH3}$ and $\ce{C2H5}$. (A) Methyl adds to butan-2-one, which already holds one $\ce{CH3}$ and the $\ce{C2H5}$: correct. (B) Ethyl adds to propanone, which holds the two $\ce{CH3}$ groups: correct. (C) Butanal is an aldehyde and gives a <em>secondary</em> alcohol, pentan-2-ol: wrong. (D) The ester supplies the ethyl group and the carbonyl carbon; two methyls arrive from two $\ce{CH3MgBr}$: correct. <strong>Answer: A, B, D.</strong></p></sol>
+</q>
+
+<q type="single" answer="A" pyq="JEE Main 2021">
+<stem>Which of the following compounds will give a <strong>tertiary</strong> alcohol on reaction with excess $\ce{CH3MgBr}$ followed by hydrolysis?</stem>
+<opt>Phenyl ethanoate, $\ce{CH3COOC6H5}$</opt>
+<opt>But-3-yn-1-ol, $\ce{HC#C-CH2CH2OH}$</opt>
+<opt>Propanal, $\ce{CH3CH2CHO}$</opt>
+<opt>Ethyl methanoate, $\ce{HCOOC2H5}$</opt>
+<sol><p>(A) An ester takes two $\ce{CH3MgBr}$: the first gives propanone (expelling phenoxide), the second adds to it, and hydrolysis gives $\ce{(CH3)3COH}$, 2-methylpropan-2-ol — tertiary. (B) Both the alkyne C–H and the O–H are acidic; the Grignard reagent is simply protonated to methane. (C) An aldehyde gives a secondary alcohol, butan-2-ol. (D) A methanoate ester gives an <em>aldehyde</em> (ethanal) after the first addition, and the second methyl turns it into propan-2-ol — secondary. <strong>Answer (A).</strong></p></sol>
+</q>
+
+<q type="single" answer="B" pyq="AIEEE 2006">
+<stem>Phenylmagnesium bromide reacts with methanol to give:</stem>
+<opt>a mixture of anisole and $\ce{Mg(OH)Br}$</opt>
+<opt>a mixture of benzene and $\ce{Mg(OMe)Br}$</opt>
+<opt>a mixture of toluene and $\ce{Mg(OH)Br}$</opt>
+<opt>a mixture of phenol and $\ce{Mg(Me)Br}$</opt>
+<sol><p>Methanol has an acidic O–H. The phenyl “carbanion” of the Grignard reagent takes that proton — an acid–base reaction, not an addition: $\ce{C6H5MgBr + CH3OH -> C6H6 + Mg(OCH3)Br}$. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>Two alcohols the world makes by the tanker</h2>
+<p><strong>Methanol</strong> was once called <em>wood spirit</em>, because it came from heating wood without air. Today it is made from carbon monoxide and hydrogen:</p>
+$$\ce{CO + 2H2 ->[ZnO-Cr2O3][200-300\ atm,\ 573-673\ K] CH3OH}$$
+<p>It is a solvent and fuel — and it is <strong>poisonous</strong>: a small amount can cause blindness, a larger one death (Lesson 7 explains why).</p>
+<p><strong>Ethanol</strong> is made by <strong>fermentation</strong> of sugars from molasses, sugarcane or fruit such as grapes. Two enzymes from yeast do it in turn:</p>
+$$\ce{C12H22O11 + H2O ->[invertase] \underset{glucose}{C6H12O6} + \underset{fructose}{C6H12O6}}$$
+$$\ce{C6H12O6 ->[zymase] 2C2H5OH + 2CO2}$$
+<p>Fermentation runs <strong>without air</strong>. Let oxygen in and other microbes oxidise the ethanol to ethanoic acid — which is how wine turns into vinegar. Ethanol is also made industrially by hydrating ethene.</p>
+<p>Ethanol sold for industry is made undrinkable by adding a little <strong>copper sulphate</strong> (for colour) and <strong>pyridine</strong> (for a foul smell). This is called <strong>denaturation</strong> of alcohol.</p>
+</card>
+
+<q type="single" answer="B" title="Which enzyme first?">
+<stem>In the fermentation of cane sugar to ethanol, the enzymes act in which order?</stem>
+<opt>Zymase, then invertase</opt>
+<opt>Invertase, then zymase</opt>
+<opt>Diastase, then maltase</opt>
+<opt>Zymase alone does both steps</opt>
+<sol><p>Sucrose is first split into glucose and fructose by <strong>invertase</strong>; <strong>zymase</strong> then ferments the hexoses to ethanol and carbon dioxide. (Diastase and maltase belong to the fermentation of <em>starch</em>, which must first be broken down to sugars.) <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<callout kind="recap">
+<ul>
+<li><strong>Hydration</strong> of alkenes: $\ce{H2O/H+}$ → Markovnikov, through a carbocation (watch for rearrangement); $\ce{B2H6}$ then $\ce{H2O2/OH-}$ → anti-Markovnikov orientation, no rearrangement; oxymercuration → Markovnikov, no rearrangement.</li>
+<li><strong>Reduction</strong>: aldehyde → 1°, ketone → 2°, acid or ester → 1°. $\ce{NaBH4}$ for aldehydes and ketones only; $\ce{LiAlH4}$ for acids and esters too.</li>
+<li><strong>Grignard</strong>: HCHO → 1°, RCHO → 2°, ketone → 3°, ester (2 RMgX) → 3°, epoxide → 1° (+2 C). Any acidic H kills the reagent.</li>
+<li>Methanol from $\ce{CO + 2H2}$; ethanol by fermentation (invertase, then zymase, no air); denatured with $\ce{CuSO4}$ and pyridine.</li>
+</ul>
+</callout>
+</card>

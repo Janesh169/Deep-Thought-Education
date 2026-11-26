@@ -81,6 +81,9 @@
     'permeability | mu', 'drift velocity | drift speed', 'mobility | drift', 'resistivity | rho', 'conductivity | sigma',
     'potentiometer | meter bridge', 'ammeter | shunt', 'voltmeter | multiplier', 'superposition | principle of superposition',
     'equipotential | same potential', 'conductor | metal', 'dielectric | insulator', 'electron | e',
+/* chapter:alcohols-phenols-and-ethers:synonyms:start */
+    'pcc | pyridinium chlorochromate', 'lialh4 | lithium aluminium hydride | lah', 'nabh4 | sodium borohydride', 'eas | electrophilic substitution | electrophilic aromatic substitution', 'sn1 | unimolecular substitution', 'sn2 | bimolecular substitution', 'reimer tiemann | salicylaldehyde', 'kolbe | salicylic acid', 'williamson | williamson synthesis', 'carbolic acid | phenol', 'grignard | rmgx | organomagnesium', 'hydroboration | anti markovnikov', 'markovnikov | markownikoff', 'saytzeff | zaitsev', 'iodoform | haloform | chi3', 'picric acid | trinitrophenol', 'anisole | methoxybenzene', 'phenetole | ethoxybenzene', 'cumene | isopropylbenzene', 'lucas | lucas test | lucas reagent', 'dehydration | elimination', 'bp | boiling point', 'hbond | hydrogen bond', 'pka | acidity | acid strength', 'wood spirit | methanol', 'glycerol | propane-1,2,3-triol | glycerine', 'glycol | ethane-1,2-diol', 'cresol | methylphenol', 'catechol | benzene-1,2-diol', 'resorcinol | benzene-1,3-diol', 'quinol | hydroquinone | benzene-1,4-diol', 'ether | alkoxyalkane',
+/* chapter:alcohols-phenols-and-ethers:synonyms:end */
   ];
   var SYN = {}; // stemmed single word → [[stems…], …]
   SYN_GROUPS.forEach(function (g) {

@@ -1,0 +1,29 @@
+/* "vine" (Alcohols, Phenols & Ethers): fresh vine-leaf green on a dusk of plum and grape — the vineyard
+   and the still-room where alcohols begin — with a lilac secondary. The background glow is kept low and
+   slow so long sessions stay restful. */
+[data-tone="vine"] { --accent: #c8e66e; --accent-ink: #1a2200; --violet: #c9a7ff; }
+:root[data-tone="vine"] { --bg0: #0b0a10; --c1: #4a1f45; --c2: #1f4a33; --c3: #5b4a14; --c4: #3a1f5c; --blob-alpha: .52; }
+[data-theme="light"][data-tone="vine"], [data-theme="light"] [data-tone="vine"] { --accent: #557000; --accent-ink: #ffffff; --violet: #7440c8; }
+:root[data-theme="light"][data-tone="vine"] { --bg0: #f6f5ec; --c1: #f2c6e6; --c2: #cfeec0; --c3: #f6e4a6; --c4: #d9ccff; --blob-alpha: .8; }
+:root[data-tone="vine"] .blob { animation-duration: 70s; }
+
+/* Breather — a short, deliberate pause inside long lessons: a slowly breathing ring and one light idea. */
+.callout--breather { --tone: color-mix(in srgb, var(--ok) 55%, var(--violet)); display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; align-items: center; }
+.lesson > .callout--breather { margin: 22px clamp(6px, 2.4vw, 26px); padding: 18px 22px; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.callout--breather .callout__head { grid-column: 1 / -1; margin-bottom: 2px; }
+.callout--breather .callout__body { display: contents; }
+.callout--breather .callout__body > p:last-child { margin-bottom: 0; }
+.breathe { grid-row: span 3; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; position: relative; }
+.breathe::before, .breathe i { content: ""; position: absolute; border-radius: 50%; }
+.breathe::before { inset: 0; border: 1.5px solid color-mix(in srgb, var(--tone) 60%, transparent); }
+.breathe i { width: 34px; height: 34px; background: radial-gradient(circle, color-mix(in srgb, var(--tone) 70%, transparent), color-mix(in srgb, var(--tone) 12%, transparent) 70%); animation: breathe 9s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: scale(.62); opacity: .55; } 45%, 55% { transform: scale(1.5); opacity: 1; } }
+.motion-off .breathe i { animation: none; transform: scale(1.1); }
+@media (prefers-reduced-motion: reduce) { .breathe i { animation: none; transform: scale(1.1); } }
+@media (max-width: 520px) { .callout--breather { grid-template-columns: 1fr; } .breathe { grid-row: auto; } }
+
+/* Chemistry figures: atoms tinted by element, used by content/alcohols-phenols-and-ethers. */
+.fig .t-ox { fill: var(--pos); }
+.fig .t-hb { fill: var(--violet); }
+.fig .hb { stroke: var(--violet); stroke-dasharray: 3 4; stroke-width: 1.6; fill: none; }
+.fig .ox { fill: var(--pos); fill-opacity: .16; stroke: none; }

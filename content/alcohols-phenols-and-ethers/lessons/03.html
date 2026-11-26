@@ -1,0 +1,97 @@
+<card>
+<h2>From coal tar to the cumene plant</h2>
+<p>In 1834 the German chemist Friedlieb Runge distilled the black, sticky tar left over from making coal gas and pulled out a crystalline solid that smelled faintly medicinal. He called it <em>carbolic acid</em>. That is phenol, and for most of the next century coal tar was its only source.</p>
+<p>Then phenol became too useful to scrape out of tar. In 1907 Leo Baekeland heated it with formaldehyde and made <strong>Bakelite</strong>, the first fully synthetic plastic. Today phenol goes into polycarbonate (spectacle lenses, water bottles), epoxy glues, nylon, dyes, antiseptics — and the salicylic acid that becomes aspirin (Lesson 8). Millions of tonnes a year are needed, and almost all of it now comes from one clever process, the last of the four you need to know.</p>
+<callout kind="intuition" title="Why you cannot just “add OH” to benzene">
+<p>Benzene’s ring is electron-rich: it reacts with <em>electrophiles</em>. But $\ce{OH-}$ is a <em>nucleophile</em>, and it has no reason to attack a ring that is already full of electrons. Every route below solves this by putting a <strong>good leaving group</strong> on the ring first — Cl, $\ce{SO3H}$, $\ce{N2+}$ — or by sneaking the oxygen in through a completely different door, as the cumene process does.</p>
+</callout>
+</card>
+
+<card>
+<h2>Four roads to phenol</h2>
+<?py fig(560, 400,
+  ring(60, 62, {1: 'Cl'}) + arrow(100, 66, 240, 'NaOH, 623 K', '300 atm') + txt(292, 70, 'C6H5O^−Na^+') + arrow(345, 66, 448, 'HCl') + ring(500, 62, {1: 'OH'}) +
+  ring(60, 152, {}) + arrow(100, 156, 240, 'oleum', '(H2SO4 + SO3)') + ring(292, 152, {1: 'SO3H'}) + arrow(345, 156, 448, '(i) NaOH, fuse', '(ii) H^+') + ring(500, 152, {1: 'OH'}) +
+  ring(60, 242, {1: 'NH2'}) + arrow(100, 246, 240, 'NaNO2 + HCl', '273–278 K') + ring(292, 242, {1: 'N2^+Cl^−'}) + arrow(345, 246, 448, 'H2O, warm', '– N2') + ring(500, 242, {1: 'OH'}) +
+  ring(60, 332, {1: 'CH(CH3)2'}) + arrow(100, 336, 240, 'O2 (air)', '') + ring(292, 332, {1: 'C(CH3)2–O–OH'}) + arrow(345, 336, 448, 'H^+, H2O', '') + ring(500, 332, {1: 'OH'}) + txt(500, 392, '+ CH3COCH3', 'rm t-a'),
+  'Top to bottom: from chlorobenzene (Dow process), from benzenesulphonic acid, from a diazonium salt, and from cumene.',
+  'Four routes to phenol: chlorobenzene with sodium hydroxide at 623 kelvin and 300 atmospheres; benzenesulphonic acid fused with sodium hydroxide; benzenediazonium chloride warmed with water; cumene oxidised by air to cumene hydroperoxide, then split by acid into phenol and acetone') ?>
+<p><strong>1. From haloarenes.</strong> Chlorobenzene is fused with sodium hydroxide at <strong>623 K and 300 atm</strong>; acidifying the sodium phenoxide gives phenol. The conditions are brutal because the aryl C–Cl bond has partial double-bond character (the Cl lone pair is shared with the ring) and sits on an sp² carbon — it simply refuses to be pushed out.</p>
+<p><strong>2. From benzenesulphonic acid.</strong> Benzene is sulphonated with <strong>oleum</strong>; the sulphonic acid is fused with sodium hydroxide, and acidification of the sodium phenoxide gives phenol.</p>
+<p><strong>3. From diazonium salts.</strong> Aniline treated with nitrous acid ($\ce{NaNO2 + HCl}$) at <strong>273–278 K</strong> gives benzenediazonium chloride. Warm it with water — or treat it with dilute acid — and nitrogen gas bubbles off, leaving phenol:</p>
+$$\ce{C6H5N2+Cl- + H2O ->[warm] C6H5OH + N2 ^ + HCl}$$
+<p><strong>4. From cumene</strong> (isopropylbenzene). Cumene is oxidised by air to <strong>cumene hydroperoxide</strong>, which dilute acid splits into <strong>phenol and acetone</strong>. Two valuable products from benzene and propene — which is exactly why this is how the world makes phenol.</p>
+<derive tag="Mechanism" title="How acid turns cumene hydroperoxide into phenol (beyond the NCERT minimum)">
+<p>Acid protonates the terminal –OH of the –O–OH group, which leaves as water. As it leaves, the <strong>phenyl group migrates</strong> from carbon onto the electron-poor oxygen, giving an oxocarbenium ion $\ce{C6H5-O-\overset{+}{C}(CH3)2}$. Water adds to that carbon, and the resulting hemiacetal falls apart into $\ce{C6H5OH}$ and $\ce{(CH3)2C=O}$. The key step — a group hopping from carbon to oxygen — is the same idea as the carbocation shifts of Lesson 2.</p>
+</derive>
+</card>
+
+<q type="single" answer="C" pyq="JEE Main 2025">
+<stem><p>Match the conversions in List-I with the conditions in List-II.</p>
+<tbl><table>
+<thead><tr><th>List-I</th><th>List-II</th></tr></thead>
+<tbody>
+<tr><td>A. Chlorobenzene → phenol</td><td>I. warm $\ce{H2O}$</td></tr>
+<tr><td>B. 4-Nitrochlorobenzene → 4-nitrophenol</td><td>II. (a) NaOH, 368 K; (b) $\ce{H3O+}$</td></tr>
+<tr><td>C. 2,4-Dinitrochlorobenzene → 2,4-dinitrophenol</td><td>III. (a) NaOH, 443 K; (b) $\ce{H3O+}$</td></tr>
+<tr><td>D. 2,4,6-Trinitrochlorobenzene → 2,4,6-trinitrophenol</td><td>IV. (a) NaOH, 623 K, 300 atm; (b) $\ce{H3O+}$</td></tr>
+</tbody>
+</table></tbl></stem>
+<opt>A-II, B-III, C-I, D-IV</opt>
+<opt>A-III, B-IV, C-II, D-I</opt>
+<opt>A-IV, B-III, C-II, D-I</opt>
+<opt>A-IV, B-III, C-I, D-II</opt>
+<hint>Each nitro group at an ortho or para position helps to hold the negative charge that builds up on the ring when $\ce{OH-}$ attacks. More help, milder conditions.</hint>
+<sol><p>When hydroxide attacks the carbon bearing Cl, the ring briefly carries a negative charge. A nitro group <strong>ortho or para</strong> to that carbon can take the charge onto its own oxygens, stabilising the intermediate and lowering the barrier. So the conditions soften steadily: plain chlorobenzene needs <strong>623 K and 300 atm (IV)</strong>; one para-nitro group, <strong>443 K (III)</strong>; two, <strong>368 K (II)</strong>; three, just <strong>warm water (I)</strong>. <strong>Answer (C).</strong></p></sol>
+</q>
+
+<q type="single" answer="C" pyq="JEE Main 2019">
+<stem>The products formed in the reaction of cumene with $\ce{O2}$, followed by treatment with dilute HCl, are:</stem>
+<opt>Phenol and propanal</opt>
+<opt>Benzyl alcohol and propanone</opt>
+<opt>Phenol and propanone</opt>
+<opt>Benzaldehyde and ethanol</opt>
+<sol><p>Air oxidises cumene at its benzylic C–H to cumene hydroperoxide, $\ce{C6H5C(CH3)2OOH}$. Acid makes the phenyl group migrate to oxygen and the molecule splits into <strong>phenol</strong> and <strong>acetone (propanone)</strong>. <strong>Answer (C).</strong></p></sol>
+</q>
+
+<callout kind="breather" title="A sip of water">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>If there is a glass nearby, take a sip — even mild dehydration dulls concentration before you notice thirst.</p>
+<p>Fun fact for the pause: the acetone made alongside phenol in the cumene process is the same acetone in nail-polish remover, and is itself sold by the tanker.</p>
+</callout>
+
+<q type="single" answer="A" pyq="JEE Main 2023">
+<stem>In the preparation of phenol from cumene in the presence of air, the intermediate formed is:</stem>
+<opt>Cumene hydroperoxide</opt>
+<opt>2-Phenylpropan-2-ol</opt>
+<opt>Isopropyl phenyl ether</opt>
+<opt>Acetophenone</opt>
+<sol><p>Oxygen from air attacks the benzylic C–H of cumene (it is tertiary and benzylic, so the radical formed there is especially stable), giving <strong>cumene hydroperoxide</strong>, $\ce{C6H5C(CH3)2-O-O-H}$. Acid then cleaves it to phenol and acetone. <strong>Answer (A).</strong></p></sol>
+</q>
+
+<q type="single" answer="A" title="Fizzing to phenol">
+<stem>Benzenediazonium chloride is warmed with water. The gas given off and the organic product are:</stem>
+<opt>$\ce{N2}$ and phenol</opt>
+<opt>$\ce{NH3}$ and aniline</opt>
+<opt>$\ce{N2O}$ and phenol</opt>
+<opt>$\ce{N2}$ and chlorobenzene</opt>
+<sol><p>The $\ce{-N2+}$ group is one of the best leaving groups in chemistry: it departs as stable nitrogen gas. Water takes its place, and loss of $\ce{H+}$ gives phenol. <strong>Answer (A).</strong></p></sol>
+</q>
+
+<q type="reveal" answer="Benzene + propene (H₃PO₄ or AlCl₃) → cumene; cumene + O₂ (air) → cumene hydroperoxide; dilute acid → phenol + acetone" title="Design the plant">
+<stem><p>You run a factory with an unlimited supply of <strong>benzene</strong>, <strong>propene</strong> and <strong>air</strong>, and a little acid. Write the three steps that turn them into phenol — and name the second product you can sell.</p></stem>
+<sol><p><strong>Step 1 — alkylation:</strong> benzene + propene with an acid catalyst ($\ce{H3PO4}$ or $\ce{AlCl3}$) → <strong>cumene</strong>, $\ce{C6H5CH(CH3)2}$. (Friedel–Crafts: propene is protonated to the 2° isopropyl cation, which attacks the ring.)</p>
+<p><strong>Step 2 — air oxidation:</strong> cumene + $\ce{O2}$ → <strong>cumene hydroperoxide</strong>.</p>
+<p><strong>Step 3 — acid cleavage:</strong> dilute acid → <strong>phenol</strong> + <strong>acetone</strong>. Acetone is the bonus product.</p></sol>
+</q>
+
+<card>
+<callout kind="recap">
+<ul>
+<li><strong>Chlorobenzene</strong> + NaOH at <strong>623 K, 300 atm</strong>, then acid (Dow). Nitro groups at o/p make it much easier: one → 443 K, two → 368 K, three → warm water.</li>
+<li><strong>Benzenesulphonic acid</strong> (from oleum) fused with NaOH, then acid.</li>
+<li><strong>Diazonium salt</strong> (aniline + $\ce{NaNO2/HCl}$, 273–278 K) warmed with water → phenol + $\ce{N2}$.</li>
+<li><strong>Cumene</strong> + air → cumene hydroperoxide → dilute acid → <strong>phenol + acetone</strong>.</li>
+</ul>
+</callout>
+</card>

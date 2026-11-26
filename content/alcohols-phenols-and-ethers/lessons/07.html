@@ -1,0 +1,126 @@
+<card>
+<h2>Orange to green at the roadside</h2>
+<p>The first police breathalysers of the 1950s were glass tubes packed with crystals of <strong>potassium dichromate</strong> soaked in sulphuric acid — bright orange. A driver blew through the tube; any ethanol in the breath was oxidised, and the dichromate ($\ce{Cr2O7^2-}$, orange) was reduced to $\ce{Cr^3+}$, <strong>green</strong>. The further the green stain crept along the tube, the more the driver had drunk.</p>
+<p>That colour change is the reaction of this lesson. It also hides a test: a <strong>tertiary</strong> alcohol would have left the tube orange.</p>
+</card>
+
+<card>
+<h2>Oxidation is taking hydrogen away</h2>
+<p>Oxidising an alcohol removes <strong>two hydrogens</strong>: the one on oxygen and one on the <strong>carbinol carbon</strong>, leaving a C=O. So what happens depends on how many hydrogens that carbon has:</p>
+<?py fig(540, 215,
+  box(10, 14, 150, 40, 'RCH2OH', sub='') + note(85, 68, 'primary') + arrow(166, 34, 300, '[O]', '') + box(306, 14, 110, 40, 'RCHO') + arrow(422, 34, 468, '[O]', '') + txt(474, 39, 'RCOOH', 'rm', 'start') +
+  box(10, 86, 150, 40, 'R2CHOH') + note(85, 140, 'secondary') + arrow(166, 106, 300, '[O]', '') + box(306, 86, 110, 40, 'R2C=O') + note(361, 140, 'ketone: stops here') +
+  box(10, 152, 150, 40, 'R3COH') + note(85, 206, 'tertiary') + arrow(166, 172, 300, '[O]', 'no H on carbinol C', cls='ln thin dash') + txt(330, 177, 'no reaction (mild)', 'sm', 'start', formula=False),
+  'Primary alcohols go to aldehydes and then acids, secondary alcohols to ketones; tertiary alcohols have no hydrogen on the carbinol carbon and resist mild oxidation.',
+  'Oxidation ladder: primary alcohol to aldehyde to carboxylic acid; secondary alcohol to ketone; tertiary alcohol does not react under mild conditions') ?>
+<ul>
+<li><strong>Primary → aldehyde → carboxylic acid.</strong> Strong oxidants — acidified $\ce{KMnO4}$ or acidified $\ce{K2Cr2O7}$ — go all the way to the acid. To <strong>stop at the aldehyde</strong>, use $\ce{CrO3}$ in an <strong>anhydrous</strong> medium or, better, <strong>pyridinium chlorochromate (PCC)</strong>, $\ce{C5H5NH+CrO3Cl-}$, in dichloromethane.</li>
+<li><strong>Secondary → ketone</strong>, with $\ce{CrO3}$, chromic acid or PCC. Ketones resist further mild oxidation.</li>
+<li><strong>Tertiary</strong>: no H on the carbinol carbon, so no oxidation under mild conditions. Forced with hot $\ce{KMnO4}$, the carbon skeleton itself breaks and you get a mixture of acids with fewer carbons.</li>
+</ul>
+<callout kind="intuition" title="Why water matters for stopping at the aldehyde">
+<p>In water, an aldehyde adds a molecule of water to form a hydrate, $\ce{RCH(OH)2}$ — which looks like an alcohol to the oxidant and is oxidised again, to the acid. Take water away (anhydrous $\ce{CrO3}$, PCC in $\ce{CH2Cl2}$) and the aldehyde has nothing to hide behind.</p>
+</callout>
+</card>
+
+<q type="single" answer="D" pyq="JEE Main 2014">
+<stem>The most suitable reagent for the conversion $\ce{R-CH2-OH -> R-CHO}$ is:</stem>
+<opt>$\ce{KMnO4}$</opt>
+<opt>$\ce{K2Cr2O7}$</opt>
+<opt>$\ce{CrO3}$</opt>
+<opt>PCC (pyridinium chlorochromate)</opt>
+<sol><p>Permanganate and dichromate (in aqueous acid) carry a primary alcohol straight on to the carboxylic acid. $\ce{CrO3}$ stops at the aldehyde only if the medium is strictly anhydrous. PCC is mild, works in dichloromethane, and reliably stops at the aldehyde. <strong>Answer (D).</strong></p></sol>
+</q>
+
+<card>
+<h2>Hot copper: one reagent, three different answers</h2>
+<p>Pass the vapour of an alcohol over <strong>copper at 573 K</strong> and copper pulls off hydrogen (<em>dehydrogenation</em>) — or, for a tertiary alcohol, water:</p>
+$$\ce{RCH2OH ->[Cu][573\ K] RCHO + H2} \qquad \ce{R2CHOH ->[Cu][573\ K] R2C=O + H2}$$
+$$\ce{(CH3)3COH ->[Cu][573\ K] (CH3)2C=CH2 + H2O}$$
+<p>Aldehyde, ketone or alkene: the product itself tells you whether the alcohol was 1°, 2° or 3°.</p>
+</card>
+
+<q type="single" answer="B" title="Copper and a tertiary alcohol">
+<stem>The vapour of 2-methylpropan-2-ol is passed over heated copper at 573 K. The product is:</stem>
+<opt>2-Methylpropanal</opt>
+<opt>2-Methylpropene</opt>
+<opt>Propanone and methane</opt>
+<opt>No reaction</opt>
+<sol><p>A tertiary alcohol has no hydrogen on the carbinol carbon, so it cannot be dehydrogenated to a carbonyl compound. Over hot copper it <strong>dehydrates</strong> instead: $\ce{(CH3)3COH -> (CH3)2C=CH2 + H2O}$. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>The iodoform test: a yellow cloud for one special group</h2>
+<p>Warm a compound with iodine and sodium hydroxide. If it contains the group $\ce{CH3-CH(OH)-}$ (attached to H or to a carbon), a <strong>yellow precipitate of iodoform</strong>, $\ce{CHI3}$, appears, with a distinctive antiseptic smell.</p>
+<p>Why that group? The hypoiodite ($\ce{NaOI}$) first <strong>oxidises</strong> $\ce{CH3CH(OH)R}$ to the methyl ketone $\ce{CH3COR}$. The three hydrogens of its $\ce{CH3}$ group are then replaced by iodine, and the $\ce{CI3}$ group is cleaved off as $\ce{CHI3}$:</p>
+$$\ce{CH3CH(OH)R ->[NaOI] CH3COR ->[I2,\ NaOH] CHI3 v + RCOO^-Na+}$$
+<tbl><table>
+<thead><tr><th>Positive (yellow $\ce{CHI3}$)</th><th>Negative</th></tr></thead>
+<tbody>
+<tr><td>Ethanol — the <strong>only primary alcohol</strong> that gives it</td><td>Methanol</td></tr>
+<tr><td>Propan-2-ol, butan-2-ol, pentan-2-ol</td><td>Propan-1-ol, butan-1-ol, pentan-3-ol</td></tr>
+<tr><td>1-Phenylethanol, $\ce{C6H5CH(OH)CH3}$</td><td>2-Methylpropan-2-ol (tertiary: cannot be oxidised)</td></tr>
+<tr><td>Ethanal and methyl ketones such as propanone</td><td>Propanal, pentan-3-one</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<q type="single" answer="C" pyq="AIEEE 2006">
+<stem>Among the following, the one that gives a positive iodoform test upon reaction with $\ce{I2}$ and NaOH is:</stem>
+<opt>$\ce{CH3CH2CH(OH)CH2CH3}$</opt>
+<opt>$\ce{C6H5CH2CH2OH}$</opt>
+<opt>$\ce{C6H5CH(OH)CH3}$</opt>
+<opt>$\ce{(CH3)2CHCH2OH}$</opt>
+<sol><p>Look for $\ce{CH3-CH(OH)-}$. Only (C), 1-phenylethanol, has it: hypoiodite oxidises it to acetophenone, $\ce{C6H5COCH3}$, a methyl ketone, which gives $\ce{CHI3}$. (A) pentan-3-ol has ethyl groups on both sides; (B) and (D) are primary alcohols other than ethanol. <strong>Answer (C).</strong></p></sol>
+</q>
+
+<q type="integer" answer="4" title="Count the yellow tubes">
+<stem>How many of these give a yellow precipitate with $\ce{I2}$/NaOH? Ethanol, methanol, propan-2-ol, butan-2-ol, pentan-3-ol, 2-methylpropan-2-ol, propanone, propanal.</stem>
+<sol><p>Positive: ethanol ($\ce{CH3CH2OH}$ — the $\ce{CH3CH(OH)}$ unit with H), propan-2-ol, butan-2-ol and propanone (a methyl ketone) — <strong>4</strong>. Methanol has only one carbon; pentan-3-ol has no $\ce{CH3CH(OH)}$ unit; the tertiary alcohol cannot be oxidised to a methyl ketone; propanal is $\ce{CH3CH2CHO}$, not $\ce{CH3CHO}$.</p></sol>
+</q>
+
+<callout kind="breather" title="Blink on purpose">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>When we concentrate on a screen we blink about a third as often as usual. Blink slowly ten times — it is surprisingly refreshing.</p>
+<p>Then the last card: every test for telling 1°, 2° and 3° alcohols apart, on one table.</p>
+</callout>
+
+<card>
+<h2>Primary, secondary or tertiary? The test table</h2>
+<tbl><table>
+<thead><tr><th>Test</th><th>1° alcohol</th><th>2° alcohol</th><th>3° alcohol</th></tr></thead>
+<tbody>
+<tr><td><strong>Lucas</strong> (conc. HCl + anhyd. $\ce{ZnCl2}$, room temp.)</td><td>no turbidity</td><td>turbid in ~5 min</td><td>turbid at once</td></tr>
+<tr><td><strong>Acidified $\ce{K2Cr2O7}$</strong></td><td>orange → green (acid formed)</td><td>orange → green (ketone)</td><td>stays orange</td></tr>
+<tr><td><strong>Cu, 573 K</strong></td><td>aldehyde + $\ce{H2}$</td><td>ketone + $\ce{H2}$</td><td>alkene + $\ce{H2O}$</td></tr>
+<tr><td><strong>Victor Meyer</strong> (via RI → $\ce{RNO2}$ → $\ce{HNO2}$, then NaOH)</td><td>blood-red</td><td>blue</td><td>colourless</td></tr>
+</tbody>
+</table></tbl>
+<p>Add the <strong>iodoform test</strong> for the special $\ce{CH3CH(OH)-}$ unit, and you can usually pin down an unknown alcohol completely. (The Victor Meyer test appears in older papers; the other three are the ones JEE Main asks about most.)</p>
+<callout kind="story" title="Why methanol blinds and ethanol is the antidote">
+<p>In the body, the enzyme alcohol dehydrogenase oxidises methanol to methanal and then to <strong>methanoic acid</strong>, which damages the optic nerve and can kill. A patient with methanol poisoning is given <strong>diluted ethanol</strong> intravenously: the enzyme is swamped with ethanol, methanol is oxidised only slowly, and the kidneys have time to excrete it unchanged.</p>
+</callout>
+<callout kind="intuition" label="Beyond NCERT" title="Periodic acid cuts 1,2-diols">
+<p>$\ce{HIO4}$ cleaves the C–C bond between two neighbouring –OH groups, turning each carbon into a C=O: ethane-1,2-diol gives two molecules of methanal; glycerol gives two HCHO and one HCOOH. It occasionally appears in JEE Main as a structure-finding clue.</p>
+</callout>
+</card>
+
+<q type="multi" answer="A,B,D" title="Which pairs can iodoform separate?">
+<stem>The iodoform test can distinguish between which pairs?</stem>
+<opt>Ethanol and methanol</opt>
+<opt>Propan-1-ol and propan-2-ol</opt>
+<opt>Butan-2-ol and propan-2-ol</opt>
+<opt>Pentan-2-ol and pentan-3-ol</opt>
+<sol><p>A pair is distinguished when exactly one member is positive. (A) ethanol +, methanol −. (B) propan-2-ol +, propan-1-ol −. (C) both have $\ce{CH3CH(OH)-}$: both positive, not distinguished. (D) pentan-2-ol +, pentan-3-ol −. <strong>Answer: A, B, D.</strong></p></sol>
+</q>
+
+<card>
+<callout kind="recap">
+<ul>
+<li>Oxidation removes H from O and from the carbinol C: 1° → aldehyde → acid; 2° → ketone; 3° resists. Strong: acidified $\ce{KMnO4}$, $\ce{K2Cr2O7}$ (orange → green). Stop at aldehyde: anhydrous $\ce{CrO3}$ or <strong>PCC</strong>.</li>
+<li>Cu at 573 K: 1° → aldehyde, 2° → ketone, 3° → alkene.</li>
+<li>Iodoform (yellow $\ce{CHI3}$) for $\ce{CH3CH(OH)-}$ and $\ce{CH3CO-}$: ethanol is the only positive 1° alcohol; methanol is negative.</li>
+<li>Methanol → methanal → methanoic acid in the body; ethanol is the antidote.</li>
+</ul>
+</callout>
+</card>

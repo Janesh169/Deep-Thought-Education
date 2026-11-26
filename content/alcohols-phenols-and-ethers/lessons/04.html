@@ -1,0 +1,134 @@
+<card>
+<h2>Three molecules, the same weight, wildly different</h2>
+<p>Here are three molecules of almost exactly the same mass. On a scale you could not tell them apart. In a flask you could not confuse them:</p>
+<tbl><table>
+<thead><tr><th>Compound</th><th>Molar mass</th><th>Boiling point</th><th>At room temperature</th></tr></thead>
+<tbody>
+<tr><td>Propane, $\ce{CH3CH2CH3}$</td><td>44</td><td><strong>231 K</strong></td><td>a gas (camping-stove fuel)</td></tr>
+<tr><td>Methoxymethane, $\ce{CH3OCH3}$</td><td>46</td><td><strong>248 K</strong></td><td>a gas</td></tr>
+<tr><td>Ethanol, $\ce{CH3CH2OH}$</td><td>46</td><td><strong>351 K</strong></td><td>a liquid you can pour</td></tr>
+</tbody>
+</table></tbl>
+<p>The ether boils a little above the alkane. The alcohol boils more than <strong>100 K</strong> above both. Same mass, same size — so something besides ordinary van der Waals attraction is holding ethanol molecules together.</p>
+</card>
+
+<card>
+<h2>The handshake only alcohols can make</h2>
+<p>An O–H bond is strongly polar: the hydrogen carries a sizeable δ+, and the oxygen carries δ− and two lone pairs. The H of one ethanol molecule is pulled towards a lone pair on the O of the next — a <strong>hydrogen bond</strong>. Each alcohol molecule is both a <strong>donor</strong> (through its O–H) and an <strong>acceptor</strong> (through its lone pairs), so the liquid becomes a loose, constantly re-forming network. To boil it, you must tear that network apart, which costs extra energy.</p>
+<?py fig(460, 150,
+  txt(60, 80, 'C2H5', 'rm', 'end') + line(64, 76, 86, 76) + txt(96, 80, 'O', 'rm t-ox') + line(104, 76, 124, 90) + txt(130, 99, 'H', 'rm') +
+  '<line class="hb" x1="138" y1="96" x2="178" y2="84"/>' +
+  txt(190, 86, 'O', 'rm t-ox') + line(198, 82, 222, 66) + txt(228, 63, 'C2H5', 'rm', 'start') + line(196, 90, 214, 108) + txt(220, 119, 'H', 'rm') +
+  '<line class="hb" x1="228" y1="116" x2="268" y2="104"/>' +
+  txt(280, 106, 'O', 'rm t-ox') + line(288, 102, 312, 86) + txt(318, 83, 'C2H5', 'rm', 'start') + line(286, 110, 304, 128) + txt(310, 139, 'H', 'rm') +
+  '<line class="hb" x1="318" y1="136" x2="352" y2="128"/>' + note(360, 124, '…', 'sm', 'start') +
+  note(158, 76, 'H-bond', 'sm t-hb') + note(248, 96, 'H-bond', 'sm t-hb'),
+  'Each ethanol molecule donates its O–H hydrogen to the oxygen of the next: a chain of hydrogen bonds (dashed).',
+  'Three ethanol molecules linked into a chain by hydrogen bonds from the O–H hydrogen of one to the oxygen of the next') ?>
+<ul>
+<li><strong>Alkanes</strong>: no polar bonds worth mentioning, no hydrogen bonds — the lowest boiling points.</li>
+<li><strong>Ethers</strong>: a polar, bent C–O–C, so slightly higher than alkanes; but there is <strong>no O–H</strong>, so ether molecules cannot hydrogen-bond to <em>each other</em>. Their boiling points stay close to those of alkanes.</li>
+<li><strong>Alcohols and phenols</strong>: hydrogen bonds — much higher boiling points. Phenol (M = 94) boils at 455 K; toluene (M = 92) at 384 K.</li>
+</ul>
+<p><strong>Two trends within alcohols.</strong> Boiling point <strong>rises with the number of carbons</strong> (bigger molecules, more van der Waals attraction) and <strong>falls with branching</strong> (a rounder molecule has less surface in contact with its neighbours). The four butanols show it beautifully: butan-1-ol 391 K, 2-methylpropan-1-ol 381 K, butan-2-ol 373 K, 2-methylpropan-2-ol 355 K.</p>
+</card>
+
+<lab sim="ape-hbond-lab" title="The sticky-molecule box">
+<p>Each dot is a molecule. Pick a family and slide the temperature. Dashed lines are hydrogen bonds; molecules escape into the vapour when they are moving fast enough to break free.</p>
+<p><strong>Try these, in order:</strong></p>
+<ol>
+<li>With <strong>Alkane</strong> selected, find the temperature where the liquid boils away. Switch to <strong>Ether</strong>, then <strong>Alcohol</strong>, and do it again. How far does the boiling point jump for the alcohol?</li>
+<li>Turn on <strong>Add water</strong>. Which family mixes into the water and which floats on top as a separate layer? Watch which molecules form H-bonds <em>with water</em>.</li>
+<li>Switch to the <strong>Heavier</strong> set (C₄–C₅). The alcohol still boils highest — but notice how much less of it now mixes with water.</li>
+</ol>
+</lab>
+
+<q type="single" answer="A" title="Order the boiling points">
+<stem>Arrange propan-1-ol (M = 60), methoxyethane (M = 60) and butane (M = 58) in <strong>decreasing</strong> order of boiling point.</stem>
+<opt>propan-1-ol &gt; methoxyethane &gt; butane</opt>
+<opt>methoxyethane &gt; propan-1-ol &gt; butane</opt>
+<opt>butane &gt; methoxyethane &gt; propan-1-ol</opt>
+<opt>propan-1-ol &gt; butane &gt; methoxyethane</opt>
+<sol><p>Similar masses, so the deciding factor is the intermolecular force. Propan-1-ol hydrogen-bonds (370 K). Methoxyethane is polar but cannot hydrogen-bond to itself (about 281 K). Butane has only weak dispersion forces (about 273 K). <strong>Answer (A).</strong></p></sol>
+</q>
+
+<q type="single" answer="D" title="Which butanol boils first?">
+<stem>Which isomer of $\ce{C4H9OH}$ has the <strong>lowest</strong> boiling point?</stem>
+<opt>Butan-1-ol</opt>
+<opt>Butan-2-ol</opt>
+<opt>2-Methylpropan-1-ol</opt>
+<opt>2-Methylpropan-2-ol</opt>
+<sol><p>All four hydrogen-bond, so the difference comes from shape. The most branched isomer, 2-methylpropan-2-ol, is nearly spherical: least surface contact, weakest van der Waals attraction, and its crowded –OH also hydrogen-bonds less well. It boils at 355 K, against 391 K for butan-1-ol. <strong>Answer (D).</strong></p></sol>
+</q>
+
+<card>
+<h2>Why ethanol mixes with water and butanol barely does</h2>
+<p>To dissolve in water, a molecule has to break into water’s own hydrogen-bond network — and it pays its way by forming <strong>new hydrogen bonds with water</strong>. The –OH of an alcohol does exactly that, so the lower alcohols mix with water in all proportions.</p>
+<p>But the alkyl part is <strong>hydrophobic</strong>: it cannot hydrogen-bond, and water molecules have to arrange themselves awkwardly around it. As the carbon chain grows, that penalty wins. Methanol, ethanol and the propanols are fully miscible; butan-1-ol dissolves only about 9 g per 100 mL; hexan-1-ol barely at all.</p>
+<p><strong>Ethers</strong> cannot donate a hydrogen bond, but their oxygen can still <strong>accept</strong> one from water. So small ethers dissolve about as well as alcohols of the same mass: diethyl ether about 7.5 g and butan-1-ol about 9 g per 100 mL, while pentane is essentially immiscible.</p>
+<callout kind="key" title="Boiling point vs solubility: which hydrogen bonds count">
+<p><strong>Boiling point</strong> depends on hydrogen bonds <em>between molecules of the substance</em> — ethers have none, so they boil like alkanes. <strong>Solubility</strong> depends on hydrogen bonds <em>with water</em> — ethers can accept them, so they dissolve like alcohols. Same molecule, two different answers.</p>
+</callout>
+</card>
+
+<q type="single" answer="D" pyq="JEE Main 2025">
+<stem><p><strong>Statement I:</strong> Dimethyl ether is completely soluble in water, but diethyl ether is only slightly soluble in water.</p>
+<p><strong>Statement II:</strong> Sodium metal can be used to dry diethyl ether, but not ethyl alcohol.</p>
+<p>Choose the correct option.</p></stem>
+<opt>Statement I is false, but Statement II is true</opt>
+<opt>Both statements are false</opt>
+<opt>Statement I is true, but Statement II is false</opt>
+<opt>Both statements are true</opt>
+<sol><p><strong>I is true.</strong> The ether oxygen accepts hydrogen bonds from water. With only two carbons the hydrophobic part is small, so dimethyl ether dissolves freely; with four carbons, diethyl ether dissolves only to about 7.5 g per 100 mL.</p>
+<p><strong>II is true.</strong> Sodium reacts with any O–H: $\ce{2C2H5OH + 2Na -> 2C2H5ONa + H2}$, so it would destroy ethanol. Diethyl ether has no acidic hydrogen, so sodium removes only the traces of water in it. <strong>Answer (D).</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Look out of the window">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Find the farthest thing you can see and focus on it for a few slow breaths. Your eye muscles have been holding a near focus for a while.</p>
+<p>Then one last idea for this lesson — a hydrogen bond that points <em>inward</em> instead of outward.</p>
+</callout>
+
+<card>
+<h2>The nitrophenol that runs away with steam</h2>
+<p>In <strong>o-nitrophenol</strong>, the –OH and the –NO₂ are neighbours. The O–H hydrogen bonds to an oxygen of its <em>own</em> nitro group, closing a six-membered ring. This is <strong>intramolecular</strong> hydrogen bonding, also called chelation. With its hydrogen “already taken”, the molecule hardly hydrogen-bonds to its neighbours or to water.</p>
+<p>In <strong>p-nitrophenol</strong> the groups are too far apart for that, so the O–H bonds to <em>other</em> molecules — <strong>intermolecular</strong> hydrogen bonding — and to water.</p>
+<?py fig(470, 175,
+  ring(95, 108) +
+  line(95, 84, 95, 66) + txt(95, 62, 'O', 'rm t-ox') + line(101, 54, 112, 44) + txt(117, 43, 'H', 'rm') +
+  line(115.8, 96, 130, 88) + txt(133, 92, 'N', 'rm', 'start') + note(150, 84, '+', 'sm') +
+  line(139, 79, 139, 66) + txt(139, 61, 'O', 'rm t-ox') + line(147, 89, 160, 92) + txt(171, 97, 'O^−', 'rm t-ox') +
+  '<path class="hb" d="M124 40 C 132 34, 138 40, 136 48"/>' +
+  note(95, 168, 'o-nitrophenol: intramolecular H-bond') +
+  ring(350, 100, {1: 'OH', 4: 'NO2'}) + '<line class="hb" x1="372" y1="50" x2="420" y2="40"/>' + note(424, 42, '··· next', 'sm', 'start') +
+  note(350, 168, 'p-nitrophenol: intermolecular H-bonds'),
+  'Ortho: the O–H hydrogen bonds to its own nitro group, closing a six-membered ring. Para: the O–H can only bond to other molecules.',
+  'o-Nitrophenol with a hydrogen bond from its OH to its own neighbouring nitro group; p-nitrophenol forming hydrogen bonds to other molecules') ?>
+<p>So o-nitrophenol is <strong>more volatile</strong> (lower boiling point), <strong>less soluble in water</strong>, and <strong>steam volatile</strong>; p-nitrophenol melts and boils much higher (melting points: 45 °C vs 114 °C). When phenol is nitrated (Lesson 8) and gives a mixture of the two, passing steam through carries off the ortho isomer and leaves the para behind: <strong>steam distillation</strong>.</p>
+</card>
+
+<q type="multi" answer="A,B,D" title="Ortho vs para">
+<stem>Which statements about o-nitrophenol and p-nitrophenol are correct?</stem>
+<opt>o-Nitrophenol is steam volatile; p-nitrophenol is not.</opt>
+<opt>p-Nitrophenol has the higher boiling point.</opt>
+<opt>o-Nitrophenol is more soluble in water than p-nitrophenol.</opt>
+<opt>o-Nitrophenol shows intramolecular hydrogen bonding.</opt>
+<sol><p>The ortho isomer’s O–H is tied up inside its own molecule, so it associates less with its neighbours and with water. It is therefore more volatile and steam volatile (A, true), lower boiling (B, true), and <em>less</em> soluble in water (C, false). (D) is the cause of it all. <strong>Answer: A, B, D.</strong></p></sol>
+</q>
+
+<q type="integer" answer="4" title="Count the donors">
+<stem>How many of these can act as <strong>hydrogen-bond donors</strong> towards water? $\ce{CH3OH}$, $\ce{CH3OCH3}$, $\ce{C6H5OH}$, $\ce{C2H5OC2H5}$, $\ce{(CH3)3COH}$, $\ce{CH3CHO}$, $\ce{HOCH2CH2OH}$</stem>
+<hint>A donor needs a hydrogen attached to O (or N, F).</hint>
+<sol><p>Only molecules with an O–H can donate: methanol, phenol, 2-methylpropan-2-ol and ethane-1,2-diol — <strong>4</strong>. The two ethers and ethanal can only <em>accept</em> hydrogen bonds through their oxygen lone pairs.</p></sol>
+</q>
+
+<card>
+<callout kind="recap">
+<ul>
+<li>Boiling points at similar mass: <strong>alcohol ≫ ether &gt; alkane</strong>. Alcohols hydrogen-bond to each other; ethers cannot (no O–H).</li>
+<li>Within alcohols, b.p. rises with chain length and falls with branching.</li>
+<li>Solubility comes from hydrogen bonds <em>with water</em>. Alcohols donate and accept; ethers accept, so small ethers dissolve like alcohols of the same mass. Longer carbon chains make both less soluble.</li>
+<li><strong>o-Nitrophenol</strong>: intramolecular H-bond → lower b.p., less water-soluble, steam volatile. <strong>p-Nitrophenol</strong>: intermolecular → higher b.p.</li>
+</ul>
+</callout>
+</card>

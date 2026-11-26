@@ -1,0 +1,133 @@
+<card>
+<h2>The whole chapter on two maps</h2>
+<p>Nine lessons, one idea underneath: <strong>what the oxygen is attached to decides everything</strong>. Here is every reaction you have met, arranged around the two hubs. Read each map left to right — how you <em>make</em> the hub, then what you can <em>turn it into</em>.</p>
+<?py fig(620, 400,
+  box(10, 40, 175, 58, 'C=C', sub='H2O/H+ · B2H6; H2O2/OH−') +
+  box(10, 165, 175, 58, 'C=O', sub='H2/Pd · NaBH4 · LiAlH4') +
+  box(10, 290, 175, 58, 'C=O + RMgX', sub='then H2O') +
+  line(185, 69, 248, 186, 'ln thin', ' marker-end="url(#ah)"') + line(185, 194, 248, 196, 'ln thin', ' marker-end="url(#ah)"') + line(185, 319, 248, 206, 'ln thin', ' marker-end="url(#ah)"') +
+  box(250, 160, 120, 76, 'R–OH', fill='shade-v') +
+  ''.join(line(370, 198, 433, 34 + 64 * k, 'ln thin', ' marker-end="url(#ah)"') for k in range(6)) +
+  box(435, 8, 178, 52, 'R–X', sub='HX (ZnCl2) · PCl5 · SOCl2') +
+  box(435, 72, 178, 52, 'C=C', sub='conc. H2SO4, 443 K') +
+  box(435, 136, 178, 52, 'R–O–R', sub='conc. H2SO4, 413 K') +
+  box(435, 200, 178, 52, 'RCHO / R2CO / RCOOH', sub='PCC · CrO3 · KMnO4 · Cu 573 K') +
+  box(435, 264, 178, 52, "R′COOR", sub="R′COOH/H+ · R′COCl/pyridine") +
+  box(435, 328, 178, 52, 'RO^−Na^+  + H2', sub='Na metal'),
+  'The alcohol hub: three ways in (hydration, reduction, Grignard), six ways out.',
+  'Alcohol reaction map: alkenes, carbonyl compounds and Grignard reagents lead to alcohols; alcohols lead to alkyl halides, alkenes, ethers, carbonyl compounds and acids, esters, and alkoxides') ?>
+<?py fig(620, 520,
+  box(10, 60, 175, 58, 'C6H5Cl', sub='NaOH, 623 K, 300 atm; H+') +
+  box(10, 170, 175, 58, 'C6H5SO3H', sub='NaOH (fuse); H+') +
+  box(10, 280, 175, 58, 'C6H5N2^+Cl^−', sub='H2O, warm') +
+  box(10, 390, 175, 58, 'cumene', sub='O2 (air); H+ → + acetone') +
+  ''.join(line(185, 89 + 110 * k, 248, 248 + 8 * k, 'ln thin', ' marker-end="url(#ah)"') for k in range(4)) +
+  box(250, 230, 120, 76, 'C6H5OH', fill='shade-v') +
+  ''.join(line(370, 268, 433, 27 + 52 * k, 'ln thin', ' marker-end="url(#ah)"') for k in range(10)) +
+  box(435, 6, 178, 44, '2,4,6-Br3C6H2OH', sub='Br2 water · white ppt') +
+  box(435, 58, 178, 44, 'p-BrC6H4OH', sub='Br2 in CS2, 273 K') +
+  box(435, 110, 178, 44, 'o- + p-nitrophenol', sub='dil. HNO3, 298 K') +
+  box(435, 162, 178, 44, 'picric acid', sub='conc. HNO3 (via SO3H)') +
+  box(435, 214, 178, 44, 'o/p-HOC6H4SO3H', sub='conc. H2SO4 (o cold, p 373 K)') +
+  box(435, 266, 178, 44, 'salicylic acid', sub='NaOH, CO2; H+ (Kolbe)') +
+  box(435, 318, 178, 44, 'salicylaldehyde', sub='CHCl3, NaOH; H+ (R–T)') +
+  box(435, 370, 178, 44, 'C6H6', sub='Zn dust, heat') +
+  box(435, 422, 178, 44, 'benzoquinone', sub='Na2Cr2O7, H2SO4') +
+  box(435, 474, 178, 44, 'C6H5OCH3', sub='NaOH; CH3I (Williamson)'),
+  'The phenol hub: four ways in, ten ways out. Almost every way out is an attack on the activated ring at ortho or para.',
+  'Phenol reaction map: chlorobenzene, benzenesulphonic acid, benzenediazonium chloride and cumene lead to phenol; phenol leads to bromophenols, nitrophenols, picric acid, phenolsulphonic acids, salicylic acid, salicylaldehyde, benzene, benzoquinone and anisole') ?>
+</card>
+
+<card>
+<h2>Every test, one table</h2>
+<tbl><table>
+<thead><tr><th>Test</th><th>Tells apart</th><th>Positive result</th></tr></thead>
+<tbody>
+<tr><td>Sodium metal</td><td>alcohols, phenols vs ethers</td><td>$\ce{H2}$ bubbles (not with ethers)</td></tr>
+<tr><td>Aqueous NaOH</td><td>phenols vs alcohols</td><td>phenol dissolves as phenoxide</td></tr>
+<tr><td>Aqueous $\ce{NaHCO3}$</td><td>carboxylic acids, picric acid vs phenol</td><td>$\ce{CO2}$ effervescence</td></tr>
+<tr><td>Neutral $\ce{FeCl3}$</td><td>phenols vs alcohols</td><td>violet colour</td></tr>
+<tr><td>Bromine water</td><td>phenol</td><td>white ppt of 2,4,6-tribromophenol</td></tr>
+<tr><td>Lucas reagent</td><td>1° vs 2° vs 3° alcohols</td><td>3° at once, 2° in ~5 min, 1° not at room temp.</td></tr>
+<tr><td>Acidified $\ce{K2Cr2O7}$</td><td>1°, 2° vs 3° alcohols</td><td>orange → green (not 3°)</td></tr>
+<tr><td>Cu, 573 K</td><td>1° vs 2° vs 3° alcohols</td><td>aldehyde / ketone / alkene</td></tr>
+<tr><td>$\ce{I2}$ + NaOH (iodoform)</td><td>$\ce{CH3CH(OH)-}$ and $\ce{CH3CO-}$</td><td>yellow ppt of $\ce{CHI3}$</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<card>
+<h2>The case of the four bottles</h2>
+<p>Four unlabelled bottles, <strong>A</strong> to <strong>D</strong>. A label maker’s receipt says only that each contains a different compound of formula $\ce{C4H10O}$.</p>
+<ul>
+<li><strong>A</strong> does nothing at all when a piece of sodium is dropped in.</li>
+<li><strong>B</strong> turns the Lucas reagent cloudy the instant it is added.</li>
+<li><strong>C</strong> gives a yellow precipitate with iodine and sodium hydroxide.</li>
+<li><strong>D</strong>, passed over copper at 573 K, gives an aldehyde; D’s carbon chain is branched.</li>
+</ul>
+</card>
+
+<q type="integer" answer="7" title="How many suspects?">
+<stem>Before solving the case: how many structural isomers have the formula $\ce{C4H10O}$?</stem>
+<hint>Count the alcohols (four carbons, one –OH) and the ethers (split four carbons between two groups) separately.</hint>
+<sol><p><strong>Alcohols (4):</strong> butan-1-ol, butan-2-ol, 2-methylpropan-1-ol, 2-methylpropan-2-ol. <strong>Ethers (3):</strong> ethoxyethane, 1-methoxypropane, 2-methoxypropane. Total <strong>7</strong>.</p></sol>
+</q>
+
+<q type="reveal" answer="A: an ether (e.g. ethoxyethane); B: 2-methylpropan-2-ol; C: butan-2-ol; D: 2-methylpropan-1-ol" title="Solve the case">
+<stem><p>Identify A, B, C and D. Commit to an answer before you reveal.</p></stem>
+<sol><p><strong>A</strong>: no reaction with sodium means no O–H — an <strong>ether</strong> (ethoxyethane, 1-methoxypropane or 2-methoxypropane; the clues cannot tell which).</p>
+<p><strong>B</strong>: instant Lucas turbidity means <strong>tertiary</strong>; the only 3° $\ce{C4H10O}$ is <strong>2-methylpropan-2-ol</strong>.</p>
+<p><strong>C</strong>: iodoform means a $\ce{CH3CH(OH)-}$ unit: <strong>butan-2-ol</strong>.</p>
+<p><strong>D</strong>: an aldehyde over hot copper means <strong>primary</strong>; branched: <strong>2-methylpropan-1-ol</strong>.</p></sol>
+</q>
+
+<callout kind="breather" title="Victory lap">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>You have reached the end of the chapter’s new material. Get up, walk to the far side of the room and back.</p>
+<p>When you sit down, the last thing waiting is a game. It is meant to be fast, so it goes better with fresh eyes.</p>
+</callout>
+
+<lab sim="ape-rush-lab" title="Reagent Rush">
+<p>A starting compound and a reagent appear. Pick the product before the bar runs out. Answers build a streak; the cards you miss come back later in the round.</p>
+<p><strong>How to use it:</strong> play one round of 12 cards without looking anything up. Note the reactions you missed, find them on the maps above, then play a second round. Your best score is kept on this device.</p>
+</lab>
+
+<q type="single" answer="A" title="Phenol to aspirin">
+<stem>Which sequence converts phenol into aspirin?</stem>
+<opt>(i) NaOH; (ii) $\ce{CO2}$, 400 K, 4–7 atm; (iii) $\ce{H+}$; (iv) $\ce{(CH3CO)2O}$, $\ce{H+}$</opt>
+<opt>(i) $\ce{CHCl3}$, NaOH; (ii) $\ce{H+}$; (iii) $\ce{(CH3CO)2O}$</opt>
+<opt>(i) Zn dust, heat; (ii) $\ce{CH3COCl}$, $\ce{AlCl3}$</opt>
+<opt>(i) conc. $\ce{HNO3}$; (ii) Sn, HCl; (iii) $\ce{(CH3CO)2O}$</opt>
+<sol><p>Aspirin is acetylsalicylic acid. Kolbe’s reaction (phenoxide + $\ce{CO2}$, then acid) gives salicylic acid, and acetylating its –OH gives aspirin. (B) makes salicylaldehyde, so its acetylation gives an aldehyde, not an acid. (C) makes acetophenone. (D) makes an acetylated aminophenol, not aspirin. <strong>Answer (A).</strong></p></sol>
+</q>
+
+<q type="multi" answer="A,B,D" title="Ethanol or phenol?">
+<stem>Ethanol and phenol can be distinguished by:</stem>
+<opt>neutral $\ce{FeCl3}$ solution</opt>
+<opt>bromine water</opt>
+<opt>sodium metal</opt>
+<opt>$\ce{I2}$ and NaOH</opt>
+<sol><p>(A) phenol gives violet, ethanol nothing. (B) phenol gives a white precipitate, ethanol nothing. (C) both give hydrogen — no distinction. (D) ethanol gives yellow iodoform, phenol does not. <strong>Answer: A, B, D.</strong></p></sol>
+</q>
+
+<q type="integer" answer="4" title="Count the oxidants">
+<stem>How many of these reagents can convert propan-2-ol into propanone? Acidified $\ce{K2Cr2O7}$, PCC, $\ce{CrO3}$, Cu at 573 K, $\ce{LiAlH4}$, $\ce{NaBH4}$, $\ce{B2H6}$</stem>
+<sol><p>Propan-2-ol → propanone is an oxidation (dehydrogenation) of a secondary alcohol. Acidified dichromate, PCC, $\ce{CrO3}$ and hot copper all do it — <strong>4</strong>. $\ce{LiAlH4}$, $\ce{NaBH4}$ and $\ce{B2H6}$ are reducing agents or hydroborating agents; they go the other way, if anywhere.</p></sol>
+</q>
+
+<card>
+<callout kind="recap" title="Ten things to say in your sleep">
+<ol>
+<li>1°/2°/3° = carbons on the carbinol carbon. C–O–H 108.9°, C–O–C 111.7°, phenol C–O 136 pm.</li>
+<li>$\ce{H2O/H+}$ Markovnikov (may rearrange); $\ce{B2H6}$/$\ce{H2O2}$ anti-Markovnikov orientation.</li>
+<li>Grignard: HCHO → 1°, RCHO → 2°, ketone and ester → 3°.</li>
+<li>Phenol from chlorobenzene (623 K, 300 atm), sulphonic acid, diazonium salt, and cumene (+ acetone).</li>
+<li>Boiling: alcohol ≫ ether ≈ alkane; solubility: alcohol ≈ ether. o-Nitrophenol is steam volatile.</li>
+<li>Acidity: RCOOH &gt; picric acid … &gt; phenol &gt; water &gt; 1° &gt; 2° &gt; 3° alcohol. EWG at o/p helps most.</li>
+<li>Lucas: 3° at once, 2° 5 min, 1° no. Dehydration: 3° easiest; carbocation; Saytzeff; watch shifts.</li>
+<li>PCC stops at aldehyde; Cu 573 K gives aldehyde/ketone/alkene; iodoform for $\ce{CH3CH(OH)-}$.</li>
+<li>Phenol ring: bromine water → tribromo; Kolbe → salicylic acid; Reimer–Tiemann ($\ce{:CCl2}$) → salicylaldehyde.</li>
+<li>Williamson: bulky alkoxide + small halide. HI cleaves ethers: small group gets I — unless the other is 3°; anisole → phenol + $\ce{CH3I}$.</li>
+</ol>
+</callout>
+</card>

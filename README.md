@@ -33,6 +33,9 @@ another device or browser. Backups are interchangeable with the single-file vers
 | `tools/backup.js` | The Export / Import backup module |
 | `tools/search.js`, `tools/search.css` | Search: ranking, the search panel, jumping to a result |
 | `tools/search_index.py` | Builds the search index, turning each rendered formula back into searchable text |
+| `content/<id>/` | Source of a chapter written on its own (outside the single-file app): `chapter.json`, `lessons/NN.html`, `labs.js`, and optionally `theme.css`, `ambient.js`, `synonyms.txt` |
+| `tools/add_chapter.py` | Builds one `content/<id>/` chapter into the site (see below) |
+| `tools/chemfig.py`, `tools/tex.js` | Chemistry figures (rings, formulas, reaction arrows) as themed SVG; TeX/mhchem → KaTeX HTML |
 
 The first visit loads about 0.5 MB instead of the whole 8.5 MB course. Each chapter (about 2 MB) loads when
 you need it, and opening a chapter overview fetches it in the background.
@@ -52,3 +55,21 @@ python3 tools/build.py single path/to/single-file.html path/to/output.html
 ```
 
 The script checks every place it patches and stops with a message if the source has changed shape.
+
+### Chapters written as their own source folder
+
+**Alcohols, Phenols & Ethers** lives in `content/alcohols-phenols-and-ethers/` rather than in the single-file app.
+Its lessons use light markup — `<card>`, `<callout kind="…">`, `<q type="…" answer="…" pyq="…">`, `<lab sim="…">`,
+`$…$` maths with `\ce{…}` chemistry, and `<?py fig(…) ?>` figures drawn with `tools/chemfig.py`. The full syntax is
+in the docstring of `tools/add_chapter.py`. To build it (or a new chapter written the same way):
+
+```bash
+(cd tools && npm install)        # once: KaTeX 0.19.1, the version the site's CSS and fonts are for
+python3 tools/add_chapter.py content/alcohols-phenols-and-ethers
+```
+
+That writes `chapters/<id>.js`, adds the chapter to the manifest in `index.html` and to the search index, and adds its
+colour tone (`assets/app.css`), ambient soundscape and search synonyms (`assets/app.js`, `tools/search.js`) between
+`chapter:<id>` marker comments. It is safe to run again. **`tools/build.py site` regenerates those files from the
+single-file app, which does not contain this chapter — so run `add_chapter.py` again after it.**
+

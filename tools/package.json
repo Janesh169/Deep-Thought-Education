@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Build-time helpers for tools/add_chapter.py (TeX rendering). Not needed to use the site.",
+  "dependencies": {
+    "katex": "0.19.1"
+  }
+}

@@ -1,0 +1,143 @@
+<card>
+<h2>“Gentlemen, this is no humbug”</h2>
+<p>On 16 October 1846, in a steep-sided operating theatre in Boston now called the Ether Dome, William Morton held a glass inhaler to the mouth of a young man named Gilbert Abbott. Abbott breathed diethyl ether vapour and fell asleep. The surgeon, John Collins Warren, removed a tumour from his neck while the audience waited for a scream that never came. Warren turned to them and said: “Gentlemen, this is no humbug.”</p>
+<p>Ether was used as an anaesthetic for over a century, until safer, non-flammable gases replaced it. Its other career has never ended: it is one of chemistry’s favourite <strong>solvents</strong>, precisely because it is so unreactive. This lesson is about how ethers are made, and about the one reagent that finally breaks them.</p>
+</card>
+
+<card>
+<h2>Making ethers, method 1: two alcohols, one water</h2>
+<p>Heat ethanol with concentrated sulphuric acid at <strong>413 K</strong> and two molecules combine, losing one water:</p>
+$$\ce{2CH3CH2OH ->[conc.\ H2SO4][413\ K] CH3CH2-O-CH2CH3 + H2O}$$
+<p>The mechanism is substitution, not elimination. The acid protonates one alcohol molecule; a second, un-protonated alcohol molecule attacks its carbon with an oxygen lone pair and pushes out water ($\mathrm{S_N2}$); loss of a proton gives the ether.</p>
+<callout kind="trap" title="Temperature decides: ether or alkene">
+<p>Same reagents, about 30 degrees apart: <strong>413 K → diethyl ether</strong>, <strong>443 K → ethene</strong> (Lesson 6). And the method only works well for <strong>primary</strong> alcohols making <strong>symmetrical</strong> ethers: 2° and 3° alcohols simply dehydrate to alkenes, and two different alcohols give a messy mixture of three ethers.</p>
+</callout>
+</card>
+
+<q type="single" answer="B" title="413 K">
+<stem>Ethanol is heated with concentrated $\ce{H2SO4}$ at 413 K. The main organic product is:</stem>
+<opt>Ethene</opt>
+<opt>Ethoxyethane</opt>
+<opt>Ethyl hydrogen sulphate only</opt>
+<opt>Ethanal</opt>
+<sol><p>At 413 K a protonated ethanol molecule is attacked by a second ethanol molecule ($\mathrm{S_N2}$), giving <strong>diethyl ether</strong> (ethoxyethane). At 443 K elimination takes over and ethene is the product. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>Method 2: Williamson synthesis</h2>
+<p>The general way to make any ether, symmetrical or not: an <strong>alkyl halide</strong> plus a <strong>sodium alkoxide</strong>.</p>
+$$\ce{R-X + R'-O^-Na+ -> R-O-R' + NaX}$$
+<p>The alkoxide ion is the nucleophile and attacks the carbon of the alkyl halide from the back, pushing out the halide: an $\mathrm{S_N2}$ reaction. So it works best when the halide carbon is <strong>uncrowded — methyl or primary</strong>.</p>
+<p>The catch is that an alkoxide is also a <strong>strong base</strong>. Give it a crowded <strong>tertiary</strong> halide and, unable to reach the carbon, it grabs a β-hydrogen instead: <strong>elimination</strong>, giving an alkene. Secondary halides give a mixture.</p>
+<?py fig(560, 150,
+  txt(10, 40, '(CH3)3C–O^−Na^+  +  CH3–Br', 'rm', 'start') + arrow(250, 36, 330, 'substitution') + txt(338, 40, '(CH3)3C–O–CH3', 'rm t-a', 'start') + note(480, 56, 'ether ✓', 'sm t-o') +
+  txt(10, 110, '(CH3)3C–Br  +  CH3–O^−Na^+', 'rm', 'start') + arrow(250, 106, 330, 'elimination') + txt(338, 110, '(CH3)2C=CH2', 'rm t-w', 'start') + note(480, 126, 'alkene ✗', 'sm t-p'),
+  'To make tert-butyl methyl ether, the crowded group must come from the alkoxide and the halide must be the uncrowded one.',
+  'Two Williamson routes to tert-butyl methyl ether: sodium tert-butoxide with bromomethane gives the ether; tert-butyl bromide with sodium methoxide gives 2-methylpropene') ?>
+<callout kind="key" title="The Williamson rule">
+<p>Put the <strong>bulky group on the alkoxide</strong> and the <strong>small group on the halide</strong>. For aryl ethers, the aryl group must be on the oxygen: $\ce{C6H5O^-Na+ + CH3I -> C6H5OCH3}$ (anisole) works, but $\ce{C6H5Br + CH3O^-Na+}$ does not — aryl halides do not do $\mathrm{S_N2}$.</p>
+</callout>
+</card>
+
+<q type="single" answer="D" pyq="JEE Main 2016">
+<stem>2-Chloro-2-methylpentane on reaction with sodium methoxide in methanol yields: (I) $\ce{CH3CH2CH2C(CH3)2OCH3}$ (II) $\ce{CH3CH2CH2C(CH3)=CH2}$ (III) $\ce{CH3CH2CH=C(CH3)2}$</stem>
+<opt>I and III only</opt>
+<opt>III only</opt>
+<opt>I and II only</opt>
+<opt>All of these</opt>
+<sol><p>The halide is <strong>tertiary</strong>. Substitution can only happen through the carbocation ($\mathrm{S_N1}$, with methanol or methoxide capturing it) and gives the ether I. Methoxide is also a strong base, so elimination competes, removing a β-H from either side to give both alkenes, II and III (III, the more substituted, is the larger share). All three products form. <strong>Answer (D).</strong></p></sol>
+</q>
+
+<q type="single" answer="D" pyq="JEE Main 2025">
+<stem>Which one of the following reactions will <strong>not</strong> give the desired ether as the major product?</stem>
+<opt>$\ce{(CH3)2CHCH2Br + CH3CH2O^-Na+}$ → isobutyl ethyl ether</opt>
+<opt>$\ce{CH3CH2CH2Br + (CH3)3CO^-Na+}$ → tert-butyl propyl ether</opt>
+<opt>$\ce{CH3CH2Br + CH3CH2CH(CH3)O^-Na+}$ → sec-butyl ethyl ether</opt>
+<opt>$\ce{(CH3)3CBr + CH3CH2O^-Na+}$ → tert-butyl ethyl ether</opt>
+<sol><p>In A, B and C the halide is primary, so $\mathrm{S_N2}$ substitution gives the ether, whatever the size of the alkoxide. In D the halide is <strong>tertiary</strong>: ethoxide acts as a base and eliminates HBr, giving 2-methylpropene as the major product. To make tert-butyl ethyl ether, use sodium tert-butoxide with bromoethane. <strong>Answer (D).</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Palms on your eyes">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Rub your palms together until they are warm and rest them lightly over your closed eyes for a few breaths. Darkness and warmth relax the focusing muscles.</p>
+<p>Next: how HI finally breaks an ether, and which side of the oxygen it chooses.</p>
+</callout>
+
+<card>
+<h2>Breaking an ether: only HI and HBr will do</h2>
+<p>Ethers ignore bases, dilute acids, oxidants and reductants — the reason they make good solvents. But heated with a concentrated <strong>hydrogen halide</strong>, the C–O bond breaks:</p>
+$$\ce{R-O-R + HX -> R-X + R-OH} \qquad \text{(excess HX: } \ce{R-OH -> R-X}\text{ too)}$$
+<p>The order is <strong>HI &gt; HBr &gt; HCl</strong>: iodide is the best nucleophile, and HI the strongest acid. Two steps:</p>
+<ol>
+<li><strong>Protonation</strong> of the ether oxygen, making a good leaving group (a neutral alcohol).</li>
+<li><strong>Attack by $\ce{X-}$</strong>, which decides which side breaks:
+<ul>
+<li>If both groups are methyl or primary: $\mathrm{S_N2}$, so iodide attacks the <strong>less hindered</strong> carbon. $\ce{CH3-O-CH2CH3 + HI -> CH3I + CH3CH2OH}$.</li>
+<li>If one group is <strong>tertiary</strong>: the C–O bond to it breaks on its own to give the stable 3° carbocation ($\mathrm{S_N1}$), which iodide then captures. $\ce{(CH3)3C-O-CH3 + HI -> (CH3)3C-I + CH3OH}$.</li>
+</ul></li>
+</ol>
+<p><strong>Aryl alkyl ethers</strong> always break on the alkyl side: $\ce{C6H5-O-CH3 + HI -> C6H5OH + CH3I}$. The O–aryl bond has partial double-bond character, and iodide cannot do $\mathrm{S_N2}$ on an sp² carbon or make an aryl cation. And even excess HI does not turn the phenol into iodobenzene, for the same reason.</p>
+</card>
+
+<lab sim="ape-mechanism-lab" title="The mechanism player: ether cleavage" data-mech="cleave-sn2">
+<p>Step through what HI does to an ether. Then compare the two routes.</p>
+<p><strong>Try these, in order:</strong></p>
+<ol>
+<li>Play <strong>Methoxyethane + HI</strong>. Which carbon does iodide attack, and why that one?</li>
+<li>Switch to <strong>tert-Butyl methyl ether + HI</strong>. Here the bond breaks <em>before</em> iodide arrives. Which product ends up with the iodine?</li>
+</ol>
+</lab>
+
+<q type="single" answer="B" title="Anisole meets HI">
+<stem>Anisole is heated with concentrated HI. The products are:</stem>
+<opt>Iodobenzene and methanol</opt>
+<opt>Phenol and iodomethane</opt>
+<opt>Iodobenzene and iodomethane</opt>
+<opt>Benzene and methyl hypoiodite</opt>
+<sol><p>After protonation, iodide attacks the methyl carbon ($\mathrm{S_N2}$ at the least hindered site); the O–phenyl bond, with its partial double-bond character, survives. Products: <strong>phenol and $\ce{CH3I}$</strong>. Phenol does not react further with HI. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<q type="single" answer="B" title="Which side breaks?">
+<stem>tert-Butyl methyl ether, $\ce{(CH3)3C-O-CH3}$, is heated with one equivalent of HI. The products are:</stem>
+<opt>$\ce{(CH3)3C-OH}$ and $\ce{CH3I}$</opt>
+<opt>$\ce{(CH3)3C-I}$ and $\ce{CH3OH}$</opt>
+<opt>$\ce{(CH3)3C-I}$ and $\ce{CH3I}$</opt>
+<opt>$\ce{(CH3)2C=CH2}$ and $\ce{CH3OCH3}$</opt>
+<sol><p>The protonated ether can lose methanol to form the stable tertiary carbocation ($\mathrm{S_N1}$), which iodide captures: $\ce{(CH3)3CI + CH3OH}$. This is the opposite of what $\mathrm{S_N2}$ at the less hindered methyl group would predict — the classic exam twist. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>The ring of an aromatic ether</h2>
+<p>In anisole the oxygen’s lone pair is shared with the ring, just as in phenol, so –OCH₃ is <strong>activating and ortho/para directing</strong> (somewhat less than –OH). Typical reactions:</p>
+<ul>
+<li><strong>Bromination</strong>: bromine in <strong>ethanoic acid</strong>, with <strong>no catalyst</strong> → mainly <strong>p-bromoanisole</strong> (plus some ortho).</li>
+<li><strong>Friedel–Crafts alkylation</strong>: $\ce{CH3Cl/AlCl3}$ → 2- and 4-methoxytoluene.</li>
+<li><strong>Friedel–Crafts acylation</strong>: $\ce{CH3COCl/AlCl3}$ → 2- and 4-methoxyacetophenone.</li>
+<li><strong>Nitration</strong>: conc. $\ce{H2SO4}$ + conc. $\ce{HNO3}$ → 2- and 4-nitroanisole.</li>
+</ul>
+<p>Para is usually the major product: the ortho positions sit right next to the methoxy group and are more crowded.</p>
+<callout kind="story" title="The bottle that grows crystals">
+<p>Left in air and light, ethers slowly react with oxygen to form <strong>peroxides</strong>, which can explode when the ether is distilled to dryness. That is why ether comes in dark bottles, is used fresh, and is tested for peroxides before distillation — a lesson some labs learned the hard way.</p>
+</callout>
+</card>
+
+<q type="multi" answer="A,B" title="Anisole’s ring">
+<stem>Which reactions of anisole are correctly matched with their major organic product?</stem>
+<opt>$\ce{Br2}$ in ethanoic acid → 4-bromoanisole</opt>
+<opt>$\ce{CH3COCl}$, anhydrous $\ce{AlCl3}$ → 4-methoxyacetophenone (with some 2-isomer)</opt>
+<opt>conc. $\ce{HNO3}$ + conc. $\ce{H2SO4}$ → 3-nitroanisole</opt>
+<opt>conc. HI, heat → iodobenzene and methanol</opt>
+<sol><p>(A) and (B) are correct: –OCH₃ directs ortho/para, and para dominates. (C) is wrong: nitration also goes ortho/para, not meta. (D) is wrong: HI gives phenol and iodomethane. <strong>Answer: A, B.</strong></p></sol>
+</q>
+
+<card>
+<callout kind="recap">
+<ul>
+<li><strong>Dehydration</strong> of 1° alcohols at <strong>413 K</strong> (conc. $\ce{H2SO4}$, $\mathrm{S_N2}$) → symmetrical ethers; at 443 K → alkenes.</li>
+<li><strong>Williamson</strong>: $\ce{RX + R'ONa}$, $\mathrm{S_N2}$. Bulky group on the alkoxide, methyl/1° halide. 3° halides eliminate. Aryl ethers: phenoxide + alkyl halide.</li>
+<li><strong>Cleavage</strong>: HI &gt; HBr. 1°/methyl: iodide attacks the smaller group ($\mathrm{S_N2}$). With a 3° group: the 3° carbon gets the iodine ($\mathrm{S_N1}$). Anisole → phenol + $\ce{CH3I}$.</li>
+<li>–OR activates the ring, o/p (para major): $\ce{Br2}$/ethanoic acid, Friedel–Crafts, nitration.</li>
+<li>Ethers form explosive peroxides on standing in air and light.</li>
+</ul>
+</callout>
+</card>

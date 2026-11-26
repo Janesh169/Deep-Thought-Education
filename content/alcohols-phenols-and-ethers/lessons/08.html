@@ -1,0 +1,161 @@
+<card>
+<h2>A ring with the volume turned up</h2>
+<p>Benzene is famously reluctant: to brominate it you need liquid bromine <em>and</em> an $\ce{FeBr3}$ catalyst. Drip <strong>bromine water</strong> into a solution of phenol and, in seconds, a white solid crashes out — three bromines on the ring, no catalyst, room temperature.</p>
+<p>The reason is the oxygen’s lone pair. It is shared with the ring (+R effect), pushing electron density onto the <strong>ortho and para</strong> carbons — the same three carbons that carried the charge in phenoxide (Lesson 5). Electrophiles are drawn to them.</p>
+<?py fig(380, 150, ring(110, 85, {1: 'OH'}, hl=(2, 4, 6), charges={2: 'δ−', 4: 'δ−', 6: 'δ−'}) + note(230, 66, '–OH: strongly activating,', 'sm', 'start') + note(230, 82, 'ortho/para directing', 'sm', 'start'),
+  'The –OH group feeds electron density into the ring at the two ortho positions and the para position (highlighted).',
+  'Phenol with its two ortho and one para carbons highlighted as electron-rich') ?>
+<callout kind="key" title="Phenol’s ring in one line">
+<p>–OH is a <strong>strongly activating, ortho/para-directing</strong> group. Reactions need <strong>milder</strong> conditions than for benzene, and often go further than you want (polysubstitution) unless you tame them.</p>
+</callout>
+</card>
+
+<card>
+<h2>Nitration: dilute for one, concentrated for three</h2>
+<ul>
+<li><strong>Dilute $\ce{HNO3}$ at 298 K</strong> gives a mixture of <strong>o-nitrophenol and p-nitrophenol</strong>. Steam distillation separates them: the ortho isomer, with its intramolecular hydrogen bond, is steam volatile; the para isomer stays behind (Lesson 4).</li>
+<li><strong>Concentrated $\ce{HNO3}$</strong> gives <strong>2,4,6-trinitrophenol — picric acid</strong>. But concentrated nitric acid also <em>oxidises</em> the electron-rich ring, so the yield is poor.</li>
+</ul>
+<p>The industrial trick: first treat phenol with concentrated $\ce{H2SO4}$ to give phenol-2,4-disulphonic acid, then with concentrated $\ce{HNO3}$. The $\ce{-SO3H}$ groups protect the ring from oxidation and are then <strong>replaced</strong> by $\ce{-NO2}$ groups, giving picric acid cleanly.</p>
+</card>
+
+<lab sim="ape-phenol-lab" title="Phenol reaction explorer">
+<p>Pick a reagent and watch where the electrophile lands. The glowing positions are the ones the –OH group activates; each new group slides in from the side.</p>
+<p><strong>Try these, in order:</strong></p>
+<ol>
+<li>Compare <strong>Br₂ in CS₂, 273 K</strong> with <strong>Br₂ water</strong>. Same reagent, different solvent — why one bromine in one case and three in the other?</li>
+<li>Compare <strong>dil. HNO₃</strong> with <strong>conc. HNO₃</strong>.</li>
+<li>Run <strong>Kolbe</strong> and <strong>Reimer–Tiemann</strong>. Both put a one-carbon group at the ortho position — what are the electrophiles?</li>
+</ol>
+</lab>
+
+<card>
+<h2>Halogenation: the solvent decides</h2>
+<ul>
+<li><strong>Bromine in a solvent of low polarity</strong> — $\ce{CS2}$ or $\ce{CHCl3}$ — at <strong>273 K</strong>: <strong>monobromophenols</strong>, mainly <strong>p-bromophenol</strong> (with some ortho).</li>
+<li><strong>Bromine water</strong>: a white precipitate of <strong>2,4,6-tribromophenol</strong>. This is a test for phenol.</li>
+</ul>
+$$\ce{C6H5OH + 3Br2 ->[H2O] C6H2Br3OH v + 3HBr}$$
+<p>Why the difference? In water, phenol partly ionises to <strong>phenoxide</strong>, which is even more strongly activating than phenol, and the polar solvent helps polarise $\ce{Br2}$ into a ready electrophile. In $\ce{CS2}$ at low temperature, phenol stays un-ionised and bromine stays only weakly polarised: the reaction is slow enough to stop after one bromine.</p>
+<callout kind="trap" title="No Lewis acid, ever">
+<p>An answer option that brominates phenol with $\ce{Br2/FeBr3}$ is a decoy. The ring is so activated that a Lewis acid is never needed — and with water as solvent you cannot even stop at one bromine.</p>
+</callout>
+</card>
+
+<q type="single" answer="B" pyq="JEE Main 2021">
+<stem>The conversion of phenol into 2,4,6-tribromophenol can be carried out with:</stem>
+<opt>$\ce{Br2}$ in $\ce{CS2}$ at 273 K</opt>
+<opt>Bromine water</opt>
+<opt>$\ce{Br2}$ in $\ce{CHCl3}$ at 273 K</opt>
+<opt>$\ce{Br2}$ with $\ce{FeBr3}$, in the dark</opt>
+<sol><p>Only in water does phenol (partly as phenoxide) react three times, at all the activated o- and p-positions, giving the white precipitate of 2,4,6-tribromophenol. Low-polarity solvents at 273 K give monobromophenols, and a Lewis acid is not what makes the difference. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>Sulphonation and the temperature switch</h2>
+<p>Concentrated $\ce{H2SO4}$ sulphonates phenol. Near room temperature the <strong>ortho</strong> product (o-hydroxybenzenesulphonic acid) forms fastest; at about <strong>373 K</strong> the more stable <strong>para</strong> isomer dominates. Sulphonation is reversible, so given heat and time the ring settles into its most stable arrangement.</p>
+</card>
+
+<q type="single" answer="D" title="Hot sulphonation">
+<stem>Phenol is heated with concentrated $\ce{H2SO4}$ at 373 K. The major product is:</stem>
+<opt>Benzenesulphonic acid</opt>
+<opt>m-Hydroxybenzenesulphonic acid</opt>
+<opt>o-Hydroxybenzenesulphonic acid</opt>
+<opt>p-Hydroxybenzenesulphonic acid</opt>
+<sol><p>–OH directs to ortho and para. Sulphonation is reversible: at the higher temperature the reaction reaches equilibrium and the less crowded, more stable <strong>para</strong> isomer dominates. (At room temperature, the faster-forming ortho isomer is the major product.) <strong>Answer (D).</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Unhunch">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Sit back, let your shoulder blades touch the chair, and lift your chin a little. Hold it for three breaths.</p>
+<p>Coming up: two named reactions that put a carbon on phenol’s ring — and one of them ends in a pill you have almost certainly taken.</p>
+</callout>
+
+<card>
+<h2>Kolbe’s reaction: from phenol to aspirin</h2>
+<p><strong>Phenoxide</strong> is so electron-rich that it attacks even carbon dioxide, a weak electrophile. Heat sodium phenoxide with $\ce{CO2}$ (about 400 K, 4–7 atm), then acidify, and you get <strong>salicylic acid</strong> (2-hydroxybenzoic acid), mainly at the ortho position:</p>
+$$\ce{C6H5ONa ->[(i) CO2, 400 K, 4–7 atm][(ii) H+]} \text{2-hydroxybenzoic acid (salicylic acid)}$$
+<p>Acetylate its –OH with ethanoic anhydride and you have <strong>aspirin</strong>. (Plain phenol is not reactive enough for $\ce{CO2}$ — the base has to make phenoxide first.)</p>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2009">
+<stem>The major product obtained on interaction of phenol with sodium hydroxide and carbon dioxide is:</stem>
+<opt>Salicylaldehyde</opt>
+<opt>Salicylic acid</opt>
+<opt>Phthalic acid</opt>
+<opt>Benzoic acid</opt>
+<sol><p>NaOH turns phenol into the strongly nucleophilic phenoxide, which attacks $\ce{CO2}$ at the ortho position (Kolbe’s reaction). Acidification gives 2-hydroxybenzoic acid — <strong>salicylic acid</strong>. <strong>Answer (B).</strong></p></sol>
+</q>
+
+<q type="single" answer="A" pyq="JEE Main 2014">
+<stem>Sodium phenoxide, when heated with $\ce{CO2}$ under pressure at 125 °C, yields a product which on acetylation produces <strong>C</strong>. The major product C would be:</stem>
+<opt>Acetylsalicylic acid (aspirin)</opt>
+<opt>Phenyl ethanoate</opt>
+<opt>Methyl salicylate</opt>
+<opt>2-Hydroxyacetophenone</opt>
+<sol><p>Kolbe’s reaction gives (sodium) salicylate → salicylic acid. Acetylation puts $\ce{CH3CO-}$ on the phenolic –OH: <strong>acetylsalicylic acid</strong>, aspirin. <strong>Answer (A).</strong></p></sol>
+</q>
+
+<card>
+<h2>Reimer–Tiemann: an aldehyde from chloroform</h2>
+<p>Warm phenol with <strong>chloroform and aqueous sodium hydroxide</strong> (about 340 K), then acidify, and a –CHO group appears at the ortho position: <strong>salicylaldehyde</strong> (2-hydroxybenzaldehyde).</p>
+<derive tag="Mechanism" title="Where the –CHO comes from">
+<p>Hydroxide pulls a proton off chloroform; the $\ce{CCl3-}$ ion then loses $\ce{Cl-}$ to give <strong>dichlorocarbene</strong>, $\ce{:CCl2}$ — a neutral carbon with only six valence electrons, hungry for a pair:</p>
+$$\ce{CHCl3 + OH- -> CCl3^- + H2O} \qquad \ce{CCl3^- -> :CCl2 + Cl-}$$
+<p>The phenoxide ring attacks $\ce{:CCl2}$ at the ortho carbon. After proton shuffles, the ring carries a $\ce{-CHCl2}$ group (a substituted benzal chloride). Aqueous alkali hydrolyses $\ce{-CHCl2}$ to –CHO, and acid releases salicylaldehyde.</p>
+</derive>
+<p>Swap chloroform for <strong>carbon tetrachloride</strong> and the same route ends in a –COOH: salicylic acid.</p>
+</card>
+
+<q type="single" answer="B" title="Name the electrophile">
+<stem>In the Reimer–Tiemann reaction of phenol with $\ce{CHCl3}$ and aqueous NaOH, the electrophile that attacks the ring is:</stem>
+<opt>The dichloromethyl cation, $\ce{^+CHCl2}$</opt>
+<opt>Dichlorocarbene, $\ce{:CCl2}$</opt>
+<opt>The trichloromethyl anion, $\ce{^-CCl3}$</opt>
+<opt>The formyl cation, $\ce{HC#O+}$</opt>
+<sol><p>Base converts $\ce{CHCl3}$ to $\ce{CCl3-}$, which loses chloride to give dichlorocarbene. Its carbon has only a sextet of electrons, so it is electrophilic. ($\ce{CCl3-}$ is its precursor and is a nucleophile, not an electrophile.) <strong>Answer (B).</strong></p></sol>
+</q>
+
+<card>
+<h2>Three more reactions and a colour test</h2>
+<ul>
+<li><strong>Zinc dust</strong>: heating phenol with zinc dust removes the oxygen: $\ce{C6H5OH + Zn -> C6H6 + ZnO}$.</li>
+<li><strong>Oxidation</strong>: chromic acid ($\ce{Na2Cr2O7/H2SO4}$) oxidises phenol to <strong>benzoquinone</strong>, a yellow conjugated diketone. Even air slowly oxidises phenol, which is why old samples turn pink or dark.</li>
+<li><strong>Ferric chloride test</strong>: neutral $\ce{FeCl3}$ gives a <strong>violet</strong> colour with phenol (a coloured iron–phenoxide complex). Most phenols and enols give coloured complexes; alcohols and ethers do not.</li>
+</ul>
+<p><strong>Taming the ring.</strong> Converting the –OH into an ester (for example with methyl chloroformate, $\ce{ClCOOCH3}$, in NaOH) ties up the oxygen’s lone pair with a carbonyl group. The ring is still ortho/para directed, but much less activated — so it can now be brominated just once, mostly at the less crowded para position.</p>
+<callout kind="intuition" label="Beyond NCERT" title="Fries rearrangement">
+<p>Heating an aryl ester such as phenyl ethanoate with $\ce{AlCl3}$ moves the acyl group from oxygen onto the ring, giving o- and p-hydroxyacetophenone (more para at low temperature, more ortho at high temperature). It appears now and then in JEE Main conversion questions.</p>
+</callout>
+</card>
+
+<q type="single" answer="A" pyq="JEE Main 2018">
+<stem>Phenol reacts with methyl chloroformate, $\ce{ClCOOCH3}$, in the presence of NaOH to form product <strong>A</strong>. A reacts with $\ce{Br2}$ to form product <strong>B</strong>. A and B are respectively:</stem>
+<opt>$\ce{C6H5-O-COOCH3}$ and 4-bromophenyl methyl carbonate</opt>
+<opt>$\ce{C6H5-O-COOCH3}$ and 2,4,6-tribromophenyl methyl carbonate</opt>
+<opt>Methyl salicylate and its 5-bromo derivative</opt>
+<opt>Anisole and p-bromoanisole</opt>
+<sol><p>NaOH makes phenoxide, which attacks the C=O of methyl chloroformate and displaces chloride: <strong>A = methyl phenyl carbonate</strong>, $\ce{C6H5OCOOCH3}$. The –O–COOCH₃ group is still ortho/para directing, but its oxygen lone pair is shared with the carbonyl, so the ring is only mildly activated and takes one bromine, at the less hindered <strong>para</strong> position. <strong>Answer (A).</strong></p></sol>
+</q>
+
+<q type="multi" answer="A,C" title="Violet with ferric chloride">
+<stem>Which of these give a violet (or similar) colour with neutral $\ce{FeCl3}$ solution?</stem>
+<opt>Phenol</opt>
+<opt>Benzyl alcohol</opt>
+<opt>Salicylic acid</opt>
+<opt>Anisole</opt>
+<sol><p>The test needs a free phenolic –OH on the ring. Phenol and salicylic acid have one. Benzyl alcohol’s –OH is on a $\ce{CH2}$, not on the ring; anisole’s oxygen carries a methyl, not an H. <strong>Answer: A, C.</strong></p></sol>
+</q>
+
+<card>
+<callout kind="recap">
+<ul>
+<li>–OH: strongly activating, o/p-directing. Mild conditions, easy polysubstitution.</li>
+<li>Nitration: dil. $\ce{HNO3}$, 298 K → o- + p-nitrophenol (separate by steam distillation); conc. $\ce{HNO3}$ → picric acid (better via sulphonation first).</li>
+<li>Bromination: $\ce{Br2/CS2}$ (or $\ce{CHCl3}$), 273 K → mainly p-bromophenol; bromine water → 2,4,6-tribromophenol (white ppt). No Lewis acid.</li>
+<li>Sulphonation: ortho near room temperature, para at 373 K.</li>
+<li>Kolbe: phenoxide + $\ce{CO2}$ → salicylic acid (→ aspirin). Reimer–Tiemann: $\ce{CHCl3}$/NaOH, via $\ce{:CCl2}$ → salicylaldehyde.</li>
+<li>Zn dust → benzene; chromic acid → benzoquinone; $\ce{FeCl3}$ → violet.</li>
+</ul>
+</callout>
+</card>

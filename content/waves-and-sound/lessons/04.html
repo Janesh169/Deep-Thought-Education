@@ -1,0 +1,103 @@
+<card>
+<h2>Silence from sound</h2>
+<p>Noise-cancelling headphones use a small microphone to listen to the noise outside. A chip then plays the same sound back through the speaker, <strong>exactly upside down</strong>: a compression wherever the noise has a rarefaction. The two waves add to almost nothing, and the drone of an aircraft engine fades away.</p>
+<p>That works because of one simple rule.</p>
+<callout kind="key" title="The principle of superposition">
+<p>When two or more waves pass through the same place, the total displacement is the <strong>sum</strong> of the individual displacements: $y = y_1 + y_2 + \dots$ Afterwards, each wave carries on exactly as if the other had never been there.</p>
+</callout>
+</card>
+
+<card>
+<h2>Pulses passing through each other</h2>
+<p>Send a pulse from each end of a rope. Where they overlap, the rope’s shape is the sum of the two. Two upright pulses make one twice as tall for a moment. An upright pulse and an inverted one cancel, and the rope is flat for an instant. Then both pulses emerge unchanged and carry on.</p>
+<p>When they cancel, where does the energy go? The rope is flat, so there is no stretching energy, but it is <em>moving</em>: all the energy is kinetic for that instant.</p>
+<lab sim="wav-pulse-lab" title="Pulses meet and bounce" data-mode="meet">
+<p>Things to try. <strong>(1)</strong> Watch two upright pulses add, then pass through each other. <strong>(2)</strong> Flip the second pulse and they cancel for an instant. <strong>(3)</strong> Try the other modes now or after the reflection section below: <em>Fixed end</em>, <em>Free end</em> and the two joints.</p>
+</lab>
+</card>
+
+<card>
+<h2>Two waves of the same frequency</h2>
+<p>When two waves of the same frequency arrive at a point with a phase difference $\phi$, add them like the SHMs in the previous chapter, as rotating arrows:</p>
+$$A^2 = A_1^2 + A_2^2 + 2A_1A_2\cos\phi, \qquad I = I_1 + I_2 + 2\sqrt{I_1I_2}\cos\phi.$$
+<ul>
+<li><strong>Constructive</strong> ($\phi = 0, 2\pi, 4\pi \dots$): $A = A_1 + A_2$, the loudest possible.</li>
+<li><strong>Destructive</strong> ($\phi = \pi, 3\pi \dots$): $A = |A_1 - A_2|$, the quietest.</li>
+</ul>
+$$\frac{I_{\max}}{I_{\min}} = \left(\frac{A_1 + A_2}{A_1 - A_2}\right)^2 = \left(\frac{\sqrt{I_1} + \sqrt{I_2}}{\sqrt{I_1} - \sqrt{I_2}}\right)^2.$$
+<p>For two sources in phase, the phase difference at a point comes from the <strong>path difference</strong> $\Delta = |r_1 - r_2|$: $\phi = 2\pi\Delta/\lambda$. Loud where $\Delta = n\lambda$, quiet where $\Delta = (n + \tfrac12)\lambda$. If the sources are out of phase, the two rules swap.</p>
+</card>
+
+<lab sim="wav-ripple-lab" title="Two sources, one pond">
+<p>Things to try. <strong>(1)</strong> Turn on the <em>Loudness map</em>. The dark spokes are the quiet lines (nodal lines), where the path difference is a half-odd number of wavelengths. <strong>(2)</strong> Drag the microphone onto a bright band and onto a dark one, and read the path difference each time. <strong>(3)</strong> Pull the sources apart, or shorten the wavelength, and more bands appear. <strong>(4)</strong> Make the sources out of phase: loud and quiet swap places.</p>
+</lab>
+
+<q type="integer" answer="9" title="Max over min">
+<stem>Two coherent sound waves with intensities $I$ and $4I$ overlap. What is the ratio $I_{\max}/I_{\min}$?</stem>
+<sol><p>The amplitudes are in the ratio $1 : 2$. So $\dfrac{I_{\max}}{I_{\min}} = \left(\dfrac{1 + 2}{2 - 1}\right)^2 = 9$.</p></sol>
+</q>
+
+<q type="single" answer="B" title="Two loudspeakers">
+<stem>Two loudspeakers driven in phase emit a 680 Hz tone ($v = 340$ m/s). A listener is 3.00 m from one speaker and 4.25 m from the other. The sound there is</stem>
+<opt>loud: constructive interference</opt>
+<opt>quiet: destructive interference</opt>
+<opt>in between</opt>
+<opt>impossible to tell without the amplitudes</opt>
+<sol><p>$\lambda = 340/680 = 0.5\ \text{m}$. The path difference is $1.25\ \text{m} = 2.5\lambda$, a half-odd number of wavelengths, so the interference is destructive. <strong>Answer: B.</strong> If the speakers are equally loud there, it is nearly silent.</p></sol>
+</q>
+
+<q type="single" answer="C" title="Same frequency, different phase">
+<stem>Two waves $y_1 = a\sin(\omega t + \pi/6)$ and $y_2 = a\cos\omega t$ are superposed. The amplitude of the resultant is</stem>
+<opt>$a$</opt>
+<opt>$2a$</opt>
+<opt>$\sqrt3\,a$</opt>
+<opt>$\sqrt2\,a$</opt>
+<sol><p>$\cos\omega t = \sin(\omega t + \pi/2)$, so the phase difference is $\pi/2 - \pi/6 = \pi/3$. $A^2 = a^2 + a^2 + 2a^2\cos 60° = 3a^2$, so $A = \sqrt3\,a$. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Shoulders down">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Let your shoulders drop and your jaw loosen. Three slow breaths with the ring. Next: what happens when a wave hits the end of the road.</p>
+</callout>
+
+<card>
+<h2>Reflection</h2>
+<p>A wave arriving at a boundary is partly or wholly reflected. What the reflection looks like depends on what the boundary lets the medium do.</p>
+<tbl><table>
+<thead><tr><th>Boundary</th><th>Reflected wave</th><th>Transmitted wave</th></tr></thead>
+<tbody>
+<tr><td><strong>Fixed (rigid) end</strong>: a string clamped to a wall</td><td>inverted, phase change $\pi$</td><td>none</td></tr>
+<tr><td><strong>Free end</strong>: a ring sliding on a smooth rod</td><td>upright, no phase change</td><td>none</td></tr>
+<tr><td>Light string → <strong>heavier</strong> string (slower medium)</td><td>partly, inverted</td><td>upright, slower, shorter λ</td></tr>
+<tr><td>Heavy string → <strong>lighter</strong> string (faster medium)</td><td>partly, upright</td><td>upright, faster, longer λ</td></tr>
+</tbody>
+</table></tbl>
+<p>Why does a fixed end invert the pulse? The end can’t move, so the reflected wave must cancel the incoming one there at every instant, and only an inverted copy does that. The <strong>frequency never changes</strong> on reflection or transmission. The speed and wavelength change in the new medium.</p>
+<p>For sound in a pipe, a <strong>closed end</strong> acts like a fixed end for the air’s displacement. An <strong>open end</strong> acts roughly like a free end. That gives the organ pipes of Lesson 6.</p>
+<lab sim="wav-pulse-lab" title="Reflection: fixed ends, free ends and joints" data-mode="fixed">
+<p>Compare <em>Fixed end</em> with <em>Free end</em>: one comes back upside down, the other the right way up. At a joint, part of the pulse goes on. Into a heavier string, the reflection is inverted and the transmitted pulse is slower and narrower. Into a lighter string, everything stays upright and the transmitted pulse is faster and wider.</p>
+</lab>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2002">
+<stem>A wave $y = a\sin(\omega t - kx)$ on a string meets another wave, and together they produce a node at $x = 0$. The equation of the other wave is</stem>
+<opt>$y = a\sin(\omega t + kx)$</opt>
+<opt>$y = -a\sin(\omega t + kx)$</opt>
+<opt>$y = a\sin(\omega t - kx)$</opt>
+<opt>$y = -a\sin(\omega t - kx)$</opt>
+<hint>A node at $x = 0$ means the total displacement there is zero at every instant.</hint>
+<sol><p>The second wave must travel the other way (so $\omega t + kx$) and must exactly cancel the first at $x = 0$: $a\sin\omega t + y_2(0, t) = 0$ for all $t$. That gives $y_2 = -a\sin(\omega t + kx)$. This is exactly a wave reflected from a fixed end at $x = 0$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="multi" answer="A,C,D" title="Into a heavier string">
+<stem>A pulse travels along a light string into a much heavier string joined to it (same tension). Which statements are true?</stem>
+<opt>The reflected pulse is inverted</opt>
+<opt>The transmitted pulse is inverted</opt>
+<opt>The transmitted pulse moves more slowly than the incident one</opt>
+<opt>Any wave crossing the joint keeps its frequency</opt>
+<sol><p><strong>A, C, D.</strong> The heavy string behaves almost like a wall, so the reflection is inverted. The transmitted pulse is always upright. $v = \sqrt{T/\mu}$ is smaller in the heavy string, and the frequency is set by the source, so it is unchanged.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 4 in four lines">
+<p>Superposition: displacements add, and the waves pass through each other unchanged. For the same frequency, $A^2 = A_1^2 + A_2^2 + 2A_1A_2\cos\phi$ and $\phi = 2\pi\Delta/\lambda$. Loud at $\Delta = n\lambda$, quiet at $(n + \tfrac12)\lambda$. $I_{\max}/I_{\min} = ((A_1 + A_2)/(A_1 - A_2))^2$. Fixed end or slower medium: reflection inverted. Free end or faster medium: upright. Frequency never changes.</p>
+</callout>

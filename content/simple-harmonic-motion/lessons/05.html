@@ -1,0 +1,172 @@
+<card>
+<h2>The clock that changed the world</h2>
+<?py fig(240, 160,
+  ceiling(70, 170, 16) +
+  g(line(120, 16, 120, 132, 'ln') + bob(120, 132, 11), 'osc-swing', '--T:1.5s;--a:20deg;transform-origin:120px 16px') +
+  line(120, 16, 120, 150, 'ln thin dash'),
+  '', 'An animated pendulum swinging steadily') ?>
+<p>Before 1656 the best mechanical clocks drifted by many minutes a day. That year Christiaan Huygens used Galileo’s discovery, that a pendulum keeps a steady beat, to build the first pendulum clock. Its error dropped to seconds a day. For almost three centuries the most accurate clocks on Earth were pendulums.</p>
+<p>In this lesson you will derive why a pendulum keeps time, find where that stops being true, and see how lifts, cars, liquids and even the weather change the beat.</p>
+</card>
+
+<card>
+<h2>Deriving T = 2π√(L/g)</h2>
+<?py fig(320, 235,
+  ceiling(100, 200, 20) + pendulum(150, 20, 150, 25, 11, '', True, 'θ') +
+  arr(213.4, 155.9, 213.4, 218, 'ln wrn', 'ah-w') + lbl(222, 214, 'mg', 'it t-w', 'start') +
+  arr(213.4, 155.9, 177.1, 172.8, 'ln acc', 'ah-a') + lbl(172, 190, 'mg sin θ', 'it t-a', 'end') +
+  arr(213.4, 155.9, 194.4, 115.1, 'ln', 'ah') + lbl(205, 108, 'tension', 'sm', 'start') +
+  lbl(196, 96, 'L', 'it', 'start'),
+  'Only the part of the weight along the arc, mg sin θ, pulls the bob back. The string’s tension acts along the string and does no restoring.',
+  'A pendulum displaced by angle theta, showing its weight, the tangential component mg sin theta and the tension') ?>
+<p>A bob of mass $m$ hangs on a light string of length $L$. Pull it aside by an angle $\theta$. Along the arc, the only force is the tangential part of its weight, and it points back towards the bottom:</p>
+$$m\frac{d^2s}{dt^2} = -mg\sin\theta, \qquad s = L\theta \;\Rightarrow\; \frac{d^2\theta}{dt^2} = -\frac{g}{L}\sin\theta.$$
+<p>That is <em>not</em> SHM yet, because of the $\sin\theta$. But for small angles, $\sin\theta \approx \theta$ in radians, and then</p>
+$$\frac{d^2\theta}{dt^2} = -\frac{g}{L}\,\theta \qquad\Rightarrow\qquad \omega = \sqrt{\frac gL}, \quad T = 2\pi\sqrt{\frac Lg}.$$
+<derive tag="Same result" title="Using torque about the pivot">
+<p>Moment of inertia $I = mL^2$; the torque of gravity is $\tau = -mgL\sin\theta$. Then $I\ddot\theta = \tau$ gives $\ddot\theta = -(g/L)\sin\theta \approx -(g/L)\theta$. The torque method generalises to any swinging body, as you will see at the end of the lesson.</p>
+</derive>
+<p>The mass cancels completely: a heavy bob and a light bob on equal strings keep the same time. A <strong>seconds pendulum</strong>, with $T = 2\ \text{s}$ (one second per swing), needs $L = g/\pi^2 \approx 0.99\ \text{m}$. That is why old clock pendulums are about a metre long.</p>
+</card>
+
+<card>
+<h2>How small is “small”?</h2>
+<p>The exact period grows slowly with the amplitude $\theta_0$:</p>
+<tbl><table>
+<thead><tr><th>Amplitude $\theta_0$</th><th>5°</th><th>10°</th><th>20°</th><th>30°</th><th>60°</th><th>90°</th></tr></thead>
+<tbody><tr><td>True period exceeds $2\pi\sqrt{L/g}$ by</td><td>0.05%</td><td>0.19%</td><td>0.77%</td><td>1.7%</td><td>7.3%</td><td>18%</td></tr></tbody>
+</table></tbl>
+<p>Up to about 10–15°, the formula is excellent. The lab below runs the <em>true</em> pendulum equation (with $\sin\theta$) next to a ghostly SHM twin that follows $T = 2\pi\sqrt{L/g}$. Let them go together from 90° and watch the twin pull ahead.</p>
+</card>
+
+<lab sim="osc-pendulum-lab" title="A real pendulum and its SHM twin">
+<p>Things to try. <strong>(1)</strong> Press <em>Let go from 10°</em>: the bob and its dashed twin stay together for many swings. Now try 90°. <strong>(2)</strong> Make the lift accelerate upwards at +4.9 m/s² ($g/2$). The period drops by a factor $\sqrt{2/3}$. Then drop the lift’s acceleration to −9.8 m/s², which is free fall. <strong>(3)</strong> Give the car an acceleration. The pendulum hangs tilted and swings faster, about the new, slanted “down”. <strong>(4)</strong> Try the Moon: same length, period about 2.5 times longer.</p>
+</lab>
+
+<card>
+<h2>Effective gravity</h2>
+<p>In an accelerating frame, a pendulum doesn’t feel $g$. It feels the <strong>effective gravity</strong>: real gravity minus the frame’s acceleration, $\vec g_{\text{eff}} = \vec g - \vec a$. Then simply use $T = 2\pi\sqrt{L/g_{\text{eff}}}$.</p>
+<tbl><table>
+<thead><tr><th>Situation</th><th>$g_{\text{eff}}$</th><th>Period</th></tr></thead>
+<tbody>
+<tr><td>Lift accelerating <strong>up</strong> at $a$ (or slowing while going down)</td><td>$g + a$</td><td>shorter</td></tr>
+<tr><td>Lift accelerating <strong>down</strong> at $a$</td><td>$g - a$</td><td>longer</td></tr>
+<tr><td>Lift moving at constant velocity</td><td>$g$</td><td>unchanged</td></tr>
+<tr><td>Free fall</td><td>0</td><td>no oscillation at all</td></tr>
+<tr><td>Car accelerating horizontally at $a$</td><td>$\sqrt{g^2 + a^2}$</td><td>shorter; hangs tilted by $\tan^{-1}(a/g)$</td></tr>
+<tr><td>Bob (density $\sigma$) swinging in a liquid (density $\rho$), no drag</td><td>$g\left(1 - \frac{\rho}{\sigma}\right)$</td><td>longer (buoyancy)</td></tr>
+<tr><td>Charged bob in a downward field $E$</td><td>$g + \frac{qE}{m}$</td><td>shorter if $qE$ points down</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<q type="single" answer="D" pyq="JEE Main 2021">
+<stem>A simple pendulum in a stationary lift has period $T$. If the lift moves upwards with an acceleration of $g/2$, the period becomes</stem>
+<opt>$\sqrt3\,T$</opt>
+<opt>$T/\sqrt3$</opt>
+<opt>$\sqrt{3/2}\,T$</opt>
+<opt>$\sqrt{2/3}\,T$</opt>
+<sol><p>$g_{\text{eff}} = g + g/2 = 3g/2$, so $T' = 2\pi\sqrt{L/(3g/2)} = \sqrt{2/3}\,T$. <strong>Answer: D.</strong></p></sol>
+</q>
+
+<q type="single" answer="B" title="A pendulum in an accelerating car">
+<stem>A pendulum has period $T$ at rest. It hangs from the roof of a car accelerating horizontally at $a = g$. Its new period of small oscillations is</stem>
+<opt>$T/\sqrt2$</opt>
+<opt>$T/2^{1/4}$</opt>
+<opt>$T\sqrt2$</opt>
+<opt>$T$</opt>
+<hint>$g_{\text{eff}} = \sqrt{g^2 + a^2}$, and $T \propto g_{\text{eff}}^{-1/2}$.</hint>
+<sol><p>$g_{\text{eff}} = \sqrt{g^2 + g^2} = \sqrt2\,g$, so $T' = T/(\sqrt2)^{1/2} = T/2^{1/4} \approx 0.84\,T$. The pendulum swings about a line tilted 45° back from the vertical. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="single" answer="D" pyq="JEE Main 2019">
+<stem>A simple pendulum oscillating in air has period $T$. Its bob is then completely immersed in a non-viscous liquid whose density is $\tfrac{1}{16}$ of the density of the bob’s material. If the bob stays inside the liquid all the time, its period of oscillation in the liquid is</stem>
+<opt>$2T\sqrt{1/10}$</opt>
+<opt>$2T\sqrt{1/14}$</opt>
+<opt>$4T\sqrt{1/14}$</opt>
+<opt>$4T\sqrt{1/15}$</opt>
+<hint>Buoyancy reduces the effective weight: $g_{\text{eff}} = g(1 - \rho/\sigma)$.</hint>
+<sol><p>$g_{\text{eff}} = g\left(1 - \tfrac{1}{16}\right) = \tfrac{15}{16}g$, so $T' = T\sqrt{16/15} = 4T\sqrt{1/15}$. <strong>Answer: D.</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Stand up for a moment">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Stand, stretch your arms up and let them swing down loosely. Your arms are pendulums, and their natural rhythm is the one you walk at. Sit back down for the second half.</p>
+</callout>
+
+<card>
+<h2>What counts as the length</h2>
+<p>$L$ is the distance from the pivot to the <strong>centre of mass</strong> of the bob, not to the bottom of the bob. Anything that moves the centre of mass changes the period:</p>
+<ul>
+<li><strong>A child standing up on a swing</strong> raises their centre of mass, so $L$ falls and the period gets <em>shorter</em>.</li>
+<li><strong>A hollow bob full of water, leaking from a hole at the bottom:</strong> as the water drains, the centre of mass first <em>drops</em> (the water left is low down), so $T$ increases. Once nearly empty, the centre of mass rises back to the centre of the shell, so $T$ decreases again.</li>
+<li><strong>Temperature:</strong> a metal rod expands when warm. $L$ grows by $L\alpha\Delta\theta$, so $T$ grows by the fraction $\tfrac12\alpha\Delta\theta$ and the clock <em>loses</em> time in summer.</li>
+</ul>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2002">
+<stem>A child is swinging on a swing while sitting down. If the child stands up, the period of the swing will</stem>
+<opt>increase</opt>
+<opt>decrease</opt>
+<opt>stay the same</opt>
+<opt>increase if the child is tall and decrease if short</opt>
+<sol><p>Standing raises the child’s centre of mass, so the effective length shortens and $T = 2\pi\sqrt{L/g}$ decreases. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="single" answer="C" pyq="AIEEE 2005">
+<stem>The bob of a simple pendulum is a hollow sphere filled with water. A plugged hole near the bottom of the oscillating bob is suddenly unplugged. While water is flowing out, the period of oscillation will</stem>
+<opt>stay the same</opt>
+<opt>increase towards a fixed value</opt>
+<opt>first increase and then decrease</opt>
+<opt>first decrease and then increase</opt>
+<sol><p>Full: the centre of mass is at the centre of the sphere. Partly empty: the remaining water sits low, so the centre of mass is lower and the effective length is longer, which means a longer period. Empty: the centre of mass is back at the centre. So $L$, and with it $T$, first rises and then falls back to its starting value. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="numeric" answer="17.3" tol="0.3" title="Summer clock">
+<stem>A pendulum clock with a brass rod ($\alpha = 2\times10^{-5}\ {}^\circ\text{C}^{-1}$) keeps correct time at 20 °C. How many seconds per day does it lose at 40 °C? (1 decimal place.)</stem>
+<hint>$\dfrac{\Delta T}{T} = \tfrac12\alpha\Delta\theta$. A day has 86 400 s.</hint>
+<sol><p>$\dfrac{\Delta T}{T} = \tfrac12 \times 2\times10^{-5} \times 20 = 2\times10^{-4}$. Each tick takes a little longer, so in a day the clock falls behind by $86\,400 \times 2\times10^{-4} \approx 17.3\ \text{s}$.</p></sol>
+</q>
+
+<card>
+<h2>A wire that stretches</h2>
+<p>If the string is a wire with Young’s modulus $Y$ and cross-section $A$, the weight stretches it by $\Delta L = \dfrac{MgL}{AY}$. A heavier bob means a longer wire and a slightly longer period. Since $T \propto \sqrt{L}$, timing two different bobs lets you measure $Y$.</p>
+</card>
+
+<q type="single" answer="A" pyq="JEE Main 2015">
+<stem>A pendulum made of a uniform wire of cross-sectional area $A$ has period $T$. When an extra mass $M$ is added to its bob, the period becomes $T_M$. If $Y$ is the Young’s modulus of the wire, then $1/Y$ equals</stem>
+<opt>$\left[\left(\dfrac{T_M}{T}\right)^2 - 1\right]\dfrac{A}{Mg}$</opt>
+<opt>$\left[\left(\dfrac{T_M}{T}\right)^2 - 1\right]\dfrac{Mg}{A}$</opt>
+<opt>$\left[1 - \left(\dfrac{T_M}{T}\right)^2\right]\dfrac{A}{Mg}$</opt>
+<opt>$\left[1 - \left(\dfrac{T}{T_M}\right)^2\right]\dfrac{A}{Mg}$</opt>
+<hint>$(T_M/T)^2 = (L + \Delta L)/L$ with $\Delta L = MgL/(AY)$.</hint>
+<sol><p>$\left(\dfrac{T_M}{T}\right)^2 = \dfrac{L + \Delta L}{L} = 1 + \dfrac{Mg}{AY}$. Rearranging: $\dfrac1Y = \left[\left(\dfrac{T_M}{T}\right)^2 - 1\right]\dfrac{A}{Mg}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<card>
+<h2>Swinging solid bodies</h2>
+<p>A real body swinging about a pivot, such as a rod, a ring or a ruler, is a <strong>physical (compound) pendulum</strong>. Let $d$ be the distance from the pivot to the centre of mass and $I$ the moment of inertia about the pivot. The torque gives $I\ddot\theta = -mgd\,\theta$ for small angles, so</p>
+$$T = 2\pi\sqrt{\frac{I}{mgd}}.$$
+<tbl><table>
+<thead><tr><th>Body, pivot</th><th>$I$ about the pivot</th><th>$d$</th><th>$T$</th></tr></thead>
+<tbody>
+<tr><td>Point bob on a string</td><td>$mL^2$</td><td>$L$</td><td>$2\pi\sqrt{L/g}$</td></tr>
+<tr><td>Uniform rod, pivot at one end</td><td>$\tfrac13mL^2$</td><td>$L/2$</td><td>$2\pi\sqrt{\dfrac{2L}{3g}}$</td></tr>
+<tr><td>Ring hung on a nail</td><td>$2mR^2$</td><td>$R$</td><td>$2\pi\sqrt{\dfrac{2R}{g}}$</td></tr>
+<tr><td>Disc, pivot at its rim</td><td>$\tfrac32mR^2$</td><td>$R$</td><td>$2\pi\sqrt{\dfrac{3R}{2g}}$</td></tr>
+</tbody>
+</table></tbl>
+<callout kind="intuition" title="Equivalent length">
+<p>A rod of length $L$ swings like a simple pendulum of length $\tfrac23L$. Part of its mass is close to the pivot and barely moves, so it behaves as if it were shorter.</p>
+</callout>
+</card>
+
+<q type="numeric" answer="1.99" tol="0.02" title="A swinging rod">
+<stem>A uniform rod 1.5 m long swings about a horizontal axis through one end. Find its period for small oscillations, in seconds. Take $g = 10\ \text{m s}^{-2}$ and give 2 decimal places.</stem>
+<hint>$T = 2\pi\sqrt{2L/3g}$.</hint>
+<sol><p>$T = 2\pi\sqrt{\dfrac{2\times1.5}{3\times10}} = 2\pi\sqrt{0.1} = 2\pi \times 0.316 \approx 1.99\ \text{s}$.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 5 in five lines">
+<p>$T = 2\pi\sqrt{L/g}$ for small angles. It is independent of the mass and nearly independent of the amplitude below about 15°. In any accelerating frame, use $g_{\text{eff}} = |\vec g - \vec a|$: free fall means no oscillation, and in a liquid $g_{\text{eff}} = g(1 - \rho/\sigma)$. $L$ is measured to the centre of mass, and heat lengthens $L$. Solid bodies: $T = 2\pi\sqrt{I/mgd}$.</p>
+</callout>

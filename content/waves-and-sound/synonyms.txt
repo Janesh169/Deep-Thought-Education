@@ -1,0 +1,19 @@
+# One group per line: words or phrases a search should treat as the same thing.
+wavelength | lambda
+wave number | propagation constant | angular wave number
+progressive wave | travelling wave | traveling wave
+standing wave | stationary wave
+fundamental | first harmonic
+overtone | higher harmonic
+closed pipe | closed organ pipe | stopped pipe
+open pipe | open organ pipe
+resonance tube | resonance column
+end correction | end effect
+sonometer | sonometer wire
+beat frequency | beats per second
+doppler | doppler effect | doppler shift
+mach | mach number | sonic boom
+laplace correction | laplace
+newton formula | newton speed of sound
+linear mass density | mass per unit length
+compression | condensation

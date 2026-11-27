@@ -1,0 +1,79 @@
+<card>
+<h2>The whole chapter on one screen</h2>
+<tbl><table>
+<thead><tr><th>Idea</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Test for SHM</td><td>$a = -\omega^2 x$ (or $\alpha = -\omega^2\theta$), with $T = 2\pi/\omega$</td></tr>
+<tr><td>Motion</td><td>$x = A\sin(\omega t + \phi)$, $v = \pm\omega\sqrt{A^2 - x^2}$, $v_{\max} = A\omega$, $a_{\max} = A\omega^2$</td></tr>
+<tr><td>Phase</td><td>$v$ leads $x$ by $\pi/2$, $a$ leads $x$ by $\pi$. Time = angle on the reference circle ÷ ω.</td></tr>
+<tr><td>Energy</td><td>$U = \tfrac12kx^2$, $K = \tfrac12k(A^2 - x^2)$, $E = \tfrac12m\omega^2A^2$. $K = U$ at $x = \pm A/\sqrt2$. Each oscillates at $2f$.</td></tr>
+<tr><td>Spring</td><td>$T = 2\pi\sqrt{m/k}$. Vertical: $T = 2\pi\sqrt{d/g}$. Parallel and both-sides: $k_1 + k_2$. Series: $\frac{k_1k_2}{k_1 + k_2}$. Cut to $1/n$: $nk$.</td></tr>
+<tr><td>Two bodies</td><td>$T = 2\pi\sqrt{\mu/k}$, $\mu = \frac{m_1m_2}{m_1 + m_2}$</td></tr>
+<tr><td>Pendulum</td><td>$T = 2\pi\sqrt{L/g_{\text{eff}}}$, with $\vec g_{\text{eff}} = \vec g - \vec a$. In a liquid: $g(1 - \rho/\sigma)$.</td></tr>
+<tr><td>Physical pendulum</td><td>$T = 2\pi\sqrt{I/mgd}$. Rod about its end: $2\pi\sqrt{2L/3g}$.</td></tr>
+<tr><td>Any valley</td><td>$\omega^2 = U''(x_0)/m$</td></tr>
+<tr><td>U-tube · floating block · Earth tunnel</td><td>$2\pi\sqrt{\ell/2g}$ · $2\pi\sqrt{h/g}$ · $2\pi\sqrt{R/g} \approx 84$ min</td></tr>
+<tr><td>Adding SHMs on one line</td><td>$R^2 = A_1^2 + A_2^2 + 2A_1A_2\cos\delta$</td></tr>
+<tr><td>Damping</td><td>Amplitude $\propto e^{-bt/2m}$, energy $\propto e^{-bt/m}$</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<callout kind="trap" title="Eight traps examiners like">
+<p><strong>1.</strong> In SHM the period does not depend on amplitude. A real pendulum at large angles is not SHM. <strong>2.</strong> $K = U$ at $A/\sqrt2$, not $A/2$. <strong>3.</strong> Half the distance is not half the time: $0 \to A/2$ takes $T/12$. <strong>4.</strong> $\sin\phi = \tfrac12$ has two answers, and the direction of motion picks one. <strong>5.</strong> Decide between series and parallel by asking whether the springs share the stretch or the force. <strong>6.</strong> A pendulum’s $L$ runs to the centre of mass. <strong>7.</strong> In free fall a pendulum doesn’t oscillate at all. <strong>8.</strong> Convert grams to kilograms before using $k = m\omega^2$.</p>
+</callout>
+
+<lab sim="osc-rush-lab" title="SHM Rush">
+<p>Twelve quick questions drawn from the whole chapter, with 15 seconds each. Fast answers score bonus points and a streak adds more. Anything you miss comes back once later in the round. Your best score is kept on this device. Keys 1, 2 and 3 work too.</p>
+</lab>
+
+<callout kind="breather" title="Victory lap">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>However the game went, you now know more about oscillations than most people ever will. One slow breath, then the final round of past papers.</p>
+</callout>
+
+<q type="single" answer="C" pyq="JEE Main 2019">
+<stem>A particle executes SHM of amplitude $A$ along the x-axis about $x = 0$. When its potential energy equals its kinetic energy, its position is</stem>
+<opt>$A/2$</opt>
+<opt>$A/(2\sqrt2)$</opt>
+<opt>$A/\sqrt2$</opt>
+<opt>$A$</opt>
+<sol><p>$\tfrac12kx^2 = \tfrac12\cdot\tfrac12kA^2$ gives $x = A/\sqrt2$. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="numeric" answer="0.33" tol="0.01" pyq="JEE Main 2019">
+<stem>A particle in SHM has displacement $x(t) = A\sin(\pi t/90)$, with $t$ in seconds. Find the ratio of its kinetic energy to its potential energy at $t = 210\ \text{s}$ (2 decimal places).</stem>
+<hint>Find the phase $\pi t/90$ at $t = 210$, then use $K/U = \cot^2(\text{phase})$.</hint>
+<sol><p>Phase $= 210\pi/90 = 7\pi/3 = 2\pi + \pi/3$, which is the same as $\pi/3$. $U \propto \sin^2(\pi/3) = \tfrac34$ and $K \propto \cos^2(\pi/3) = \tfrac14$, so $K/U = \tfrac13 \approx 0.33$.</p></sol>
+</q>
+
+<q type="integer" answer="12" title="Average velocity">
+<stem>A body in SHM has period 0.5 s and amplitude 1 cm. Find its average velocity, in cm/s, as it moves from the mean position to half of its amplitude.</stem>
+<hint>Time from 0 to $A/2$ is $T/12$.</hint>
+<sol><p>Displacement $= 0.5\ \text{cm}$ and time $= T/12 = 0.5/12 = 1/24\ \text{s}$, so the average velocity is $0.5 \times 24 = 12\ \text{cm/s}$.</p></sol>
+</q>
+
+<q type="single" answer="A" title="The jumping coin">
+<stem>A coin rests on a horizontal platform that moves up and down in SHM with angular frequency $\omega$. The amplitude is slowly increased. The coin first loses contact with the platform</stem>
+<opt>at the highest position, when the amplitude reaches $g/\omega^2$</opt>
+<opt>at the lowest position, when the amplitude reaches $g/\omega^2$</opt>
+<opt>at the mean position, when the amplitude reaches $g/\omega$</opt>
+<opt>at the highest position, when the amplitude reaches $g/\omega$</opt>
+<hint>The coin can be pushed up by the platform but never pulled down by it. Its downward acceleration can’t exceed $g$.</hint>
+<sol><p>At the top, the platform accelerates <em>downward</em> at $\omega^2A$. The coin can only fall at $g$. Once $\omega^2A > g$, the platform drops away faster than the coin can follow, so contact is lost there first, at $A = g/\omega^2$. At the bottom the platform pushes up harder, so contact is safest there. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="integer" answer="20" title="Kick at the mean">
+<stem>A 1 kg block on a smooth floor is attached to a spring with $k = 100\ \text{N m}^{-1}$. At rest at its mean position, it is given a speed of 2 m/s. What is the amplitude of the resulting SHM, in cm?</stem>
+<sol><p>$\omega = \sqrt{k/m} = 10\ \text{rad/s}$. At the mean position $v_{\max} = A\omega$, so $A = 2/10 = 0.2\ \text{m} = 20\ \text{cm}$.</p></sol>
+</q>
+
+<q type="integer" answer="10" title="Sine plus cosine, speed">
+<stem>A particle moves as $x = 3\sin 2t + 4\cos 2t$ (metres, seconds). What is its greatest speed, in m/s?</stem>
+<sol><p>The amplitude is $\sqrt{3^2 + 4^2} = 5\ \text{m}$ and $\omega = 2\ \text{rad/s}$, so $v_{\max} = A\omega = 10\ \text{m/s}$.</p></sol>
+</q>
+
+<card>
+<h2>Where this goes next</h2>
+<p>Now connect a long row of oscillators, each tugging on the next, as in a string, the air or the ground. A disturbance passes from one to the next, and that is a <strong>wave</strong>. Everything in this chapter, including phase, the reference circle, energy $\propto A^2$, superposition and resonance, comes straight back in <a href="#/c/waves-and-sound">Waves &amp; Sound</a>.</p>
+</card>

@@ -1,0 +1,166 @@
+<card>
+<h2>Jump into a hole through the Earth</h2>
+<p>Puzzle books have asked this for centuries. Drill a straight tunnel through the centre of the Earth, pump out the air and jump in. What happens?</p>
+<p>You fall faster and faster until you pass the centre at about 8 km/s. Then you slow down and come to rest exactly at the other side, where you could step out in the antipodes. If you don’t step out, you fall back. You are oscillating, and the trip there and back takes about <strong>84 minutes</strong>, whatever tunnel you choose.</p>
+<p>This lesson gives you one method that finds the period of <em>any</em> oscillator, including that one.</p>
+</card>
+
+<card>
+<h2>The three-step recipe</h2>
+<ol>
+<li><strong>Find the equilibrium</strong>, where the net force (or torque) is zero.</li>
+<li><strong>Displace the body by a small $x$</strong> (or $\theta$) and write the net restoring force. Keep only first-order terms in $x$.</li>
+<li><strong>Write it as $a = -\omega^2x$.</strong> Whatever multiplies $x$ is $\omega^2$.</li>
+</ol>
+<p>It is always some form of</p>
+$$T = 2\pi\sqrt{\frac{\text{inertia factor}}{\text{restoring factor}}},$$
+<p>where the “restoring factor” is the extra force per unit displacement (the effective $k$) and the “inertia factor” is the mass that actually moves.</p>
+</card>
+
+<card>
+<h2>The U-tube</h2>
+<?py fig(330, 205,
+  path('M100 72 L100 140 A50 50 0 0 0 200 140 L200 108 L180 108 L180 140 A30 30 0 0 1 120 140 L120 72 Z', 'shade') +
+  path('M100 28 L100 140 A50 50 0 0 0 200 140 L200 28', 'ln') + path('M120 28 L120 140 A30 30 0 0 0 180 140 L180 28', 'ln') +
+  line(80, 90, 230, 90, 'ln thin dash') + dim(222, 72, 222, 108, '2y', -14) +
+  arr(110, 60, 110, 84, 'ln wrn', 'ah-w') + lbl(76, 94, 'equilibrium', 'sm', 'end') + note(150, 200, 'total liquid column length ℓ'),
+  'Lift one side by y and the other drops by y. The extra column of height 2y is pulled down by gravity, and that pushes the whole liquid back.',
+  'A U-tube with liquid displaced: one side is y above equilibrium and the other y below') ?>
+<p>Push the liquid so the left side rises by $y$ and the right side falls by $y$. An extra column of height $2y$ is now unbalanced. Its weight, $\rho A(2y)g$, drives the <em>whole</em> liquid column (mass $\rho A\ell$) back:</p>
+$$\rho A\ell\,\ddot y = -2\rho Ag\,y \quad\Rightarrow\quad \omega^2 = \frac{2g}{\ell}, \qquad T = 2\pi\sqrt{\frac{\ell}{2g}}.$$
+<p>The density and the cross-section both cancel. Only the length of the liquid column matters.</p>
+</card>
+
+<q type="numeric" answer="0.99" tol="0.01" title="Sloshing in a U-tube">
+<stem>The liquid in a U-tube has a total column length of 50 cm. It is disturbed and left to oscillate. Find the period in seconds. Take $g = 10\ \text{m s}^{-2}$ and give 2 decimal places.</stem>
+<sol><p>$T = 2\pi\sqrt{\ell/2g} = 2\pi\sqrt{0.5/20} = 2\pi \times 0.158 \approx 0.99\ \text{s}$.</p></sol>
+</q>
+
+<card>
+<h2>A floating block</h2>
+<?py fig(280, 185,
+  line(40, 30, 40, 170, 'ln') + line(40, 170, 240, 170, 'ln') + line(240, 170, 240, 30, 'ln') +
+  path('M41 82 L239 82 L239 169 L41 169 Z', 'shade') + line(41, 82, 239, 82, 'ln acc') +
+  block(105, 52, 70, 90, '') + dim(188, 82, 188, 142, 'h', -10) +
+  arr(140, 160, 140, 122, 'ln wrn', 'ah-w') + lbl(146, 158, 'buoyancy', 'sm t-w', 'start'),
+  'At equilibrium the block floats with depth h under water. Push it down by y and the buoyancy grows by ρAgy.',
+  'A block floating in a tank with depth h submerged') ?>
+<p>A block of cross-section $A$, height $H$ and density $\sigma$ floats in liquid of density $\rho$ with a depth $h$ under water. At equilibrium, buoyancy equals weight: $\rho Ahg = \sigma AHg$. Push it down by $y$: the extra buoyancy $\rho Agy$ pushes it back up.</p>
+$$\sigma AH\,\ddot y = -\rho Ag\,y \quad\Rightarrow\quad T = 2\pi\sqrt{\frac{\sigma H}{\rho g}} = 2\pi\sqrt{\frac{h}{g}}.$$
+<p>As with the spring, only the depth it sits at matters: a block floating with depth $h$ bobs like a pendulum of length $h$.</p>
+</card>
+
+<q type="single" answer="A" pyq="AIEEE 2011">
+<stem>A wooden cube of side $l$ and density $d$ floats in a liquid of density $\rho$ with its top and bottom faces horizontal. If the cube is pushed slightly down and released, it performs SHM of period $T$. Then $T$ equals</stem>
+<opt>$2\pi\sqrt{\dfrac{ld}{\rho g}}$</opt>
+<opt>$2\pi\sqrt{\dfrac{l\rho}{dg}}$</opt>
+<opt>$2\pi\sqrt{\dfrac{ld}{(\rho - d)g}}$</opt>
+<opt>$2\pi\sqrt{\dfrac{l\rho}{(\rho - d)g}}$</opt>
+<sol><p>Mass $= l^3d$ and restoring force $= \rho l^2g\,y$, so $\omega^2 = \rho g/(ld)$ and $T = 2\pi\sqrt{ld/(\rho g)}$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="single" answer="C" pyq="AIEEE 2010">
+<stem>A uniform cylinder of length $L$, mass $M$ and cross-sectional area $A$ hangs vertically from a light spring of constant $k$. At equilibrium it is half submerged in a liquid of density $\sigma$. When it is pushed down slightly and released, its frequency of oscillation is</stem>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{k - A\sigma g}{M}}$</opt>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{k}{M}}$</opt>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{k + A\sigma g}{M}}$</opt>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{k + A\sigma gL/2}{M}}$</opt>
+<hint>Push it down by $x$. Two things push back: the spring and the extra buoyancy.</hint>
+<sol><p>Displacing it down by $x$ adds a spring force $kx$ and an extra buoyancy $A\sigma gx$, both upward. The effective $k$ is $k + A\sigma g$, so $f = \dfrac{1}{2\pi}\sqrt{\dfrac{k + A\sigma g}{M}}$. “Half submerged” only fixes the equilibrium, not the stiffness. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<lab sim="osc-systems-lab" title="SHM in disguise">
+<p>Pick a system and watch the restoring force (yellow) grow with the displacement and always point back. Things to try. <strong>(1)</strong> U-tube: make the column four times longer and the period doubles. <strong>(2)</strong> Floating block: a lighter wood floats higher, with a smaller $h$, and bobs faster. <strong>(3)</strong> Tunnel: move the tunnel off-centre. The trip gets shorter, but so does the push along it, and the period stays at 84 minutes. <strong>(4)</strong> Gas spring: compare $\gamma = 1$ (slow, isothermal squeezes) with $\gamma = 1.4$ (fast, adiabatic ones).</p>
+</lab>
+
+<card>
+<h2>The tunnel through the Earth</h2>
+<p>Inside a uniform Earth, only the mass <em>closer to the centre</em> than you pulls on you (the shell theorem). That mass shrinks as $r^3$ while the distance squared shrinks as $r^2$, so gravity inside falls off <strong>linearly</strong>:</p>
+$$g(r) = g\,\frac{r}{R}.$$
+<p>In a straight tunnel at any distance from the centre, the component of this pull along the tunnel is $-\dfrac{mg}{R}x$, where $x$ is measured from the tunnel’s midpoint. That is a perfect spring with $k = mg/R$:</p>
+$$T = 2\pi\sqrt{\frac Rg} = 2\pi\sqrt{\frac{6.4\times10^6}{9.8}} \approx 84\ \text{min}.$$
+<p>That is also the period of a satellite skimming the Earth’s surface. The satellite’s shadow on a diameter <em>is</em> the tunnel motion: one more reference circle.</p>
+</card>
+
+<q type="single" answer="B" title="Halfway down">
+<stem>A ball is dropped into a smooth, airless tunnel through the Earth’s centre. About how long does it take to reach the centre?</stem>
+<opt>a few seconds</opt>
+<opt>21 min</opt>
+<opt>42 min</opt>
+<opt>84 min</opt>
+<sol><p>Surface to centre is from the extreme to the mean position, a quarter of a period: $84/4 \approx 21$ min. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<card>
+<h2>A gas spring</h2>
+<p>A piston of mass $M$ sits on a column of gas (volume $V_0$, pressure $P_0$) in a cylinder of area $A$. Push the piston down by $x$ and the volume shrinks by $Ax$. If the squeeze is fast and the cylinder is insulated, the process is adiabatic, $PV^\gamma = \text{const}$, so $\Delta P = -\gamma P_0\,\dfrac{\Delta V}{V_0} = \gamma P_0\,\dfrac{Ax}{V_0}$. The extra upward force is $A\,\Delta P$:</p>
+$$F = -\frac{\gamma P_0A^2}{V_0}\,x \quad\Rightarrow\quad f = \frac{1}{2\pi}\sqrt{\frac{\gamma P_0A^2}{MV_0}}.$$
+<p>For a slow, isothermal squeeze, replace $\gamma$ by 1.</p>
+</card>
+
+<q type="single" answer="A" pyq="JEE Main 2013">
+<stem>An ideal gas in a vertical cylinder supports a freely moving piston of mass $M$. The piston and the cylinder have the same cross-sectional area $A$. At equilibrium the gas has volume $V_0$ and pressure $P_0$. The piston is displaced slightly and released. If the system is completely isolated from its surroundings, the piston performs SHM with frequency</stem>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{\gamma P_0A^2}{MV_0}}$</opt>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{P_0A^2}{MV_0}}$</opt>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{MV_0}{\gamma P_0A^2}}$</opt>
+<opt>$\dfrac{1}{2\pi}\sqrt{\dfrac{\gamma P_0A}{MV_0}}$</opt>
+<hint>“Completely isolated” means no heat flows, so the process is adiabatic.</hint>
+<sol><p>Adiabatic: $\Delta P = \gamma P_0Ax/V_0$, so the restoring force is $(\gamma P_0A^2/V_0)\,x$ and $\omega^2 = \gamma P_0A^2/(MV_0)$. <strong>Answer: A.</strong> Option B is the isothermal answer, and option D has the wrong dimensions (check it: you need $A^2$).</p></sol>
+</q>
+
+<callout kind="breather" title="Hands off the keyboard">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Open and close your hands five times, slowly. Then three breaths with the ring. The second half of this lesson is pure geometry, and it is pretty.</p>
+</callout>
+
+<card>
+<h2>Adding two SHMs along one line</h2>
+<p>When a body is pushed by two SHMs of the <strong>same frequency</strong> along the same line, say $x_1 = A_1\sin\omega t$ and $x_2 = A_2\sin(\omega t + \delta)$, add them as <strong>rotating arrows (phasors)</strong>. Both arrows spin together at $\omega$, so the angle between them never changes, and their sum is one arrow of fixed length spinning at $\omega$. The result is a single SHM:</p>
+$$R = \sqrt{A_1^2 + A_2^2 + 2A_1A_2\cos\delta}, \qquad \tan\alpha = \frac{A_2\sin\delta}{A_1 + A_2\cos\delta}.$$
+<ul>
+<li>In phase ($\delta = 0$): $R = A_1 + A_2$. Out of phase ($\delta = \pi$): $R = |A_1 - A_2|$.</li>
+<li>$\delta = \pi/2$: $R = \sqrt{A_1^2 + A_2^2}$, the sine-plus-cosine rule from Lesson 2.</li>
+<li><strong>Different frequencies</strong>: the angle between the arrows keeps changing, so the sum is <em>not</em> SHM. Its amplitude pulses, which you will meet again as <em>beats</em> in sound.</li>
+</ul>
+</card>
+
+<q type="integer" answer="5" title="Three, four, five">
+<stem>A particle is subjected to $x_1 = 3\sin\omega t$ cm and $x_2 = 4\cos\omega t$ cm along the same line. What is the amplitude of its resulting motion, in cm?</stem>
+<sol><p>$\cos\omega t = \sin(\omega t + \pi/2)$, so $\delta = 90°$ and $R = \sqrt{9 + 16} = 5\ \text{cm}$.</p></sol>
+</q>
+
+<q type="single" answer="C" title="Three equal arrows">
+<stem>Two SHMs along one line have equal amplitudes $A$ and a phase difference of $2\pi/3$. The amplitude of the resultant motion is</stem>
+<opt>$0$</opt>
+<opt>$A/2$</opt>
+<opt>$A$</opt>
+<opt>$\sqrt3A$</opt>
+<sol><p>$R^2 = A^2 + A^2 + 2A^2\cos 120° = 2A^2 - A^2 = A^2$, so $R = A$. The two arrows and their sum form an equilateral triangle. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<card>
+<h2>Two SHMs at right angles</h2>
+<p>Now push a body with one SHM along $x$ and another along $y$: $x = A_1\sin\omega_1t$ and $y = A_2\sin(\omega_2t + \delta)$. The path it traces depends on the frequency ratio and the phase:</p>
+<ul>
+<li>Same frequency, $\delta = 0$ or $\pi$: a <strong>straight line</strong> ($y = \pm\frac{A_2}{A_1}x$).</li>
+<li>Same frequency, $\delta = \pi/2$: an <strong>ellipse</strong> with its axes along $x$ and $y$, and a <strong>circle</strong> if $A_1 = A_2$. That is circular motion rebuilt from two SHMs, the reference circle run backwards.</li>
+<li>Other $\delta$: a tilted ellipse.</li>
+<li>Frequencies in a whole-number ratio such as 1 : 2 or 2 : 3: closed loops called <strong>Lissajous figures</strong>, once used to compare frequencies on an oscilloscope.</li>
+</ul>
+<lab sim="osc-combine-lab" title="Adding SHMs: phasors and Lissajous figures">
+<p><strong>Same line:</strong> drag $\delta$ from 0° to 180° and watch the resultant arrow shrink from $A_1 + A_2$ to $|A_1 - A_2|$. Its projection (yellow) is always a clean sine. <strong>At right angles:</strong> with ratio 1 : 1, step $\delta$ through 0°, 45° and 90° to get a line, an ellipse and a circle (set $A_1 = A_2$). Then try 1 : 2 for a figure of eight and 2 : 3 for a pretzel.</p>
+</lab>
+</card>
+
+<q type="single" answer="B" title="Two SHMs at right angles">
+<stem>A particle moves so that $x = 2\sin\omega t$ and $y = 2\sin(\omega t + \pi/2)$. Its path is</stem>
+<opt>a straight line through the origin</opt>
+<opt>a circle of radius 2</opt>
+<opt>an ellipse with unequal axes</opt>
+<opt>a figure of eight</opt>
+<sol><p>$y = 2\cos\omega t$, so $x^2 + y^2 = 4$: a circle of radius 2, traced at angular speed $\omega$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 6 in five lines">
+<p>The recipe: find the equilibrium, displace by $x$, get $a = -\omega^2x$. U-tube: $T = 2\pi\sqrt{\ell/2g}$. Floating block: $T = 2\pi\sqrt{h/g}$. Earth tunnel: $2\pi\sqrt{R/g} \approx 84$ min for every chord. Gas spring: $\omega^2 = \gamma P_0A^2/MV_0$. Same-frequency SHMs add like arrows, $R^2 = A_1^2 + A_2^2 + 2A_1A_2\cos\delta$. At right angles they give lines, ellipses, circles and Lissajous figures.</p>
+</callout>

@@ -1,0 +1,143 @@
+<card>
+<h2>The trampoline trade</h2>
+<p>At the top of a bounce on a trampoline you hang still for an instant: no speed, and all the energy stored in your height. As you sink into the mat, that energy goes into the stretched springs. In between, you are moving at full speed. An oscillator works the same way: it keeps <strong>trading the same energy back and forth</strong> between motion and storage.</p>
+<p>For a spring, the stored energy is the work done in stretching it, and the energy of motion is the usual $\tfrac12mv^2$:</p>
+$$U = \tfrac12kx^2, \qquad K = \tfrac12mv^2 = \tfrac12m\omega^2(A^2 - x^2) = \tfrac12k(A^2 - x^2).$$
+<p>Add them and every $x$ cancels:</p>
+$$E = K + U = \tfrac12kA^2 = \tfrac12m\omega^2A^2.$$
+<callout kind="key" title="Total energy">
+<p>$E = \tfrac12 m\omega^2A^2$ is constant and grows as the <strong>square</strong> of the amplitude. Double the amplitude and you store four times the energy.</p>
+</callout>
+</card>
+
+<card>
+<h2>Energy against position</h2>
+<?py fig(430, 200,
+  line(40, 165, 395, 165, 'ln thin') + line(210, 20, 210, 170, 'ln thin') +
+  curve(lambda u: u * u, -1, 1, 210, 165, 150, 125, 80, 'ln vio') +
+  curve(lambda u: 1 - u * u, -1, 1, 210, 165, 150, 125, 80, 'ln acc') +
+  line(60, 40, 360, 40, 'ln dash') +
+  dot(103.9, 102.5, 3.5) + dot(316.1, 102.5, 3.5) + line(316.1, 102.5, 316.1, 165, 'ln thin dash') +
+  lbl(316, 180, 'A/√2', 'sm') + lbl(60, 180, '−A', 'sm') + lbl(360, 180, '+A', 'sm') + var(398, 169, 'x', 'it', 'start') +
+  lbl(368, 36, 'E = ½kA²', 'sm', 'start') + lbl(366, 62, 'U = ½kx²', 'sm t-v', 'start') + lbl(222, 30, 'K', 'sm t-a', 'start'),
+  'Potential energy (coral) is a bowl and kinetic energy (aqua) is an upside-down bowl. Together they always add up to the flat line E. They are equal at x = ±A/√2.',
+  'Graph of potential energy, kinetic energy and total energy against displacement') ?>
+<p>The potential energy is a bowl. The kinetic energy is the gap between the bowl and the flat total. They are equal where $\tfrac12kx^2 = \tfrac14kA^2$, which is at $x = \pm A/\sqrt2 \approx \pm 0.71A$, <em>not</em> at $A/2$.</p>
+</card>
+
+<q type="single" answer="A" pyq="AIEEE 2003">
+<stem>A body moves in SHM. Its potential energy (PE), kinetic energy (KE) and total energy (TE) are measured as functions of displacement $x$. Which statement is true?</stem>
+<opt>KE is maximum when $x = 0$</opt>
+<opt>TE is zero when $x = 0$</opt>
+<opt>KE is maximum when $x$ is maximum</opt>
+<opt>PE is maximum when $x = 0$</opt>
+<sol><p>$K = \tfrac12k(A^2 - x^2)$ is largest at $x = 0$, the mean position, where the speed is $A\omega$. The total energy is never zero, and PE is <em>zero</em> at $x = 0$. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="numeric" answer="0.5" tol="0.01" title="Three to one">
+<stem>At what displacement, as a fraction of the amplitude ($x/A$), is the kinetic energy of an SHM <strong>three times</strong> its potential energy?</stem>
+<hint>If $K = 3U$, then $E = 4U$.</hint>
+<sol><p>$E = K + U = 4U$, so $\tfrac12kA^2 = 4\cdot\tfrac12kx^2$, which gives $x = A/2$. <strong>Answer: 0.5.</strong></p></sol>
+</q>
+
+<card>
+<h2>Energy against time</h2>
+<p>With $x = A\sin\omega t$, the two energies are</p>
+$$U = E\sin^2\omega t, \qquad K = E\cos^2\omega t.$$
+<?py fig(450, 170,
+  axes(40, 140, 400, 115, 0, 't', 'energy') +
+  curve(lambda u: cos(2 * pi * u) ** 2, 0, 1, 40, 140, 380, 100, 120, 'ln acc') +
+  curve(lambda u: sin(2 * pi * u) ** 2, 0, 1, 40, 140, 380, 100, 120, 'ln vio') +
+  line(40, 40, 420, 40, 'ln thin dash') + line(40, 90, 420, 90, 'ln thin dash') +
+  lbl(230, 158, 'T/2', 'sm') + lbl(420, 158, 'T', 'sm') + lbl(30, 44, 'E', 'sm', 'end') + lbl(30, 94, 'E/2', 'sm', 'end'),
+  'Kinetic (aqua) and potential (coral) energy each go through two full cycles while the body makes one oscillation. Each averages E/2.',
+  'Graphs of kinetic and potential energy against time over one period') ?>
+<p>Because of the squares, <strong>each energy oscillates at twice the frequency of the motion</strong>, with period $T/2$. Over a whole cycle each one averages $E/2$: on average, the energy is shared equally between motion and storage.</p>
+</card>
+
+<lab sim="osc-energy-lab" title="Energy in the well">
+<p>Things to try. <strong>(1)</strong> Watch the aqua (kinetic) and coral (potential) bars. They swap twice per oscillation, and the time graph below shows the doubled frequency. <strong>(2)</strong> Drag the ball to a new amplitude. Total energy grows as $A^2$, but the period doesn’t change. <strong>(3)</strong> Turn on <em>Stiffening spring</em>: the bowl gets steeper walls ($U = \tfrac12kx^2 + \tfrac14bx^4$). Now a bigger swing has a <em>shorter</em> period. The motion is still periodic, but it isn’t SHM any more.</p>
+</lab>
+
+<q type="single" answer="A" pyq="JEE Main 2017">
+<stem>A particle executes SHM with period $T$ and is at its mean position at $t = 0$. Which description fits its kinetic energy–time graph? (The original question showed four graphs.)</stem>
+<opt>It starts at its maximum, falls to zero at $T/4$ and is back at its maximum at $T/2$: a $\cos^2$ curve with period $T/2$, never negative</opt>
+<opt>It starts at zero and rises to its maximum at $T/2$: a $\sin^2$ curve with period $T$</opt>
+<opt>It starts at its maximum and falls to zero at $T/2$: a $\cos^2$ curve with period $T$</opt>
+<opt>A straight line that falls to zero at $T/4$ and rises again (a triangle wave)</opt>
+<hint>At the mean position the speed is greatest. KE goes as $\cos^2$, which repeats every half-period.</hint>
+<sol><p>Starting at the mean, $x = A\sin\omega t$ and $v = A\omega\cos\omega t$, so $K = E\cos^2\omega t$. That curve starts at $E$, reaches zero at $T/4$ (the extreme), is back to $E$ at $T/2$ and is never negative. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="single" answer="B" pyq="AIEEE 2006">
+<stem>Starting from the mean position, a body oscillates in SHM with a period of 2 s. After what time will its kinetic energy be 75% of the total energy?</stem>
+<opt>$1/12$ s</opt>
+<opt>$1/6$ s</opt>
+<opt>$1/4$ s</opt>
+<opt>$1/3$ s</opt>
+<hint>$K = E\cos^2\omega t = \tfrac34E$. Which angle has $\cos\theta = \sqrt3/2$?</hint>
+<sol><p>$\cos^2\omega t = \tfrac34$ gives $\omega t = \pi/6$, so $t = T/12 = 2/12 = 1/6\ \text{s}$. A quicker route: KE is 75% when $x = A/2$, and the reference circle says that takes $T/12$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<callout kind="breather" title="Unclench">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>Notice your jaw and your grip on the pen. Let both go. Breathe out slowly while the ring shrinks. Next: why <em>everything</em> oscillates in SHM if you nudge it gently enough.</p>
+</callout>
+
+<card>
+<h2>Every valley is a spring</h2>
+<p>Pick any smooth potential energy curve $U(x)$ with a minimum at $x_0$. Close to the bottom, every smooth valley looks like a parabola. The Taylor series makes this exact:</p>
+$$U(x) \approx U(x_0) + \tfrac12U''(x_0)\,(x - x_0)^2 + \dots$$
+<p>The first-derivative term is missing because the slope is zero at a minimum. So for small displacements the body feels an effective spring constant $k = U''(x_0)$, and it moves in SHM with</p>
+$$\omega = \sqrt{\frac{U''(x_0)}{m}}.$$
+<p>That is why SHM is everywhere: atoms in molecules, a marble rolling in a bowl, a ship rocking at sea. All of them are near the bottom of some valley. It also tells you when SHM fails: <strong>large amplitudes</strong> reach the parts of the valley that aren’t parabolic, as you saw with the stiffening spring.</p>
+</card>
+
+<q type="single" answer="C" title="A cosine valley">
+<stem>A particle of mass $m$ moves in a potential $U(x) = U_0(1 - \cos\alpha x)$. Its angular frequency for small oscillations about $x = 0$ is</stem>
+<opt>$\sqrt{U_0/m}$</opt>
+<opt>$\alpha\sqrt{m/U_0}$</opt>
+<opt>$\alpha\sqrt{U_0/m}$</opt>
+<opt>$\alpha^2\sqrt{U_0/m}$</opt>
+<hint>$k = U''(0)$.</hint>
+<sol><p>$U' = U_0\alpha\sin\alpha x$ and $U'' = U_0\alpha^2\cos\alpha x$, so $U''(0) = U_0\alpha^2$. Then $\omega = \sqrt{U_0\alpha^2/m} = \alpha\sqrt{U_0/m}$. <strong>Answer: C.</strong> (You could also use $1 - \cos\theta \approx \theta^2/2$ for small $\theta$.)</p></sol>
+</q>
+
+<card>
+<h2>Sudden changes: catch the moment</h2>
+<p>A favourite exam setup: something lands on, or breaks off, an oscillating block. Use two rules.</p>
+<ol>
+<li><strong>During the instant of the change, momentum is conserved</strong> (for a block landing or sticking) and the <strong>position doesn’t jump</strong>.</li>
+<li><strong>Afterwards, it is a new SHM</strong> with the new mass: $\omega' = \sqrt{k/m'}$ and $A'^2 = x^2 + v'^2/\omega'^2$.</li>
+</ol>
+<tbl><table>
+<thead><tr><th>What happens</th><th>At the mean position</th><th>At an extreme</th></tr></thead>
+<tbody>
+<tr><td>Mass $m$ lands softly on block $M$</td><td>$v$ drops to $\frac{M}{M+m}v$, and $A' = A\sqrt{\frac{M}{M+m}}$</td><td>$v = 0$ already, so $A' = A$ and only $T$ changes</td></tr>
+<tr><td>Part of the block falls off</td><td>$v$ is kept, $\omega$ increases, so $A$ <em>decreases</em></td><td>$A' = A$ and only $T$ changes</td></tr>
+</tbody>
+</table></tbl>
+</card>
+
+<q type="single" answer="A" pyq="AIEEE 2011">
+<stem>A mass $M$ on a horizontal spring oscillates with amplitude $A_1$. As $M$ passes through its mean position, a smaller mass $m$ is placed gently on it, and the two then move together with amplitude $A_2$. The ratio $A_1/A_2$ is</stem>
+<opt>$\sqrt{\dfrac{M+m}{M}}$</opt>
+<opt>$\dfrac{M+m}{M}$</opt>
+<opt>$\dfrac{M}{M+m}$</opt>
+<opt>$\sqrt{\dfrac{M}{M+m}}$</opt>
+<hint>At the mean position, $A = v_{\max}/\omega$. Find the new $v$ from momentum and the new $\omega$ from the new mass.</hint>
+<sol><p>Before: $A_1 = v/\omega$ with $\omega = \sqrt{k/M}$. Momentum gives $v' = \dfrac{Mv}{M+m}$, and $\omega' = \sqrt{k/(M+m)}$. So</p>
+$$A_2 = \frac{v'}{\omega'} = \frac{Mv}{M+m}\sqrt{\frac{M+m}{k}} = \frac{Mv}{\sqrt{k(M+m)}}, \qquad \frac{A_1}{A_2} = \frac{v\sqrt{M/k}}{Mv/\sqrt{k(M+m)}} = \sqrt{\frac{M+m}{M}}.$$
+<p><strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="numeric" answer="0.71" tol="0.01" pyq="JEE Main 2020">
+<stem>A block on a light spring oscillates with amplitude $A$ on a smooth horizontal surface. As it passes through its equilibrium position, <strong>half</strong> of its mass breaks off and is left behind. The amplitude of the remaining system becomes $fA$. Find $f$ (2 decimal places).</stem>
+<hint>The piece that stays on the spring keeps its speed $v = A\omega$, but its mass halves.</hint>
+<sol><p>Just before the break, $v = A\omega = A\sqrt{k/m}$. The remaining half keeps this speed, and its new $\omega' = \sqrt{2k/m} = \sqrt2\,\omega$. Since it is at the mean position, $A' = v/\omega' = A\omega/(\sqrt2\,\omega) = A/\sqrt2$. So $f = 1/\sqrt2 \approx 0.71$.</p>
+<p>Check with energy: the spring’s energy is the KE of what remains, $\tfrac12(m/2)v^2 = \tfrac12\cdot\tfrac12kA^2 = \tfrac12kA'^2$, so $A'^2 = A^2/2$. ✓</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 4 in four lines">
+<p>$U = \tfrac12kx^2$, $K = \tfrac12k(A^2 - x^2)$, $E = \tfrac12m\omega^2A^2$, constant. They are equal at $x = \pm A/\sqrt2$. Each energy oscillates at $2f$ and averages $E/2$. Near any minimum, $k = U''(x_0)$. For sudden changes, conserve momentum and keep the position fixed, then restart the SHM.</p>
+</callout>

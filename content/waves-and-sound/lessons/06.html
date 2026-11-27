@@ -1,0 +1,116 @@
+<card>
+<h2>Why a clarinet sounds hollow</h2>
+<p>A flute and a clarinet are about the same length, yet the clarinet plays almost an <strong>octave lower</strong> and has a darker, “hollow” tone. The reason is the end of the tube. A flute is open at both ends. A clarinet is effectively closed at the mouthpiece end, where the reed seals it. That one difference changes which notes the air inside can make, and the missing notes are what give the clarinet its sound.</p>
+</card>
+
+<card>
+<h2>The rules at the ends</h2>
+<p>The air in a pipe carries longitudinal standing waves, just as a string carries transverse ones. The ends set the boundary conditions:</p>
+<tbl><table>
+<thead><tr><th>End</th><th>Air displacement</th><th>Pressure</th></tr></thead>
+<tbody>
+<tr><td><strong>Closed</strong></td><td><strong>node</strong>: the air can’t move into a wall</td><td>antinode: the pressure swings most</td></tr>
+<tr><td><strong>Open</strong></td><td><strong>antinode</strong>: the air moves freely</td><td>node: pressure is held at atmospheric</td></tr>
+</tbody>
+</table></tbl>
+<p>Displacement nodes are pressure antinodes and vice versa, a quarter-wavelength apart, as you saw in Lesson 1.</p>
+<?py fig(480, 200,
+  pipe(30, 22, 300, 46, 'open', 'open') + envelope(30, 45, 300, 20, 1, 'open') + tag(30, 92, 'A') + tag(180, 92, 'N', 'sm') + tag(330, 92, 'A') +
+  lbl(345, 40, 'open at both ends', 'sm', 'start') + lbl(345, 56, 'L = λ/2', 'it', 'start') +
+  pipe(30, 118, 300, 46, 'closed', 'open') + envelope(30, 141, 300, 20, 1, 'closed') + tag(30, 188, 'N', 'sm') + tag(330, 188, 'A') +
+  lbl(345, 136, 'closed at one end', 'sm', 'start') + lbl(345, 152, 'L = λ/4', 'it', 'start'),
+  'Fundamental modes. Open pipe: antinodes at both ends and a node in the middle. Closed pipe: a node at the closed end and an antinode at the open end, so only a quarter of a wavelength fits.',
+  'Displacement envelopes of the fundamental mode in an open pipe and in a pipe closed at one end') ?>
+</card>
+
+<card>
+<h2>Open pipe: all harmonics</h2>
+<p>There is an antinode at each end, so a whole number of half-wavelengths must fit, just as on a string:</p>
+$$L = n\frac{\lambda}{2} \quad\Rightarrow\quad f_n = \frac{nv}{2L}, \qquad n = 1, 2, 3 \dots$$
+<h2>Closed pipe: odd harmonics only</h2>
+<p>There is a node at the closed end and an antinode at the open end. Only an <strong>odd</strong> number of quarter-wavelengths fits:</p>
+$$L = (2n - 1)\frac{\lambda}{4} \quad\Rightarrow\quad f = \frac{v}{4L},\ \frac{3v}{4L},\ \frac{5v}{4L} \dots$$
+<callout kind="key" title="Open against closed, same length">
+<p>A closed pipe’s fundamental is <strong>half</strong> that of an open pipe of the same length ($v/4L$ against $v/2L$), and it has <strong>no even harmonics</strong>. Its first overtone is the 3rd harmonic. That is the clarinet: an octave lower and hollow.</p>
+</callout>
+</card>
+
+<lab sim="wav-pipe-lab" title="Air columns">
+<p>Things to try. <strong>(1)</strong> Watch the dots, which are air molecules. At displacement nodes (N) they don’t move but get squeezed hardest, which is the pressure antinode. <strong>(2)</strong> Switch to <em>Closed at one end</em> and step through the modes: 1, 3, 5, 7, 9 only. <strong>(3)</strong> Press <em>Hear the pipe</em> for both kinds and compare the bright open-pipe tone with the hollow closed-pipe tone. <strong>(4)</strong> Warm the air: every frequency rises, since $v \propto \sqrt{T}$.</p>
+</lab>
+
+<q type="integer" answer="6" pyq="JEE Main 2014">
+<stem>A pipe 85 cm long is closed at one end. How many of its natural frequencies lie below 1250 Hz? (Speed of sound in air = 340 m/s.)</stem>
+<sol><p>$f_1 = v/4L = 340/3.4 = 100\ \text{Hz}$. Only odd multiples are allowed: 100, 300, 500, 700, 900 and 1100 Hz are below 1250 Hz. That makes <strong>6</strong>.</p></sol>
+</q>
+
+<q type="single" answer="C" pyq="JEE Main 2016">
+<stem>A pipe open at both ends has a fundamental frequency $f$ in air. It is dipped vertically in water so that half of it is under water. The fundamental frequency of the air column is now</stem>
+<opt>$3f/4$</opt>
+<opt>$2f$</opt>
+<opt>$f$</opt>
+<opt>$f/2$</opt>
+<sol><p>Before: open pipe, $f = v/2L$. After: a closed pipe (the water surface closes it) of length $L/2$, with $f' = v/(4 \cdot L/2) = v/2L = f$. Halving the length and closing the end cancel out. <strong>Answer: C.</strong></p></sol>
+</q>
+
+<q type="integer" answer="6" pyq="JEE Main 2019">
+<stem>A closed organ pipe has a fundamental frequency of 1.5 kHz. If the highest frequency a person can hear is 20 kHz, how many overtones of this pipe can they hear?</stem>
+<sol><p>Allowed frequencies are odd multiples: 1.5, 4.5, 7.5, 10.5, 13.5, 16.5, 19.5 kHz (the next, 22.5, is too high). That is 7 audible harmonics, of which the first is the fundamental, so there are <strong>6 overtones</strong>.</p></sol>
+</q>
+
+<q type="numeric" answer="106" tol="1" pyq="JEE Main 2020">
+<stem>An organ pipe 1 m long, open at both ends, is kept in a gas whose density is twice that of air at STP. If the speed of sound in air at STP is 300 m/s, what is the difference, in Hz, between the fundamental and the second harmonic of this pipe?</stem>
+<hint>At the same pressure, $v \propto 1/\sqrt\rho$. The second harmonic minus the fundamental equals the fundamental.</hint>
+<sol><p>$v = 300/\sqrt2 \approx 212\ \text{m/s}$, so $f_1 = v/2L \approx 106\ \text{Hz}$. Then $f_2 - f_1 = f_1 \approx 106\ \text{Hz}$.</p></sol>
+</q>
+
+<callout kind="breather" title="Blow across a bottle">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>If there is an empty bottle nearby, blow gently across its mouth: you have made a closed pipe. Pour in some water and the note rises, because the air column is shorter. If not, just take three slow breaths and come back for the experiment.</p>
+</callout>
+
+<card>
+<h2>End correction</h2>
+<p>The air just past an open end still takes part in the vibration, so the antinode sits slightly <em>outside</em> the pipe. The pipe behaves as if it were longer by the <strong>end correction</strong> $e \approx 0.6r = 0.3d$, where $r$ is the radius and $d$ the diameter.</p>
+$$\text{closed pipe: } f_1 = \frac{v}{4(L + e)}, \qquad \text{open pipe: } f_1 = \frac{v}{2(L + 2e)}.$$
+</card>
+
+<q type="numeric" answer="324" tol="1.5" title="With end correction">
+<stem>An open pipe is 50 cm long with radius 2 cm. Taking the end correction as $0.6r$ at each end and $v = 340$ m/s, find its fundamental frequency in Hz.</stem>
+<sol><p>Effective length $= 0.50 + 2 \times 0.6 \times 0.02 = 0.524\ \text{m}$, so $f_1 = 340/(2 \times 0.524) \approx 324\ \text{Hz}$. Without the correction it would be 340 Hz.</p></sol>
+</q>
+
+<card>
+<h2>The experiment: measuring the speed of sound</h2>
+<p>This is in the JEE Main practical-skills list. A long glass tube stands in a water reservoir, so the length of air above the water can be changed. A tuning fork of known frequency $f$ is struck and held over the mouth while the water level is lowered slowly. At certain lengths the sound suddenly booms: the air column resonates with the fork.</p>
+<ol>
+<li>First resonance: $l_1 + e = \lambda/4$. Second resonance: $l_2 + e = 3\lambda/4$.</li>
+<li>Subtract them, and the unknown end correction drops out: $\lambda = 2(l_2 - l_1)$, so $v = 2f(l_2 - l_1)$.</li>
+<li>Then $e = \dfrac{l_2 - 3l_1}{2}$.</li>
+</ol>
+<callout kind="trap" title="Ratios and seasons">
+<p>Because of the end correction, $l_2$ is slightly <em>more</em> than $3l_1$, not exactly $3l_1$. On a hot day $v$ is larger, so $\lambda$ is longer and every resonance length grows.</p>
+</callout>
+<lab sim="wav-tube-lab" title="The resonance-tube experiment">
+<p>Do the real experiment. Pick a fork, drag the water level down slowly from the top and strike the fork as you go. Watch the loudness meter, and listen. At the first boom, press <em>Record this length</em>. Keep going down to the second boom and record that too. The lab then works out $v = 2f(l_2 - l_1)$ and the end correction from <em>your</em> readings. The tube here is 4 cm wide, so $e \approx 1.2$ cm. How close did you get to 343 m/s?</p>
+</lab>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2008">
+<stem>Measuring the speed of sound with a resonance column, a student finds the first resonance at a column length of 18 cm in winter. Repeating the experiment in summer, she measures the column length for the <strong>second</strong> resonance as $x$ cm. Then</stem>
+<opt>$18 < x < 54$</opt>
+<opt>$x > 54$</opt>
+<opt>$x = 54$</opt>
+<opt>$x = 36$</opt>
+<hint>Ignoring end correction, the second resonance is three times the first. Then think about what summer does to $v$.</hint>
+<sol><p>In winter $\lambda/4 \approx 18$ cm, so the second resonance would be at about $3 \times 18 = 54$ cm. In summer the air is warmer, so $v$ and $\lambda$ are larger, and every resonance length grows. The end correction also makes $l_2$ more than $3l_1$. So $x > 54$. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="numeric" answer="338" tol="1" title="Your own data">
+<stem>With a 512 Hz fork, the first and second resonances occur at 15.0 cm and 48.0 cm. Find the speed of sound in m/s.</stem>
+<sol><p>$v = 2f(l_2 - l_1) = 2 \times 512 \times 0.33 \approx 338\ \text{m/s}$. The end correction is $e = (48.0 - 45.0)/2 = 1.5$ cm.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 6 in five lines">
+<p>A closed end is a displacement node (pressure antinode); an open end is a displacement antinode (pressure node). Open pipe: $f_n = nv/2L$, all harmonics. Closed pipe: $f = (2n-1)v/4L$, odd harmonics only, with the fundamental an octave below an open pipe of the same length. End correction $e \approx 0.6r$. Resonance tube: $v = 2f(l_2 - l_1)$ and $e = (l_2 - 3l_1)/2$.</p>
+</callout>

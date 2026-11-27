@@ -1,0 +1,88 @@
+<card>
+<h2>Tuning by ear</h2>
+<p>A piano tuner strikes a tuning fork and a piano key together and listens. If they are slightly out of tune, the sound throbs: <em>wah… wah… wah…</em>, a slow rise and fall in loudness. The tuner tightens the string and the throbbing slows… slows… and stops. Now the string and the fork match.</p>
+<p>Those throbs are <strong>beats</strong>, and they let your ear detect a frequency difference of less than 1 Hz between two notes of a few hundred hertz. No other tool a musician owns is that precise.</p>
+</card>
+
+<card>
+<h2>Where beats come from</h2>
+<p>Add two equal waves with slightly different frequencies $f_1$ and $f_2$ at one place (your ear):</p>
+$$y = A\sin 2\pi f_1t + A\sin 2\pi f_2t = \underbrace{2A\cos\left(\pi(f_1 - f_2)t\right)}_{\text{slowly changing amplitude}}\;\sin\left(\pi(f_1 + f_2)t\right).$$
+<?py fig(480, 230,
+  curve(lambda u: sin(2 * pi * 20 * u), 0, 1, 30, 32, 420, 14, 700, 'ln acc') + lbl(456, 36, 'f₁', 'sm t-a', 'start') +
+  curve(lambda u: sin(2 * pi * 22 * u), 0, 1, 30, 72, 420, 14, 700, 'ln vio') + lbl(456, 76, 'f₂', 'sm t-v', 'start') +
+  curve(lambda u: sin(2 * pi * 20 * u) + sin(2 * pi * 22 * u), 0, 1, 30, 160, 420, 26, 900, 'ln wrn') +
+  curve(lambda u: 2 * abs(cos(2 * pi * u)), 0, 1, 30, 160, 420, 26, 200, 'ln dash') +
+  line(30, 106, 450, 106, 'ln thin') + lbl(456, 164, 'sum', 'sm t-w', 'start') +
+  lbl(240, 222, 'loud · quiet · loud · quiet · loud: two beats in this window', 'sm'),
+  'Two tones slightly out of step (top) drift into step, then out again. Their sum (bottom) swells and fades: the beats.',
+  'Two sine waves of slightly different frequency and their sum, whose amplitude rises and falls') ?>
+<ul>
+<li>You hear one tone at the <strong>average</strong> frequency $\tfrac{f_1 + f_2}{2}$.</li>
+<li>Its loudness swells and fades. The amplitude $|2A\cos\pi(f_1 - f_2)t|$ peaks <strong>twice</strong> in each cycle of the cosine, so the number of loud swells per second is</li>
+</ul>
+$$f_{\text{beat}} = |f_1 - f_2|.$$
+<p>The ear can count beats up to about 10 per second. Beyond that, the sound just seems rough, and at larger differences you hear two separate notes.</p>
+</card>
+
+<lab sim="wav-beats-lab" title="Hear the beats">
+<p>Things to try. <strong>(1)</strong> Press ♪ with 256 and 260 Hz: you hear 4 swells a second. Count them against the envelope below. <strong>(2)</strong> Watch the 12 ms close-up as the cursor moves: the two waves slide into step (loud) and out of step (quiet). <strong>(3)</strong> Bring them to 1 Hz apart and the beats slow down. At 0 they stop. <strong>(4)</strong> Play the <em>Mystery fork game</em>. The fork’s frequency is hidden, so tune your string (tone 1) by listening until the beats vanish.</p>
+</lab>
+
+<card>
+<h2>The detective rules</h2>
+<p>Beats tell you <em>how far apart</em> two frequencies are, but not <em>which is higher</em>. JEE problems settle that with a second clue:</p>
+<ul>
+<li>Unknown frequency $= f_{\text{known}} \pm f_{\text{beat}}$: two candidates.</li>
+<li><strong>Loading</strong> a fork’s prong (wax, tape) <strong>lowers</strong> its frequency. <strong>Filing</strong> it raises its frequency.</li>
+<li>Tightening a string <strong>raises</strong> its frequency.</li>
+<li>Try each candidate: does the change make the beat rate go up or down? Only one candidate fits.</li>
+</ul>
+</card>
+
+<q type="single" answer="B" pyq="AIEEE 2003">
+<stem>A tuning fork of frequency 256 Hz makes 5 beats per second with a vibrating piano string. When the tension in the string is increased slightly, the beat frequency drops to 2 beats per second. The frequency of the piano string before the tension was increased was</stem>
+<opt>256 Hz</opt>
+<opt>251 Hz</opt>
+<opt>254 Hz</opt>
+<opt>261 Hz</opt>
+<sol><p>The candidates are 251 or 261 Hz. More tension raises the string’s frequency. Starting from 251 Hz, it moves towards 256 and the beats fall, which fits. Starting from 261 Hz, it would move away and the beats would rise. <strong>Answer: B.</strong></p></sol>
+</q>
+
+<q type="single" answer="D" pyq="AIEEE 2005">
+<stem>When tuning forks 1 and 2 are sounded together, 4 beats per second are heard. Some tape is then stuck on a prong of fork 2, and sounding them together gives 6 beats per second. If fork 1 is 200 Hz, what was the original frequency of fork 2?</stem>
+<opt>202 Hz</opt>
+<opt>200 Hz</opt>
+<opt>204 Hz</opt>
+<opt>196 Hz</opt>
+<sol><p>The candidates for fork 2 are 196 or 204 Hz. Tape lowers its frequency. From 204 Hz it would move towards 200 and the beats would fall, but they rose. From 196 Hz it moves away to 194 Hz and the beats rise to 6, which fits. <strong>Answer: D, 196 Hz.</strong></p></sol>
+</q>
+
+<q type="integer" answer="2" pyq="AIEEE 2009">
+<stem>Three sound waves of equal amplitude have frequencies $(\nu - 1)$, $\nu$ and $(\nu + 1)$. They superpose to give beats. How many beats are produced per second?</stem>
+<hint>Add them as phasors around the middle one, or write the sum as $A\sin 2\pi\nu t\,(1 + 2\cos 2\pi t)$.</hint>
+<sol><p>The sum is $A\sin 2\pi\nu t\,[1 + 2\cos 2\pi t]$. The amplitude factor $|1 + 2\cos 2\pi t|$ repeats every 1 s. Within each second it has a tall peak of 3 (at $t = 0$) and a smaller peak of 1 (at $t = \tfrac12$, where $1 + 2\cos\pi = -1$). So you hear <strong>2</strong> swells per second, one loud and one softer.</p></sol>
+</q>
+
+<callout kind="breather" title="Let the room ring">
+<div class="breathe" aria-hidden="true"><i></i></div>
+<p>If the ambient sound is on, listen for the distant bowl: its overtones beat slowly as they fade. Breathe out in time with the slow swells.</p>
+</callout>
+
+<q type="single" answer="A" pyq="JEE Main 2020">
+<stem>Two sitar strings, A and B, playing the note “Dha” are slightly out of tune and produce beats of 5 Hz. The tension in string B is increased slightly, and the beat frequency falls by 3 Hz. If string A is at 425 Hz, the original frequency of B was</stem>
+<opt>420 Hz</opt>
+<opt>430 Hz</opt>
+<opt>428 Hz</opt>
+<opt>422 Hz</opt>
+<sol><p>The candidates for B are 420 or 430 Hz. More tension raises B’s frequency, and the beats fall to 2 Hz. From 420 Hz, B rises to 423 Hz and the beats are 2 Hz, which fits. From 430 Hz it would rise to 433 Hz, giving 8 Hz. <strong>Answer: A.</strong></p></sol>
+</q>
+
+<q type="integer" answer="76" title="A ladder of forks">
+<stem>Twenty tuning forks are arranged in order of increasing frequency. Each one gives 4 beats per second with the next, and the last fork’s frequency is twice the first’s. What is the frequency of the first fork, in Hz?</stem>
+<sol><p>From the first fork to the last there are 19 steps of 4 Hz, so $f_{20} = f_1 + 76$. Setting $f_1 + 76 = 2f_1$ gives $f_1 = 76\ \text{Hz}$.</p></sol>
+</q>
+
+<callout kind="recap" title="Lesson 7 in four lines">
+<p>Two close frequencies give a tone at their average, swelling $|f_1 - f_2|$ times a second. Beats give the difference but not its sign. Loading a fork lowers its $f$, filing raises it, and tightening a string raises it. Try both candidates and keep the one that makes the beats change the right way.</p>
+</callout>

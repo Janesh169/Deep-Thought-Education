@@ -25,7 +25,7 @@ Authoring markup (everything else is ordinary HTML and passes through untouched)
   <callout kind="story|intuition|trap|key|recap|breather" title="…" [label="…"]> … </callout>
   <derive tag="Derivation" title="…" [predict]> … </derive>    a fold-out block
   <tbl> <table>…</table> </tbl>                                a scrollable table
-  <?py fig(…) ?>                                               a figure drawn with tools/chemfig.py
+  <?py fig(…) ?>                                               a figure drawn with tools/chemfig.py / tools/physfig.py
   <lab sim="name" title="…" [data-…="…"]> notes </lab>         an interactive lab
   <q type="single|multi|integer|numeric|reveal" answer="…" [tol="…"] [pyq="JEE Main 2014"] [title="…"]>
      <stem>…</stem> <opt>…</opt>… <hint>…</hint> <sol>…</sol>
@@ -42,6 +42,7 @@ REPO = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import chemfig  # noqa: E402
+import physfig  # noqa: E402
 import search_index  # noqa: E402
 
 APP_NAME = 'Deep Thought Education'
@@ -109,7 +110,9 @@ def figures(src, where):
     def run(m):
         try:
             env = dict(chemfig.NAMES)
-            env['__builtins__'] = {'range': range, 'len': len, 'dict': dict, 'min': min, 'max': max, 'round': round, 'enumerate': enumerate, 'zip': zip, 'str': str}
+            env.update(physfig.NAMES)
+            env['__builtins__'] = {'range': range, 'len': len, 'dict': dict, 'min': min, 'max': max, 'round': round, 'enumerate': enumerate, 'zip': zip, 'str': str,
+                                   'abs': abs, 'sum': sum, 'int': int, 'float': float, 'list': list}
             return str(eval(m.group(1), env))
         except Exception as e:
             raise BuildError('%s: figure failed (%s): %s' % (where, e, m.group(1)[:200]))

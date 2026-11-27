@@ -179,8 +179,8 @@ def question(m, cid, lesson, k, where):
     return h, {'id': qid, 'pyq': bool(pyq)}
 
 
-def lesson_html(src, ch, meta, where):
-    cid, n = ch['id'], meta['n']
+def markup(src, where):
+    """Light authoring markup → house HTML (everything except questions and maths)."""
     src = figures(src, where)
 
     def callout(m):
@@ -210,7 +210,12 @@ def lesson_html(src, ch, meta, where):
         return ('<section class="sim glass" data-sim="%s"%s><header class="sim__head">%s<div><span class="eyebrow">Interactive lab</span><h3>%s</h3></div></header><div class="sim__mount"></div><div class="sim__notes prose">%s</div></section>'
                 % (a['sim'], extra, ico('hand'), a.get('title', 'Interactive lab'), m.group(2).strip()))
     src = re.sub(r'<lab\b([^>]*)>(.*?)</lab>', lab, src, flags=re.S)
+    return src
 
+
+def lesson_html(src, ch, meta, where):
+    cid, n = ch['id'], meta['n']
+    src = markup(src, where)
     qs, k = [], [0]
 
     def q(m):
@@ -258,6 +263,17 @@ def write(p, s):
 
 def js_string(s):
     return json.dumps(s, ensure_ascii=False).replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
+
+
+SHARED_CSS = os.path.join(REPO, 'content', 'shared', 'styles.css')
+
+
+def apply_shared(repo=REPO):
+    """Styles every chapter may use (breathers, …): content/shared/styles.css → assets/app.css."""
+    css_p = os.path.join(repo, 'assets', 'app.css')
+    if os.path.exists(SHARED_CSS):
+        return write(css_p, marked(read(css_p), 'shared', 'styles', read(SHARED_CSS)))
+    return os.path.getsize(css_p)
 
 
 def build(src_dir, repo=REPO):
@@ -343,6 +359,7 @@ def build(src_dir, repo=REPO):
         app = marked(app, cid, 'synonyms', block, r'^  \];\n  var SYN = \{\};')
         write(finder_p, marked(read(finder_p), cid, 'synonyms', block, r'^  \];\n  var SYN = \{\};'))
     sizes['assets/app.js'] = write(app_p, app)
+    sizes['assets/app.css'] = apply_shared(repo)
     return sizes, sum(len(l['questions']) for l in ch['lessons']), sum(q['pyq'] for l in ch['lessons'] for q in l['questions'])
 
 

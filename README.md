@@ -73,3 +73,19 @@ colour tone (`assets/app.css`), ambient soundscape and search synonyms (`assets/
 `chapter:<id>` marker comments. It is safe to run again. **`tools/build.py site` regenerates those files from the
 single-file app, which does not contain this chapter — so run `add_chapter.py` again after it.**
 
+### Enriching a chapter that came from the single-file app
+
+`content/enrich/<id>/` holds additions to an existing chapter — story openers, a breather in every lesson,
+memory hooks, splits of overlong cards and a closing game — written in the same light markup, each placed
+relative to a heading, question, lab or callout of the original lesson (see the docstring of
+`tools/enrich_chapter.py`). Current Electricity and Magnetism are enriched this way:
+
+```bash
+python3 tools/enrich_chapter.py current-electricity magnetism
+```
+
+The original lessons are not edited: every addition is wrapped in `<!--enrich-->` comments, so the tool removes
+its previous output before applying, and is safe to re-run. **Run it again after `tools/build.py site`**, which
+rebuilds those chapter files from the single-file app. Styles shared by every chapter (breathers) live in
+`content/shared/styles.css`; the quick-fire game engine both enriched chapters use is `content/shared/rush.js`.
+

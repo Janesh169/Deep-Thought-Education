@@ -1,0 +1,37 @@
+/* include: shared/rush.js */
+Sim.register('mag-rush-lab', function (stage) {
+  'use strict';
+  DTRush(stage, [
+    ['A charge moves parallel to a uniform magnetic field.', 'Magnetic force on it?', ['zero', 'qvB', 'qvB/2'], 'F = qvB sin θ, and θ = 0.'],
+    ['A charge moves through a magnetic field.', 'Work done on it by the magnetic force?', ['always zero', 'qvB × distance', 'depends on the field'], 'The force is always perpendicular to the velocity.'],
+    ['A charge q, mass m, moves at speed v perpendicular to B.', 'Radius of its circle?', ['mv/qB', 'qB/mv', 'mvB/q'], 'qvB = mv²/r.'],
+    ['A charged particle’s speed in a uniform B is doubled.', 'Its period of revolution…', ['does not change', 'doubles', 'halves'], 'T = 2πm/qB has no v in it.'],
+    ['Crossed E and B fields act as a velocity selector.', 'Which speed passes undeflected?', ['v = E/B', 'v = B/E', 'v = EB'], 'qE = qvB.'],
+    ['A charge enters a uniform B at 30° to the field.', 'Its path is…', ['a helix', 'a circle', 'a straight line'], 'The parallel component drifts on while the perpendicular one goes round.'],
+    ['A long straight wire carries current I.', 'Field at distance r?', ['μ₀I/2πr', 'μ₀I/2r', 'μ₀I/4πr'], 'Spread round a circle of length 2πr.'],
+    ['A circular loop of radius R carries current I.', 'Field at its centre?', ['μ₀I/2R', 'μ₀I/2πR', 'μ₀IR/2'], 'Every element is the same distance R away and adds in the same direction.'],
+    ['A long solenoid has n turns per metre and current I.', 'Field inside?', ['μ₀nI', 'μ₀nI/2', 'zero'], 'Ampère’s law round a rectangle half inside.'],
+    ['Compared with its centre, the field at the end of a long solenoid is…', 'how big?', ['half', 'double', 'the same'], 'Only half of the solenoid is on one side of the end.'],
+    ['A toroid has N turns, current I, and mean radius r.', 'Field inside the core?', ['μ₀NI/2πr', 'μ₀NI', 'zero'], 'Ampère’s law round a circle of radius r inside the windings.'],
+    ['An ideal toroid carries a current.', 'Field in the space outside it?', ['zero', 'μ₀NI/2πr', 'μ₀nI'], 'An Amperian loop outside encloses no net current.'],
+    ['A long hollow pipe carries current along its length.', 'Field inside the hollow?', ['zero', 'μ₀I/2πr', 'largest at the axis'], 'An Amperian loop inside the hollow encloses no current.'],
+    ['Two long parallel wires carry currents in the same direction.', 'They…', ['attract', 'repel', 'exert no force'], 'Currents: like attract (the opposite of charges).'],
+    ['Two long parallel wires, currents I₁ and I₂, a distance d apart.', 'Force per metre?', ['μ₀I₁I₂/2πd', 'μ₀I₁I₂/4πd²', 'μ₀I₁I₂d/2π'], 'The field of one, μ₀I₁/2πd, acting on the current of the other.'],
+    ['A closed current loop of any shape sits in a uniform B.', 'Net force on it?', ['zero', 'BIL', 'depends on the shape'], 'Only the straight line joining the ends counts — and for a closed loop that is nothing.'],
+    ['The torque on a current loop in a field is…', 'which expression?', ['τ = m × B', 'τ = m · B', 'τ = mB, whatever the angle'], 'A cross product: maximum when m ⊥ B, zero when m ∥ B.'],
+    ['A coil of N turns, area A, carries current I.', 'Its magnetic moment?', ['NIA', 'NI/A', 'IA/N'], 'Each turn contributes IA.'],
+    ['A magnetic dipole sits in a uniform field.', 'Stable equilibrium when m is…', ['along B', 'opposite to B', 'perpendicular to B'], 'U = −m·B is lowest there.'],
+    ['A galvanometer’s magnet has curved pole pieces and an iron core.', 'Why a radial field?', ['so deflection ∝ current', 'so the coil heats less', 'so the torque is zero'], 'The coil’s plane always lies along B, so the torque is NIAB at every angle.'],
+    ['Current sensitivity of a moving-coil galvanometer', 'is…', ['NAB/k', 'k/NAB', 'NABk'], 'Twist per unit current: deflecting torque over spring constant.'],
+    ['A bar magnet is cut in half across its length.', 'You get…', ['two smaller magnets', 'a separate N and S pole', 'no magnet at all'], 'There are no isolated magnetic poles.'],
+    ['Diamagnetic materials', 'are…', ['weakly repelled, χ < 0', 'weakly attracted, χ > 0', 'strongly attracted'], 'Dia: dislikes the field.'],
+    ['A ferromagnet is heated above its Curie temperature.', 'It becomes…', ['paramagnetic', 'diamagnetic', 'more strongly magnetised'], 'Thermal agitation breaks up the domains.'],
+    ['By Curie’s law, a paramagnet’s susceptibility', 'varies as…', ['1/T', 'T', 'it does not depend on T'], 'Heat jostles the little dipoles out of line.'],
+    ['An electron and a proton enter the same B with the same speed.', 'Which has the larger radius?', ['the proton', 'the electron', 'neither — equal'], 'r = mv/qB and the proton is far heavier.'],
+    ['An electron and a proton enter the same B with the same kinetic energy.', 'Which has the larger radius?', ['the proton', 'the electron', 'neither — equal'], 'r = √(2mK)/qB: still larger for the larger mass.'],
+    ['A cyclotron uses a magnetic field B.', 'Its oscillator frequency must be…', ['qB/2πm', '2πm/qB', 'qBm/2π'], 'It must match the particle’s orbital frequency.'],
+    ['At the same distance from a short bar magnet, the field on its axis is…', 'compared with the equator?', ['twice as strong', 'half as strong', 'the same'], '2μ₀m/4πr³ on the axis, μ₀m/4πr³ on the equator.'],
+    ['The Lorentz force on a charge in E and B fields', 'is…', ['q(E + v × B)', 'q(E × v + B)', 'qvB only'], 'Electric and magnetic parts simply add.'],
+    ['Earth’s geographic North Pole', 'is near a magnetic…', ['south pole', 'north pole', 'neither'], 'A compass’s north end is attracted there, so it must be a south pole.'],
+  ], { key: 'mag-rush', title: 'Field Rush', round: 12, time: 15 });
+}, { unitsWide: 10, aspect: 0.5, minHeight: 300, maxHeight: 400, hint: '' });

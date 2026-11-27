@@ -1,0 +1,35 @@
+/* include: shared/rush.js */
+Sim.register('ce-rush-lab', function (stage) {
+  'use strict';
+  DTRush(stage, [
+    ['Two equal resistors R are joined in parallel.', 'Equivalent resistance?', ['R/2', '2R', 'R'], 'Product over sum: R·R/(R + R) = R/2.'],
+    ['n equal resistors R are joined in series.', 'Equivalent resistance?', ['nR', 'R/n', 'R'], 'In series resistances simply add.'],
+    ['A wire is stretched to twice its length; its volume stays the same.', 'New resistance?', ['4R', '2R', 'R/2'], 'Length doubles and area halves: R ∝ l/A goes up four times.'],
+    ['Electrons drift along a copper wire carrying a few amperes.', 'Typical drift speed?', ['about 0.1 mm/s', 'about 1 m/s', 'about 3 × 10⁸ m/s'], 'Drift is a crawl. The signal travels fast; the electrons do not.'],
+    ['A metal wire is heated.', 'Its resistance…', ['rises', 'falls', 'stays the same'], 'Same carriers, more collisions with the vibrating ions.'],
+    ['A piece of silicon is heated.', 'Its resistance…', ['falls', 'rises', 'stays the same'], 'Heat frees many more carriers — far more than the extra collisions cost.'],
+    ['A cell has emf ε and internal resistance r.', 'Which load draws the maximum power?', ['R = r', 'R = 2r', 'R = r/2'], 'Maximum power transfer: match the load to the source.'],
+    ['A cell of emf ε, internal resistance r, is being charged with current I.', 'Its terminal voltage is…', ['ε + Ir', 'ε − Ir', 'ε'], 'Charging pushes current in at the + terminal, so the charger must supply the extra Ir.'],
+    ['Kirchhoff’s junction rule', 'is conservation of…', ['charge', 'energy', 'momentum'], 'What flows into a junction must flow out.'],
+    ['Kirchhoff’s loop rule', 'is conservation of…', ['energy', 'charge', 'mass'], 'Round any closed loop, the rises and drops of potential cancel.'],
+    ['100 W and 60 W bulbs (both rated 220 V) are joined in series across 220 V.', 'Which glows brighter?', ['the 60 W bulb', 'the 100 W bulb', 'both equally'], 'Same current; the 60 W bulb has the larger resistance, so I²R is larger.'],
+    ['The same two bulbs are joined in parallel across 220 V.', 'Which glows brighter?', ['the 100 W bulb', 'the 60 W bulb', 'both equally'], 'Same voltage; smaller resistance takes more power, V²/R.'],
+    ['You want to turn a galvanometer into an ammeter.', 'Connect…', ['a small resistance in parallel', 'a large resistance in series', 'a large resistance in parallel'], 'The shunt carries most of the current around the delicate coil.'],
+    ['You want to turn a galvanometer into a voltmeter.', 'Connect…', ['a large resistance in series', 'a small resistance in parallel', 'a small resistance in series'], 'The big series resistor lets only a tiny current through.'],
+    ['An ideal voltmeter', 'has resistance…', ['infinite', 'zero', 'equal to the load'], 'It must draw no current from what it measures.'],
+    ['An ideal ammeter', 'has resistance…', ['zero', 'infinite', 'equal to the load'], 'It must add nothing to the circuit it sits in.'],
+    ['A Wheatstone bridge with P/Q = R/S.', 'Current through the galvanometer?', ['zero', 'maximum', 'depends on the battery emf'], 'Balanced: B and D are at the same potential.'],
+    ['A potentiometer measures the emf of a cell.', 'Why is it exact at balance?', ['it draws no current from the cell', 'its wire has no resistance', 'the current in it is maximum'], 'With no current, there is no drop across the cell’s internal resistance.'],
+    ['A potentiometer’s wire is made longer, with the same driver cell across it.', 'Its sensitivity…', ['improves', 'gets worse', 'does not change'], 'The same voltage over more wire: a smaller potential gradient, so each millivolt spans more length.'],
+    ['A resistor stays connected to a fixed voltage V; R is doubled.', 'Power produced?', ['halves', 'doubles', 'quadruples'], 'P = V²/R.'],
+    ['The same current I is kept through a resistor; R is doubled.', 'Power produced?', ['doubles', 'halves', 'stays the same'], 'P = I²R.'],
+    ['The unit of resistivity', 'is…', ['Ω m', 'Ω/m', 'Ω m⁻²'], 'ρ = RA/l: ohms × square metres ÷ metres.'],
+    ['One “unit” on an electricity bill', 'equals…', ['3.6 MJ', '1000 J', '36 kJ'], '1 kWh = 1000 W × 3600 s.'],
+    ['Twelve equal resistors r form the edges of a cube.', 'Resistance across a body diagonal?', ['5r/6', '3r/4', '7r/12'], 'Current splits I/3 → I/6 → I/3: (1/3 + 1/6 + 1/3) r.'],
+    ['An infinite ladder: every series and every shunt resistor is 1 Ω.', 'Its resistance?', ['(1 + √5)/2 Ω', '2 Ω', '1 Ω'], 'x = 1 + x/(1 + x) gives x² − x − 1 = 0 — the golden ratio.'],
+    ['n identical cells (ε, r) in series drive a load R.', 'Current?', ['nε/(R + nr)', 'ε/(R + r/n)', 'nε/(R + r)'], 'Emfs add and so do the internal resistances.'],
+    ['Mobility of a charge carrier', 'is defined as…', ['drift speed per unit field', 'current per unit area', 'charge per unit time'], 'μ = v_d/E.'],
+    ['A cell is delivering current to a circuit.', 'Its terminal voltage compared with its emf?', ['less', 'equal', 'greater'], 'Some of the emf is used up inside: V = ε − Ir.'],
+    ['Current density J in a conductor of conductivity σ', 'is related to the field by…', ['J = σE', 'J = E/σ', 'J = σ/E'], 'Ohm’s law written point by point.'],
+  ], { key: 'ce-rush', title: 'Circuit Rush', round: 12, time: 15 });
+}, { unitsWide: 10, aspect: 0.5, minHeight: 300, maxHeight: 400, hint: '' });
